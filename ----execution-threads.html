@@ -781,7 +781,7 @@
 <span class="odt-code-line">            Thread.Sleep(1000)</span>
 <span class="odt-code-line">        <span style="color:#0000ff">End While</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>Screen results:</p>
@@ -857,8 +857,8 @@
 <p>Let’s examine the following program:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -894,7 +894,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Display end of execution</span></span>
 <span class="odt-code-line">        Console.Out.WriteLine((&quot;End of method execution displayed in thread &quot; + Thread.CurrentThread.Name + &quot;: &quot; + DateTime.Now.ToString(&quot;hh:mm:ss&quot;)))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The main thread, the one that executes the <em>Main</em> function, creates 5 other threads responsible for executing the static method <em>display</em>. The results are as follows:</p>
@@ -985,8 +985,8 @@
 <p>The program is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; use of threads</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1052,7 +1052,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; monitoring</span></span>
 <span class="odt-code-line">        Console.Out.WriteLine((&quot;At &quot; &amp; DateTime.Now.ToString(&quot;hh:mm:ss&quot;) &amp; &quot;, thread &quot; &amp; Thread.CurrentThread.Name &amp; &quot; wrote the counter value: &quot; &amp; cptrThreads))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>We won’t dwell on the thread creation part, which we’ve already covered. Instead, let’s focus on the <em>Increment</em> method, used by each thread to increment the static counter <em>cptrThreads</em>.</p>
@@ -1148,8 +1148,8 @@
 <p>Here, threads T1 and T2 are waiting for each other. This situation occurs when threads require two shared resources: resource R1 controlled by Mutex M1 and resource R2 controlled by Mutex M2. One possible solution is to acquire both resources simultaneously using a single Mutex M. However, this is not always feasible if, for example, it results in a prolonged lock on a costly resource. Another solution is for a thread holding M1 that cannot obtain M2 to release M1 to avoid deadlock. If we apply what we just saw to the previous example, our application becomes as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; use of threads</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1221,7 +1221,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; release the access permission</span></span>
 <span class="odt-code-line">        authorization.ReleaseMutex()</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>The results obtained are as expected:</p>
@@ -1290,8 +1290,8 @@
 <span class="odt-code-line">&#x27; illustrates the simultaneous use of shared resources and synchronization</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; use of threads</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1393,7 +1393,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27;end of critical section</span></span>
 <span class="odt-code-line">        writer.ReleaseMutex()</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>The execution yields the following results:</p>

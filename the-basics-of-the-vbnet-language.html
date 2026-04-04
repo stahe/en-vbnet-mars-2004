@@ -1227,7 +1227,7 @@
 <span class="odt-code-line">        Console.Out.WriteLine(&quot;var11=&quot; + var11)</span>
 <span class="odt-code-line">        Console.Out.WriteLine(&quot;var12=&quot; + var12.ToString)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The execution produces the following results:</p>
@@ -1288,9 +1288,9 @@
   </li>
 </ul>
 <h3 id="223-data-declaration">2.2.3. <span style="color: #4f81bd">Data Declaration</span></h3>
-<h4 id="2231-role-of-declarations">2.2.3.1. <span style="color: #4f81bd"><em>Role of declarations</em></span></h4>
+<h4 id="2231-role-of-declarations">2.2.3.1. <span style="color: #4f81bd">Role of declarations</span></h4>
 <p>A program manipulates data characterized by a name and a type. This data is stored in memory. When the program is compiled, the compiler assigns each piece of data a memory location characterized by an address and a size. It does this using the declarations made by the programmer. Furthermore, these declarations allow the compiler to detect programming errors. Thus, the operation <code>x = x \* 2</code> will be declared an error if <code>x</code> is a string, for example.</p>
-<h4 id="2232-declaration-of-constants">2.2.3.2. <span style="color: #4f81bd"><em>Declaration of Constants</em></span></h4>
+<h4 id="2232-declaration-of-constants">2.2.3.2. <span style="color: #4f81bd">Declaration of Constants</span></h4>
 <p>The syntax for declaring a constant is as follows:</p>
 <p><strong><mark style="background-color: #fff5ce">const identifier as type=value</mark></strong></p>
 <p>For example, [<strong>const PI as double=3.141592</strong><em>]</em>. Why declare constants? </p>
@@ -1300,7 +1300,7 @@
   <li>Modifying the program will be easier if the &quot;constant&quot; needs to be changed. Thus, in the previous case, if the VAT rate changes to 33%, the only modification needed will be to change the statement defining its value: [<b>const vatrate as single=0.336F</b>]. If 0.186 had been used explicitly in the program, numerous statements would need to be modified.
   </li>
 </ol>
-<h4 id="2233-variable-declaration">2.2.3.3. <span style="color: #4f81bd"><em>Variable Declaration</em></span></h4>
+<h4 id="2233-variable-declaration">2.2.3.3. <span style="color: #4f81bd">Variable Declaration</span></h4>
 <p>A variable is identified by a name and refers to a data type. VB.NET does not distinguish between uppercase and lowercase letters. Thus, the variables <strong>FIN</strong> and <strong>fin</strong> are identical. Variables can be initialized when they are declared. The syntax for declaring one or more variables is:</p>
 <p><strong><mark style="background-color: #fff5ce">dim variable1,variable2,...,variablen as type_identifier</mark></strong></p>
 <p>where <em>type_identifier</em> is a predefined type or a type defined by the programmer. </p>
@@ -1335,8 +1335,8 @@
 </code></pre></div>
 <p>If the function does not generate an exception, we proceed to <strong>the next statement</strong>; otherwise, we enter the body of the <em>catch</em> clause and then proceed to <strong>the next statement</strong>. We will return to exception handling later. Here is a program demonstrating the main techniques for converting between numbers and strings. In this example, the function <strong><code>display</code></strong> prints the value of its parameter to the screen. Thus, <em><code>display(S)</code></em> prints the value of <strong>S</strong> to the screen.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
-<span class="odt-code-line"><span style="font-weight:bold;color:#ff0000">&#x27; directives</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">&#x27; directives</span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; imported namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1408,7 +1408,7 @@
 <span class="odt-code-line">    <span style="color:#0000ff">Public Sub </span>display(<span style="color:#0000ff">ByVal </span>S <span style="color:#0000ff">As String</span>)</span>
 <span class="odt-code-line">        Console.Out.WriteLine(&quot;S=&quot; + S)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The results are as follows:</p>
@@ -1457,7 +1457,7 @@
 <span class="odt-code-line">            Console.Out.WriteLine(&quot;tab1(&quot; + i.ToString + &quot;)=&quot; + tab1(i).ToString)</span>
 <span class="odt-code-line">        <span style="color:#0000ff">Next</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>and its execution:</p>
@@ -1511,7 +1511,7 @@
 <span class="odt-code-line">            <span style="color:#0000ff">Next</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">Next</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>and the results of its execution:</p>
@@ -1545,9 +1545,9 @@
 
 <p>Here, <em>names(i)</em> is an array of i+1 elements. Since <em>names(i)</em> is an array, <em>names(i).Length</em> is the number of elements it contains. Here is an example combining the three types of arrays we just discussed:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
-<span class="odt-code-line"><span style="font-weight:bold;color:#ff0000">&#x27; directives</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">&#x27; directives</span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; imports</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1589,7 +1589,7 @@
 <span class="odt-code-line">            <span style="color:#0000ff">Next</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">Next</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>When executed, we get the following results:</p>
@@ -1662,9 +1662,9 @@
 <h3 id="233-inputoutput-example">2.3.3. <span style="color: #4f81bd">Input/Output Example</span></h3>
 <p>Here is a short program illustrating keyboard/screen input/output operations:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
-<span class="odt-code-line"><span style="font-weight:bold;color:#ff0000">&#x27; options</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">&#x27; options</span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1685,7 +1685,7 @@
 <span class="odt-code-line">        <span style="color:#0000ff">Dim </span>line <span style="color:#0000ff">As String </span>= Console.In.ReadLine()</span>
 <span class="odt-code-line">        Console.Out.WriteLine((&quot;line=&quot; + line))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>and the results of the execution: </p>
@@ -1738,9 +1738,9 @@
 
 <p>Note that to redirect the I/O streams of the <em>pg</em> program to files, the <em>pg</em> program does not need to be modified. It is the OS that determines the nature of devices 0, 1, and 2. Consider the following program:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
-<span class="odt-code-line"><span style="font-weight:bold;color:#ff0000">&#x27; options</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">&#x27; options</span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1755,7 +1755,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Write to Error stream</span></span>
 <span class="odt-code-line">        Console.Error.WriteLine((&quot;Writing to Error stream: &quot; + data))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>Let&#x27;s compile this program:</p>
@@ -1791,7 +1791,7 @@
 <p>It is clear that the <em>Out</em> and <em>Error</em> streams do not write to the same devices.</p>
 <h3 id="235-assigning-the-value-of-an-expression-to-a-variable">2.3.5. <span style="color: #4f81bd">Assigning the value of an expression to a variable</span></h3>
 <p>Here we are interested in the operation <strong><mark style="background-color: #fff5ce">variable=expression</mark></strong>. The expression can be of the following types: arithmetic, relational, Boolean, or string.</p>
-<h4 id="2351-list-of-operators">2.3.5.1. <span style="color: #4f81bd"><em>List of operators</em></span></h4>
+<h4 id="2351-list-of-operators">2.3.5.1. <span style="color: #4f81bd">List of operators</span></h4>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Action</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Language element</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>Arithmetic
 </code></pre></div>
@@ -1812,7 +1812,7 @@
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">AddressOf, GetType</div></td></tr></table>
 
-<h4 id="2352-arithmetic-expression">2.3.5.2. <span style="color: #4f81bd"><em>Arithmetic expression</em></span></h4>
+<h4 id="2352-arithmetic-expression">2.3.5.2. <span style="color: #4f81bd">Arithmetic expression</span></h4>
 <p>The operators for arithmetic expressions are as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>Arithmetic
@@ -1836,7 +1836,7 @@
 <span class="odt-code-line">        Console.Out.WriteLine(r1 &amp; &quot;^2=&quot; &amp; (r1 ^ 2))</span>
 <span class="odt-code-line">        Console.Out.WriteLine(Math.Cos(3))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>gives the following results:</p>
@@ -1964,7 +1964,7 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;" colspan="2"><div style="margin:0 0 0.5em 0">Returns the hyperbolic tangent of the specified angle.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>When a function is declared &quot;overloaded,&quot; it means it exists for various types of parameters. For example, the function Abs(x) exists for x of type Integer, Long, Decimal, Single, and Float. For each of these types, there is a separate definition of the Abs function. It is then said to be overloaded.</p>
-<h4 id="2353-operators-in-the-evaluation-of-arithmetic-expressions">2.3.5.3. <span style="color: #4f81bd"><em>Operators in the evaluation of arithmetic expressions</em></span></h4>
+<h4 id="2353-operators-in-the-evaluation-of-arithmetic-expressions">2.3.5.3. <span style="color: #4f81bd">Operators in the evaluation of arithmetic expressions</span></h4>
 <p>The operator precedence when evaluating an arithmetic expression is as follows (from highest to lowest):</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Category</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Operators</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>Primary
@@ -1989,7 +1989,7 @@
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">+, -</div></td></tr></table>
 
-<h4 id="2354-relational-expressions">2.3.5.4. <span style="color: #4f81bd"><em>Relational expressions</em></span></h4>
+<h4 id="2354-relational-expressions">2.3.5.4. <span style="color: #4f81bd">Relational expressions</span></h4>
 <p>The operators are as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>Comparison
@@ -2018,7 +2018,7 @@
 <span class="odt-code-line">        Console.Out.WriteLine(&quot;cat &lt; CAT=&quot; &amp; (cat &lt; cat2))</span>
 <span class="odt-code-line">        Console.Out.WriteLine(&quot;kitten like cat*=&quot; &amp; (&quot;kitten&quot; <span style="color:#0000ff">Like </span>&quot;cat*&quot;))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>and the result of its execution:</p>
@@ -2032,7 +2032,7 @@
 <p>Let there be two characters C1 and C2. They can be compared using the operators: <mark style="background-color: #fff5ce">&lt;, &lt;=, =, &lt;&gt;, &gt;, &gt;=</mark>. It is their Unicode values—which are numbers—that are compared. According to the Unicode order, the following relationships hold:</p>
 <p>space &lt; .. &lt; &#x27;0&#x27; &lt; &#x27;1&#x27; &lt; .. &lt; &#x27;9&#x27; &lt; .. &lt; &#x27;A&#x27; &lt; &#x27;B&#x27; &lt; .. &lt; &#x27;Z&#x27; &lt; .. &lt; &#x27;a&#x27; &lt; &#x27;b&#x27; &lt; .. &lt; &#x27;z&#x27;</p>
 <p>Strings are compared character by character. The first inequality encountered between two characters implies an inequality of the same sign for the strings. With these explanations, the reader is invited to examine the results of the previous program.</p>
-<h4 id="2355-boolean-expressions">2.3.5.5. <span style="color: #4f81bd"><em>Boolean expressions</em></span></h4>
+<h4 id="2355-boolean-expressions">2.3.5.5. <span style="color: #4f81bd">Boolean expressions</span></h4>
 <p>The operators are as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>Logical/bitwise operations
@@ -2058,7 +2058,7 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">XOR</div></td></tr></table>
 
 <p>The result of a Boolean expression is a Boolean.</p>
-<h4 id="2356-bitwise-operations">2.3.5.6. <span style="color: #4f81bd"><em>Bitwise operations</em></span></h4>
+<h4 id="2356-bitwise-operations">2.3.5.6. <span style="color: #4f81bd">Bitwise operations</span></h4>
 <p>On the one hand, we find the same operators as the Boolean operators with the same precedence. We also find two shift operators: &lt;&lt; and &gt;&gt;. Let i and j be two integers.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a>i&lt;&lt;n
@@ -2094,7 +2094,7 @@
 <span class="odt-code-line">        Console.Out.WriteLine(&quot;i or 4 =&quot; &amp; (i <span style="color:#0000ff">Or</span> 4).ToString(&quot;X&quot;))</span>
 <span class="odt-code-line">        Console.Out.WriteLine(&quot;not i=&quot; &amp; (<span style="color:#0000ff">Not </span>i).ToString(&quot;X&quot;))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>Its execution yields the following results:</p>
@@ -2105,14 +2105,14 @@
 <a id="__codelineno-91-5" name="__codelineno-91-5" href="#__codelineno-91-5"></a>i or k = 123F
 <a id="__codelineno-91-6" name="__codelineno-91-6" href="#__codelineno-91-6"></a>not i=EDC0
 </code></pre></div>
-<h4 id="2357-operator-associated-with-assignment">2.3.5.7. <span style="color: #4f81bd"><em>Operator associated with assignment</em></span></h4>
+<h4 id="2357-operator-associated-with-assignment">2.3.5.7. <span style="color: #4f81bd">Operator associated with assignment</span></h4>
 <p>It is possible to write  a+=b, which means a=a+b. The list of operators that can be combined with the assignment operation is as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a>Combination of operators
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">^=, *=, /=, \=, +=, -=, &amp;=</div></td></tr></table>
 
-<h4 id="2358-general-operator-precedence">2.3.5.8. <span style="color: #4f81bd"><em>General operator precedence</em></span></h4>
+<h4 id="2358-general-operator-precedence">2.3.5.8. <span style="color: #4f81bd">General operator precedence</span></h4>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Category</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Operators</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a>Primary
 </code></pre></div>
@@ -2158,38 +2158,48 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">XOR</div></td></tr></table>
 
 <p>When an operand is placed between two operators of the same precedence, the associativity of the operators determines the order in which the operations are performed. All operators are left-associative, meaning that operations are performed from left to right. Precedence and associativity can be controlled using expressions in parentheses.</p>
-<h4 id="2359-type-conversions">2.3.5.9. <span style="color: #4f81bd"><em>Type conversions</em></span></h4>
+<h4 id="2359-type-conversions">2.3.5.9. <span style="color: #4f81bd">Type conversions</span></h4>
 <p>There are a number of predefined functions that allow you to convert from one data type to another. The list is as follows:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold">CBool, CByte, CChar, CDate, CDbl, CDec, CInt, CLng, CObj, CShort, CSng, CStr</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-107-1" name="__codelineno-107-1" href="#__codelineno-107-1"></a>CBool, CByte, CChar, CDate, CDbl, CDec, CInt, CLng, CObj, CShort, CSng, CStr
 </code></pre></div>
-
 <p>These functions accept a numeric expression or a string as an argument. The result type is shown in the following table:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>function</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Result</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Value range of the function parameter</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold">CBool</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Boolean</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Any valid string or numeric expression.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold">CByte</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Byte</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0 to 255; fractions are rounded.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold">CChar</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Char</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Any valid String expression; the value can range from 0 to 65,535.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold">CDate</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Date</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Any valid representation of the date and time.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold">CDbl</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Double</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">-1.79769313486231E+308 to <br>-4.94065645841247E-324 for negative values; 4.94065645841247E-324 to 1.79769313486231E+308 for positive values.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold">CDec</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Decimal</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">+/-79,228,162,514,264,337,593,543,950,335 for non-decimal numbers. The range of values for 28-decimal numbers is <br>+/-7.9228162514264337593543950335. The smallest non-zero number is 0.0000000000000000000000000001.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold">CInt</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Integer</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">-2,147,483,648 to 2,147,483,647; fractions are rounded.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold">CLng</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Long</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807; fractions are rounded.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold">CObj</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Object</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Any valid expression.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold">CShort</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Short</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">-32,768 to 32,767; fractions are rounded.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold">CSng</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Single</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">-3.402823E+38 to -1.401298E-45 for negative values; 1.401298E-45 to 3.402823E+38 for positive values.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold">CStr</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">String</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">The values returned by the Cstr function depend on the expression argument.</div></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>function</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Result</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Value range of the function parameter</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-108-1" name="__codelineno-108-1" href="#__codelineno-108-1"></a>CBool
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Boolean</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Any valid string or numeric expression.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-109-1" name="__codelineno-109-1" href="#__codelineno-109-1"></a>CByte
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Byte</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0 to 255; fractions are rounded.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-110-1" name="__codelineno-110-1" href="#__codelineno-110-1"></a>CChar
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Char</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Any valid String expression; the value can range from 0 to 65,535.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-111-1" name="__codelineno-111-1" href="#__codelineno-111-1"></a>CDate
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Date</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Any valid representation of the date and time.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-112-1" name="__codelineno-112-1" href="#__codelineno-112-1"></a>CDbl
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Double</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">-1.79769313486231E+308 to <br>-4.94065645841247E-324 for negative values; 4.94065645841247E-324 to 1.79769313486231E+308 for positive values.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-113-1" name="__codelineno-113-1" href="#__codelineno-113-1"></a>CDec
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Decimal</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">+/-79,228,162,514,264,337,593,543,950,335 for non-decimal numbers. The range of values for 28-decimal numbers is <br>+/-7.9228162514264337593543950335. The smallest non-zero number is 0.0000000000000000000000000001.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-114-1" name="__codelineno-114-1" href="#__codelineno-114-1"></a>CInt
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Integer</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">-2,147,483,648 to 2,147,483,647; fractions are rounded.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-115-1" name="__codelineno-115-1" href="#__codelineno-115-1"></a>CLng
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Long</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807; fractions are rounded.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-116-1" name="__codelineno-116-1" href="#__codelineno-116-1"></a>CObj
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Object</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Any valid expression.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-117-1" name="__codelineno-117-1" href="#__codelineno-117-1"></a>CShort
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Short</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">-32,768 to 32,767; fractions are rounded.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-118-1" name="__codelineno-118-1" href="#__codelineno-118-1"></a>CSng
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Single</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">-3.402823E+38 to -1.401298E-45 for negative values; 1.401298E-45 to 3.402823E+38 for positive values.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-119-1" name="__codelineno-119-1" href="#__codelineno-119-1"></a>CStr
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">String</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">The values returned by the Cstr function depend on the expression argument.</div></td></tr></table>
 
 <p>Here is an example program:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
@@ -2216,20 +2226,20 @@
 <span class="odt-code-line">        Console.Out.WriteLine(&quot;var9=&quot; &amp; var9)</span>
 <span class="odt-code-line">        Console.Out.WriteLine(&quot;var10=&quot; &amp; var10)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>and the results of its execution:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-107-1" name="__codelineno-107-1" href="#__codelineno-107-1"></a>var1=True
-<a id="__codelineno-107-2" name="__codelineno-107-2" href="#__codelineno-107-2"></a>var2=100
-<a id="__codelineno-107-3" name="__codelineno-107-3" href="#__codelineno-107-3"></a>var3=A
-<a id="__codelineno-107-4" name="__codelineno-107-4" href="#__codelineno-107-4"></a>var4=01/30/2004
-<a id="__codelineno-107-5" name="__codelineno-107-5" href="#__codelineno-107-5"></a>var5=100.45
-<a id="__codelineno-107-6" name="__codelineno-107-6" href="#__codelineno-107-6"></a>var6=1000.67
-<a id="__codelineno-107-7" name="__codelineno-107-7" href="#__codelineno-107-7"></a>var7=-30
-<a id="__codelineno-107-8" name="__codelineno-107-8" href="#__codelineno-107-8"></a>var8=456
-<a id="__codelineno-107-9" name="__codelineno-107-9" href="#__codelineno-107-9"></a>var9=-14
-<a id="__codelineno-107-10" name="__codelineno-107-10" href="#__codelineno-107-10"></a>var10=56.78
+<div class="highlight"><pre><span></span><code><a id="__codelineno-120-1" name="__codelineno-120-1" href="#__codelineno-120-1"></a>var1=True
+<a id="__codelineno-120-2" name="__codelineno-120-2" href="#__codelineno-120-2"></a>var2=100
+<a id="__codelineno-120-3" name="__codelineno-120-3" href="#__codelineno-120-3"></a>var3=A
+<a id="__codelineno-120-4" name="__codelineno-120-4" href="#__codelineno-120-4"></a>var4=01/30/2004
+<a id="__codelineno-120-5" name="__codelineno-120-5" href="#__codelineno-120-5"></a>var5=100.45
+<a id="__codelineno-120-6" name="__codelineno-120-6" href="#__codelineno-120-6"></a>var6=1000.67
+<a id="__codelineno-120-7" name="__codelineno-120-7" href="#__codelineno-120-7"></a>var7=-30
+<a id="__codelineno-120-8" name="__codelineno-120-8" href="#__codelineno-120-8"></a>var8=456
+<a id="__codelineno-120-9" name="__codelineno-120-9" href="#__codelineno-120-9"></a>var9=-14
+<a id="__codelineno-120-10" name="__codelineno-120-10" href="#__codelineno-120-10"></a>var10=56.78
 </code></pre></div>
 <p>You can also use the <strong>CType(</strong><em>expression</em><strong>,</strong> <em>type</em><strong>)</strong> function, as shown in the following program:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
@@ -2262,23 +2272,23 @@
 <span class="odt-code-line">        Console.Out.WriteLine(&quot;var12=&quot; &amp; var12)</span>
 <span class="odt-code-line">        Console.Out.WriteLine(&quot;var13=&quot; &amp; var13)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>which produces the following results:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-108-1" name="__codelineno-108-1" href="#__codelineno-108-1"></a>var1=True
-<a id="__codelineno-108-2" name="__codelineno-108-2" href="#__codelineno-108-2"></a>var2=100
-<a id="__codelineno-108-3" name="__codelineno-108-3" href="#__codelineno-108-3"></a>var3=A
-<a id="__codelineno-108-4" name="__codelineno-108-4" href="#__codelineno-108-4"></a>var4=01/30/2004
-<a id="__codelineno-108-5" name="__codelineno-108-5" href="#__codelineno-108-5"></a>var5=100.45
-<a id="__codelineno-108-6" name="__codelineno-108-6" href="#__codelineno-108-6"></a>var6=1000.67
-<a id="__codelineno-108-7" name="__codelineno-108-7" href="#__codelineno-108-7"></a>var7=-30
-<a id="__codelineno-108-8" name="__codelineno-108-8" href="#__codelineno-108-8"></a>var8=456
-<a id="__codelineno-108-9" name="__codelineno-108-9" href="#__codelineno-108-9"></a>var9=-14
-<a id="__codelineno-108-10" name="__codelineno-108-10" href="#__codelineno-108-10"></a>var10=56.78
-<a id="__codelineno-108-11" name="__codelineno-108-11" href="#__codelineno-108-11"></a>var11=47.89
-<a id="__codelineno-108-12" name="__codelineno-108-12" href="#__codelineno-108-12"></a>var12=47.89
-<a id="__codelineno-108-13" name="__codelineno-108-13" href="#__codelineno-108-13"></a>var13=47.89
+<div class="highlight"><pre><span></span><code><a id="__codelineno-121-1" name="__codelineno-121-1" href="#__codelineno-121-1"></a>var1=True
+<a id="__codelineno-121-2" name="__codelineno-121-2" href="#__codelineno-121-2"></a>var2=100
+<a id="__codelineno-121-3" name="__codelineno-121-3" href="#__codelineno-121-3"></a>var3=A
+<a id="__codelineno-121-4" name="__codelineno-121-4" href="#__codelineno-121-4"></a>var4=01/30/2004
+<a id="__codelineno-121-5" name="__codelineno-121-5" href="#__codelineno-121-5"></a>var5=100.45
+<a id="__codelineno-121-6" name="__codelineno-121-6" href="#__codelineno-121-6"></a>var6=1000.67
+<a id="__codelineno-121-7" name="__codelineno-121-7" href="#__codelineno-121-7"></a>var7=-30
+<a id="__codelineno-121-8" name="__codelineno-121-8" href="#__codelineno-121-8"></a>var8=456
+<a id="__codelineno-121-9" name="__codelineno-121-9" href="#__codelineno-121-9"></a>var9=-14
+<a id="__codelineno-121-10" name="__codelineno-121-10" href="#__codelineno-121-10"></a>var10=56.78
+<a id="__codelineno-121-11" name="__codelineno-121-11" href="#__codelineno-121-11"></a>var11=47.89
+<a id="__codelineno-121-12" name="__codelineno-121-12" href="#__codelineno-121-12"></a>var12=47.89
+<a id="__codelineno-121-13" name="__codelineno-121-13" href="#__codelineno-121-13"></a>var13=47.89
 </code></pre></div>
 <h2 id="24-instructions-for-controlling-program-execution">2.4. <span style="color: #4f81bd">Instructions for controlling program execution</span></h2>
 <h3 id="241-stop">2.4.1. <span style="color: #4f81bd">Stop</span></h3>
@@ -2289,15 +2299,15 @@
 </code></pre></div>
 
 <p>stops the current process and returns the value <em>of exitCode</em> to the parent process.  The value of <em>exitCode</em> can be used by the parent process. Under DOS, this status variable is returned to DOS in the system variable <strong>ERRORLEVEL</strong>, whose value can be checked in a batch file. Under Unix, the variable <strong>$?</strong> retrieves the value of <em>exitCode</em>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-109-1" name="__codelineno-109-1" href="#__codelineno-109-1"></a>    Environment.Exit(0)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-122-1" name="__codelineno-122-1" href="#__codelineno-122-1"></a>    Environment.Exit(0)
 </code></pre></div>
 <p>will terminate the program with an exit status of 0.</p>
 <h3 id="242-simple-decision-structure">2.4.2. <span style="color: #4f81bd">Simple decision structure</span></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-110-1" name="__codelineno-110-1" href="#__codelineno-110-1"></a>if condition then
-<a id="__codelineno-110-2" name="__codelineno-110-2" href="#__codelineno-110-2"></a>    actions_then
-<a id="__codelineno-110-3" name="__codelineno-110-3" href="#__codelineno-110-3"></a>else
-<a id="__codelineno-110-4" name="__codelineno-110-4" href="#__codelineno-110-4"></a>    actions_else
-<a id="__codelineno-110-5" name="__codelineno-110-5" href="#__codelineno-110-5"></a>end if
+<div class="highlight"><pre><span></span><code><a id="__codelineno-123-1" name="__codelineno-123-1" href="#__codelineno-123-1"></a>if condition then
+<a id="__codelineno-123-2" name="__codelineno-123-2" href="#__codelineno-123-2"></a>    actions_then
+<a id="__codelineno-123-3" name="__codelineno-123-3" href="#__codelineno-123-3"></a>else
+<a id="__codelineno-123-4" name="__codelineno-123-4" href="#__codelineno-123-4"></a>    actions_else
+<a id="__codelineno-123-5" name="__codelineno-123-5" href="#__codelineno-123-5"></a>end if
 </code></pre></div>
 <ul>
   <li>Each action is on a separate line
@@ -2309,8 +2319,8 @@
 <p>You can nest decision structures as shown in the following example:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2328,30 +2338,30 @@
 <span class="odt-code-line">            <span style="color:#0000ff">End If</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">End If</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The result obtained:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-111-1" name="__codelineno-111-1" href="#__codelineno-111-1"></a>10 is &gt; 4
+<div class="highlight"><pre><span></span><code><a id="__codelineno-124-1" name="__codelineno-124-1" href="#__codelineno-124-1"></a>10 is &gt; 4
 </code></pre></div>
 <h3 id="243-case-structure">2.4.3. <span style="color: #4f81bd">Case structure</span></h3>
 <p>The syntax is as follows:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-112-1" name="__codelineno-112-1" href="#__codelineno-112-1"></a><span class="k">select</span><span class="w"> </span><span class="k">case</span><span class="w"> </span><span class="n">expression</span>
-<a id="__codelineno-112-2" name="__codelineno-112-2" href="#__codelineno-112-2"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">value_list1</span>
-<a id="__codelineno-112-3" name="__codelineno-112-3" href="#__codelineno-112-3"></a><span class="w">        </span><span class="n">actions1</span>
-<a id="__codelineno-112-4" name="__codelineno-112-4" href="#__codelineno-112-4"></a><span class="k">case</span><span class="w"> </span><span class="n">value_list2</span>
-<a id="__codelineno-112-5" name="__codelineno-112-5" href="#__codelineno-112-5"></a><span class="w">        </span><span class="n">actions2</span>
-<a id="__codelineno-112-6" name="__codelineno-112-6" href="#__codelineno-112-6"></a><span class="p">...</span>
-<a id="__codelineno-112-7" name="__codelineno-112-7" href="#__codelineno-112-7"></a><span class="k">case</span><span class="w"> </span><span class="k">else</span>
-<a id="__codelineno-112-8" name="__codelineno-112-8" href="#__codelineno-112-8"></a><span class="w">        </span><span class="n">other_actions</span>
-<a id="__codelineno-112-9" name="__codelineno-112-9" href="#__codelineno-112-9"></a><span class="k">end</span><span class="w"> </span><span class="k">select</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-125-1" name="__codelineno-125-1" href="#__codelineno-125-1"></a><span class="k">select</span><span class="w"> </span><span class="k">case</span><span class="w"> </span><span class="n">expression</span>
+<a id="__codelineno-125-2" name="__codelineno-125-2" href="#__codelineno-125-2"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">value_list1</span>
+<a id="__codelineno-125-3" name="__codelineno-125-3" href="#__codelineno-125-3"></a><span class="w">        </span><span class="n">actions1</span>
+<a id="__codelineno-125-4" name="__codelineno-125-4" href="#__codelineno-125-4"></a><span class="k">case</span><span class="w"> </span><span class="n">value_list2</span>
+<a id="__codelineno-125-5" name="__codelineno-125-5" href="#__codelineno-125-5"></a><span class="w">        </span><span class="n">actions2</span>
+<a id="__codelineno-125-6" name="__codelineno-125-6" href="#__codelineno-125-6"></a><span class="p">...</span>
+<a id="__codelineno-125-7" name="__codelineno-125-7" href="#__codelineno-125-7"></a><span class="k">case</span><span class="w"> </span><span class="k">else</span>
+<a id="__codelineno-125-8" name="__codelineno-125-8" href="#__codelineno-125-8"></a><span class="w">        </span><span class="n">other_actions</span>
+<a id="__codelineno-125-9" name="__codelineno-125-9" href="#__codelineno-125-9"></a><span class="k">end</span><span class="w"> </span><span class="k">select</span>
 </code></pre></div>
 <ul>
   <li>The type of [expression] must be one of the following types: 
   </li>
 </ul>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-113-1" name="__codelineno-113-1" href="#__codelineno-113-1"></a>Boolean, Byte, Char, Date, Decimal, Double, Integer, Long, Object, Short, Single, and String
+<div class="highlight"><pre><span></span><code><a id="__codelineno-126-1" name="__codelineno-126-1" href="#__codelineno-126-1"></a>Boolean, Byte, Char, Date, Decimal, Double, Integer, Long, Object, Short, Single, and String
 </code></pre></div>
 <ul>
   <li>The [case else] clause may be omitted.
@@ -2373,8 +2383,8 @@
 <p>Consider the following program:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2393,14 +2403,14 @@
 <span class="odt-code-line">                Console.Out.WriteLine(&quot;i is &lt; 20&quot;)</span>
 <span class="odt-code-line">        <span style="color:#0000ff">End Select</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>It produces the following results:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-114-1" name="__codelineno-114-1" href="#__codelineno-114-1"></a>i is &lt; 15
+<div class="highlight"><pre><span></span><code><a id="__codelineno-127-1" name="__codelineno-127-1" href="#__codelineno-127-1"></a>i is &lt; 15
 </code></pre></div>
 <h3 id="244-loop-structure">2.4.4. <span style="color: #4f81bd">Loop structure</span></h3>
-<h4 id="2441-known-number-of-iterations">2.4.4.1. <span style="color: #4f81bd"><em>Known number of iterations</em></span></h4>
+<h4 id="2441-known-number-of-iterations">2.4.4.1. <span style="color: #4f81bd">Known number of iterations</span></h4>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="font-weight:bold">For </span>counter [ <span style="font-weight:bold">As </span>datatype ] <span style="font-weight:bold">= </span>start <span style="font-weight:bold">To </span>end [ <span style="font-weight:bold">Step </span>step ]</span>
 <span class="odt-code-line">   actions</span>
@@ -2410,8 +2420,8 @@
 <p>Actions are performed for each value taken by the variable [counter]. Consider the following program:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2427,11 +2437,11 @@
 <span class="odt-code-line">        result += &quot;)=&quot; + sum.ToString</span>
 <span class="odt-code-line">        Console.Out.WriteLine(result)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The results:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-115-1" name="__codelineno-115-1" href="#__codelineno-115-1"></a>sum( 0 2 4 6 8 10)=30
+<div class="highlight"><pre><span></span><code><a id="__codelineno-128-1" name="__codelineno-128-1" href="#__codelineno-128-1"></a>sum( 0 2 4 6 8 10)=30
 </code></pre></div>
 <p>Another iteration structure with a known number of iterations is as follows:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -2452,8 +2462,8 @@
 <p>Thus, the following code:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2465,16 +2475,16 @@
 <span class="odt-code-line">            Console.Out.WriteLine(name)</span>
 <span class="odt-code-line">        <span style="color:#0000ff">Next</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>would display:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-116-1" name="__codelineno-116-1" href="#__codelineno-116-1"></a>paul
-<a id="__codelineno-116-2" name="__codelineno-116-2" href="#__codelineno-116-2"></a>hélène
-<a id="__codelineno-116-3" name="__codelineno-116-3" href="#__codelineno-116-3"></a>Jacques
-<a id="__codelineno-116-4" name="__codelineno-116-4" href="#__codelineno-116-4"></a>sylvie
+<div class="highlight"><pre><span></span><code><a id="__codelineno-129-1" name="__codelineno-129-1" href="#__codelineno-129-1"></a>paul
+<a id="__codelineno-129-2" name="__codelineno-129-2" href="#__codelineno-129-2"></a>hélène
+<a id="__codelineno-129-3" name="__codelineno-129-3" href="#__codelineno-129-3"></a>Jacques
+<a id="__codelineno-129-4" name="__codelineno-129-4" href="#__codelineno-129-4"></a>sylvie
 </code></pre></div>
-<h4 id="2442-number-of-repetitions-unknown">2.4.4.2. <span style="color: #4f81bd"><em>Number of repetitions unknown</em></span></h4>
+<h4 id="2442-number-of-repetitions-unknown">2.4.4.2. <span style="color: #4f81bd">Number of repetitions unknown</span></h4>
 <p>There are many structures in VB.NET for this case.</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">Do { <span style="font-weight:bold">While </span>| <span style="font-weight:bold">Until </span>} <span style="font-style:italic">condition</span></span>
@@ -2493,14 +2503,14 @@
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="font-weight:bold">While </span><span style="font-style:italic">condition</span></span>
 <span class="odt-code-line">   [ <span style="font-style:italic">statements </span>]</span>
-<span class="odt-code-line"><span style="font-weight:bold">End While</span></span>
+<span class="odt-code-line">End While</span>
 </code></pre></div>
 
 <p>The loop continues as long as the condition is true. The loop may never be executed. The following loops all calculate the sum of the first 10 integers.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2533,20 +2543,20 @@
 <span class="odt-code-line">        <span style="color:#0000ff">Loop While </span>i &lt; 11</span>
 <span class="odt-code-line">        Console.Out.WriteLine(&quot;sum=&quot; + sum.ToString)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-117-1" name="__codelineno-117-1" href="#__codelineno-117-1"></a>sum = 55
-<a id="__codelineno-117-2" name="__codelineno-117-2" href="#__codelineno-117-2"></a>sum = 55
-<a id="__codelineno-117-3" name="__codelineno-117-3" href="#__codelineno-117-3"></a>sum = 55
-<a id="__codelineno-117-4" name="__codelineno-117-4" href="#__codelineno-117-4"></a>sum=55
+<div class="highlight"><pre><span></span><code><a id="__codelineno-130-1" name="__codelineno-130-1" href="#__codelineno-130-1"></a>sum = 55
+<a id="__codelineno-130-2" name="__codelineno-130-2" href="#__codelineno-130-2"></a>sum = 55
+<a id="__codelineno-130-3" name="__codelineno-130-3" href="#__codelineno-130-3"></a>sum = 55
+<a id="__codelineno-130-4" name="__codelineno-130-4" href="#__codelineno-130-4"></a>sum=55
 </code></pre></div>
-<h4 id="2443-loop-control-statements">2.4.4.3. <span style="color: #4f81bd"><em>Loop control statements</em></span></h4>
+<h4 id="2443-loop-control-statements">2.4.4.3. <span style="color: #4f81bd">Loop control statements</span></h4>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-118-1" name="__codelineno-118-1" href="#__codelineno-118-1"></a>exit do
+<div class="highlight"><pre><span></span><code><a id="__codelineno-131-1" name="__codelineno-131-1" href="#__codelineno-131-1"></a>exit do
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Exits a do...loop loop</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-119-1" name="__codelineno-119-1" href="#__codelineno-119-1"></a>exit for
+<div class="highlight"><pre><span></span><code><a id="__codelineno-132-1" name="__codelineno-132-1" href="#__codelineno-132-1"></a>exit for
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Exits a for loop</div></td></tr></table>
 
@@ -2554,8 +2564,8 @@
 <p>A VB.NET program that does not use user-defined classes or functions other than the main function <em>Main</em> may have the following structure:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>namespace1</span>
@@ -2565,7 +2575,7 @@
 <span class="odt-code-line">    <span style="color:#0000ff">Sub </span>main()</span>
 <span class="odt-code-line">....</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <ul>
@@ -2577,16 +2587,16 @@
   </li>
 </ul>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-120-1" name="__codelineno-120-1" href="#__codelineno-120-1"></a>        Console.Out.WriteLine(aString)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-133-1" name="__codelineno-133-1" href="#__codelineno-133-1"></a>        Console.Out.WriteLine(aString)
 </code></pre></div>
 <p>We should actually have written:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-121-1" name="__codelineno-121-1" href="#__codelineno-121-1"></a>        System.Console.Out.WriteLine(aString)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-134-1" name="__codelineno-134-1" href="#__codelineno-134-1"></a>        System.Console.Out.WriteLine(aString)
 </code></pre></div>
 <p>where <strong>System</strong> is the namespace containing the [Console] class. By importing the [System] namespace with an Imports statement, VB.NET will systematically search it whenever it encounters a class it does not recognize. It will repeat the search across all declared namespaces until it finds the class in question. We therefore write:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
-<span class="odt-code-line"><span style="color:#0000ff">....</span></span>
+<span class="odt-code-line">....</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">        Console.Out.WriteLine(aString)</span>
 </code></pre></div>
@@ -2594,8 +2604,8 @@
 <p>An example program might look like this:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27;namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2605,14 +2615,14 @@
 <span class="odt-code-line">    <span style="color:#0000ff">Sub </span>main()</span>
 <span class="odt-code-line">        Console.Out.WriteLine(&quot;main1&quot;)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The same program can be written as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27;namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2622,7 +2632,7 @@
 <span class="odt-code-line">    <span style="color:#0000ff">Public Shared Sub </span>main()</span>
 <span class="odt-code-line">        Console.Out.WriteLine(&quot;main2&quot;)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>Here, we are using the concept of a class, which will be introduced in the next chapter. When such a class contains a static (shared) procedure named <strong>main</strong>, it is executed. We include this code here because C#, the sister language of VB.NET, recognizes only the concept of classes—that is, all executed code must belong to a class. The concept of classes is part of object-oriented programming. Imposing it on the design of every program is somewhat awkward. We see this here in version 2 of the previous program, where we are forced to introduce the concepts of classes and static methods where they are not needed. Therefore, from now on, we will only introduce the concept of a class when it is necessary. In other cases, we will use the concept of a module, as in version 1 above.</p>
@@ -2630,8 +2640,8 @@
 <p>Compiling a VB.NET program requires only the .NET SDK. Consider the following program:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2664,24 +2674,22 @@
 <span class="odt-code-line">        <span style="color:#0000ff">Loop While </span>i &lt; 11</span>
 <span class="odt-code-line">        Console.Out.WriteLine(&quot;sum=&quot; + sum.ToString)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>Let&#x27;s assume it is in a file called [loops1.vb]. To compile it, we proceed as follows:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">dos&gt;dir loops1.vb</span>
-<span class="odt-code-line">03/11/2004  3:55 PM                  583 loops1.vb</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="background-color:#fff5ce">dos&gt;vbc loops1.vb</span></span>
-<span class="odt-code-line">Microsoft® Visual Basic .NET Compiler version 7.10.3052.4</span>
-<span class="odt-code-line">for Microsoft® .NET Framework version 1.1.4322.573</span>
-<span class="odt-code-line">Copyright (C) Microsoft Corporation 1987-2002. All rights reserved.</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">dos&gt;dir loops1.*</span>
-<span class="odt-code-line">03/11/2004  4:04 PM                  601 loops1.vb</span>
-<span class="odt-code-line">03/11/2004  4:04 PM                3,584 loops1.exe</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-135-1" name="__codelineno-135-1" href="#__codelineno-135-1"></a>dos&gt;dir loops1.vb
+<a id="__codelineno-135-2" name="__codelineno-135-2" href="#__codelineno-135-2"></a>03/11/2004  3:55 PM                  583 loops1.vb
+<a id="__codelineno-135-3" name="__codelineno-135-3" href="#__codelineno-135-3"></a>
+<a id="__codelineno-135-4" name="__codelineno-135-4" href="#__codelineno-135-4"></a>dos&gt;vbc loops1.vb
+<a id="__codelineno-135-5" name="__codelineno-135-5" href="#__codelineno-135-5"></a>Microsoft® Visual Basic .NET Compiler version 7.10.3052.4
+<a id="__codelineno-135-6" name="__codelineno-135-6" href="#__codelineno-135-6"></a>for Microsoft® .NET Framework version 1.1.4322.573
+<a id="__codelineno-135-7" name="__codelineno-135-7" href="#__codelineno-135-7"></a>Copyright (C) Microsoft Corporation 1987-2002. All rights reserved.
+<a id="__codelineno-135-8" name="__codelineno-135-8" href="#__codelineno-135-8"></a>
+<a id="__codelineno-135-9" name="__codelineno-135-9" href="#__codelineno-135-9"></a>dos&gt;dir loops1.*
+<a id="__codelineno-135-10" name="__codelineno-135-10" href="#__codelineno-135-10"></a>03/11/2004  4:04 PM                  601 loops1.vb
+<a id="__codelineno-135-11" name="__codelineno-135-11" href="#__codelineno-135-11"></a>03/11/2004  4:04 PM                3,584 loops1.exe
 </code></pre></div>
-
 <p>The <mark style="background-color: #fff5ce">vbc.exe </mark>program is the VB.NET compiler. Here, it was in the DOS PATH:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">dos&gt;path</span>
@@ -2694,11 +2702,11 @@
 </code></pre></div>
 
 <p>The [vbc] compiler produces an .exe file that can be executed by the .NET virtual machine:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-122-1" name="__codelineno-122-1" href="#__codelineno-122-1"></a>dos&gt;loops1
-<a id="__codelineno-122-2" name="__codelineno-122-2" href="#__codelineno-122-2"></a>sum=55
-<a id="__codelineno-122-3" name="__codelineno-122-3" href="#__codelineno-122-3"></a>sum=55
-<a id="__codelineno-122-4" name="__codelineno-122-4" href="#__codelineno-122-4"></a>sum=55
-<a id="__codelineno-122-5" name="__codelineno-122-5" href="#__codelineno-122-5"></a>sum=55
+<div class="highlight"><pre><span></span><code><a id="__codelineno-136-1" name="__codelineno-136-1" href="#__codelineno-136-1"></a>dos&gt;loops1
+<a id="__codelineno-136-2" name="__codelineno-136-2" href="#__codelineno-136-2"></a>sum=55
+<a id="__codelineno-136-3" name="__codelineno-136-3" href="#__codelineno-136-3"></a>sum=55
+<a id="__codelineno-136-4" name="__codelineno-136-4" href="#__codelineno-136-4"></a>sum=55
+<a id="__codelineno-136-5" name="__codelineno-136-5" href="#__codelineno-136-5"></a>sum=55
 </code></pre></div>
 <h2 id="27-the-tax-calculation-example">2.7. <span style="color: #4f81bd">The tax calculation Example</span></h2>
 <p>We propose to write a program to calculate a taxpayer&#x27;s tax. We consider the simplified case of a taxpayer who has only their salary to report:</p>
@@ -2718,16 +2726,16 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">12620.0</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">13,190</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0.05</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">631</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">15,640</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0.1</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">1,290.5</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">24,740</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0.15</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">2,072.5</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">31,810</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0.2</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">3,309.5</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">39,970</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0.25</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">4900</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">48,360</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0.3</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">6,898.5</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">55,790</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0.35</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">9,316.5</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">92,970</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0.4</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">12,106</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">127,860</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0.45</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">16,754.5</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">151,250</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0.50</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">23,147.5</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">172,040</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0.55</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">30,710</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">195,000</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0.60</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">39,312</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0.65</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">49062</div></td></tr></table>
 
 <p>Each row has 3 fields. To calculate tax I, find the first row where <em>QF &lt;= field1</em>. For example, if QF = 23,000, the row found will be</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-123-1" name="__codelineno-123-1" href="#__codelineno-123-1"></a>    24740        0.15        2072.5
+<div class="highlight"><pre><span></span><code><a id="__codelineno-137-1" name="__codelineno-137-1" href="#__codelineno-137-1"></a>    24740        0.15        2072.5
 </code></pre></div>
 <p>Tax I is then equal to <strong>0.15*R - 2072.5*nbParts</strong>. If QF is such that the condition <em>QF&lt;=field1</em> is never met, then the coefficients from the last row are used. Here:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-124-1" name="__codelineno-124-1" href="#__codelineno-124-1"></a>    0                0.65        49062
+<div class="highlight"><pre><span></span><code><a id="__codelineno-138-1" name="__codelineno-138-1" href="#__codelineno-138-1"></a>    0                0.65        49062
 </code></pre></div>
 <p>which gives tax I = 0.65*R - 49062*nbParts. The corresponding VB.NET program is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2820,42 +2828,42 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; display the result</span></span>
 <span class="odt-code-line">        Console.Out.WriteLine((&quot;Tax due: &quot; &amp; tax))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The program is compiled in a DOS window using:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-125-1" name="__codelineno-125-1" href="#__codelineno-125-1"></a>dos&gt;vbc impots1.vb
-<a id="__codelineno-125-2" name="__codelineno-125-2" href="#__codelineno-125-2"></a>Microsoft (R) Visual Basic .NET Compiler version 7.10.3052.4 for Microsoft (R) .NET Framework version 1.1.4322.573
-<a id="__codelineno-125-3" name="__codelineno-125-3" href="#__codelineno-125-3"></a>
-<a id="__codelineno-125-4" name="__codelineno-125-4" href="#__codelineno-125-4"></a>dos&gt;dir impots1.exe
-<a id="__codelineno-125-5" name="__codelineno-125-5" href="#__codelineno-125-5"></a>02/24/2004  3:42 PM                5,632 impots1.exe
+<div class="highlight"><pre><span></span><code><a id="__codelineno-139-1" name="__codelineno-139-1" href="#__codelineno-139-1"></a>dos&gt;vbc impots1.vb
+<a id="__codelineno-139-2" name="__codelineno-139-2" href="#__codelineno-139-2"></a>Microsoft (R) Visual Basic .NET Compiler version 7.10.3052.4 for Microsoft (R) .NET Framework version 1.1.4322.573
+<a id="__codelineno-139-3" name="__codelineno-139-3" href="#__codelineno-139-3"></a>
+<a id="__codelineno-139-4" name="__codelineno-139-4" href="#__codelineno-139-4"></a>dos&gt;dir impots1.exe
+<a id="__codelineno-139-5" name="__codelineno-139-5" href="#__codelineno-139-5"></a>02/24/2004  3:42 PM                5,632 impots1.exe
 </code></pre></div>
 <p>Compilation produces an executable file <em>named impots.exe</em>. Note that <em>impots.exe</em> is not directly executable by the processor. It actually contains intermediate code that is only executable on a .NET platform. The results obtained are as follows:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-126-1" name="__codelineno-126-1" href="#__codelineno-126-1"></a>dos&gt;impots1
-<a id="__codelineno-126-2" name="__codelineno-126-2" href="#__codelineno-126-2"></a>Are you married (Y/N)? y
-<a id="__codelineno-126-3" name="__codelineno-126-3" href="#__codelineno-126-3"></a>Number of children: 3
-<a id="__codelineno-126-4" name="__codelineno-126-4" href="#__codelineno-126-4"></a>Annual salary: 200000
-<a id="__codelineno-126-5" name="__codelineno-126-5" href="#__codelineno-126-5"></a>Tax due: 16,400
+<div class="highlight"><pre><span></span><code><a id="__codelineno-140-1" name="__codelineno-140-1" href="#__codelineno-140-1"></a>dos&gt;impots1
+<a id="__codelineno-140-2" name="__codelineno-140-2" href="#__codelineno-140-2"></a>Are you married (Y/N)? y
+<a id="__codelineno-140-3" name="__codelineno-140-3" href="#__codelineno-140-3"></a>Number of children: 3
+<a id="__codelineno-140-4" name="__codelineno-140-4" href="#__codelineno-140-4"></a>Annual salary: 200000
+<a id="__codelineno-140-5" name="__codelineno-140-5" href="#__codelineno-140-5"></a>Tax due: 16,400
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-127-1" name="__codelineno-127-1" href="#__codelineno-127-1"></a>dos&gt;taxes1
-<a id="__codelineno-127-2" name="__codelineno-127-2" href="#__codelineno-127-2"></a>Are you married (Y/N)? n
-<a id="__codelineno-127-3" name="__codelineno-127-3" href="#__codelineno-127-3"></a>Number of children: 2
-<a id="__codelineno-127-4" name="__codelineno-127-4" href="#__codelineno-127-4"></a>Annual income: 200,000
-<a id="__codelineno-127-5" name="__codelineno-127-5" href="#__codelineno-127-5"></a>Tax due: 33,388
+<div class="highlight"><pre><span></span><code><a id="__codelineno-141-1" name="__codelineno-141-1" href="#__codelineno-141-1"></a>dos&gt;taxes1
+<a id="__codelineno-141-2" name="__codelineno-141-2" href="#__codelineno-141-2"></a>Are you married (Y/N)? n
+<a id="__codelineno-141-3" name="__codelineno-141-3" href="#__codelineno-141-3"></a>Number of children: 2
+<a id="__codelineno-141-4" name="__codelineno-141-4" href="#__codelineno-141-4"></a>Annual income: 200,000
+<a id="__codelineno-141-5" name="__codelineno-141-5" href="#__codelineno-141-5"></a>Tax due: 33,388
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-128-1" name="__codelineno-128-1" href="#__codelineno-128-1"></a>dos&gt;taxes1
-<a id="__codelineno-128-2" name="__codelineno-128-2" href="#__codelineno-128-2"></a>Are you married (Y/N)? w
-<a id="__codelineno-128-3" name="__codelineno-128-3" href="#__codelineno-128-3"></a>Incorrect answer. Please try again
-<a id="__codelineno-128-4" name="__codelineno-128-4" href="#__codelineno-128-4"></a>Are you married (Y/N)? q
-<a id="__codelineno-128-5" name="__codelineno-128-5" href="#__codelineno-128-5"></a>Incorrect answer. Please try again
-<a id="__codelineno-128-6" name="__codelineno-128-6" href="#__codelineno-128-6"></a>Are you married (Y/N)? y
-<a id="__codelineno-128-7" name="__codelineno-128-7" href="#__codelineno-128-7"></a>Number of children: q
-<a id="__codelineno-128-8" name="__codelineno-128-8" href="#__codelineno-128-8"></a>Incorrect answer. Please try again
-<a id="__codelineno-128-9" name="__codelineno-128-9" href="#__codelineno-128-9"></a>Number of children: 2
-<a id="__codelineno-128-10" name="__codelineno-128-10" href="#__codelineno-128-10"></a>Annual income: q
-<a id="__codelineno-128-11" name="__codelineno-128-11" href="#__codelineno-128-11"></a>Incorrect answer. Please try again
-<a id="__codelineno-128-12" name="__codelineno-128-12" href="#__codelineno-128-12"></a>Annual income: 1
-<a id="__codelineno-128-13" name="__codelineno-128-13" href="#__codelineno-128-13"></a>Tax due: 0
+<div class="highlight"><pre><span></span><code><a id="__codelineno-142-1" name="__codelineno-142-1" href="#__codelineno-142-1"></a>dos&gt;taxes1
+<a id="__codelineno-142-2" name="__codelineno-142-2" href="#__codelineno-142-2"></a>Are you married (Y/N)? w
+<a id="__codelineno-142-3" name="__codelineno-142-3" href="#__codelineno-142-3"></a>Incorrect answer. Please try again
+<a id="__codelineno-142-4" name="__codelineno-142-4" href="#__codelineno-142-4"></a>Are you married (Y/N)? q
+<a id="__codelineno-142-5" name="__codelineno-142-5" href="#__codelineno-142-5"></a>Incorrect answer. Please try again
+<a id="__codelineno-142-6" name="__codelineno-142-6" href="#__codelineno-142-6"></a>Are you married (Y/N)? y
+<a id="__codelineno-142-7" name="__codelineno-142-7" href="#__codelineno-142-7"></a>Number of children: q
+<a id="__codelineno-142-8" name="__codelineno-142-8" href="#__codelineno-142-8"></a>Incorrect answer. Please try again
+<a id="__codelineno-142-9" name="__codelineno-142-9" href="#__codelineno-142-9"></a>Number of children: 2
+<a id="__codelineno-142-10" name="__codelineno-142-10" href="#__codelineno-142-10"></a>Annual income: q
+<a id="__codelineno-142-11" name="__codelineno-142-11" href="#__codelineno-142-11"></a>Incorrect answer. Please try again
+<a id="__codelineno-142-12" name="__codelineno-142-12" href="#__codelineno-142-12"></a>Annual income: 1
+<a id="__codelineno-142-13" name="__codelineno-142-13" href="#__codelineno-142-13"></a>Tax due: 0
 </code></pre></div>
 <h2 id="28-main-program-arguments">2.8. <span style="color: #4f81bd">Main program arguments</span></h2>
 <p>The main procedure <em>Main</em> can accept an array of strings as a parameter: </p>
@@ -2879,8 +2887,8 @@
 <p>we will have arg(0)=&quot;arg0&quot;, arg(1)=&quot;arg1&quot; … Here is an example:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; directives</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2894,15 +2902,15 @@
 <span class="odt-code-line">            Console.Out.WriteLine(&quot;argument # &quot; &amp; i &amp; &quot;=&quot; &amp; args(i))</span>
 <span class="odt-code-line">        <span style="color:#0000ff">Next</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The execution produces the following results:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-129-1" name="__codelineno-129-1" href="#__codelineno-129-1"></a>dos&gt;arg1 a b c
-<a id="__codelineno-129-2" name="__codelineno-129-2" href="#__codelineno-129-2"></a>There are 3 arguments
-<a id="__codelineno-129-3" name="__codelineno-129-3" href="#__codelineno-129-3"></a>argument #0=a
-<a id="__codelineno-129-4" name="__codelineno-129-4" href="#__codelineno-129-4"></a>argument #1=b
-<a id="__codelineno-129-5" name="__codelineno-129-5" href="#__codelineno-129-5"></a>argument #2=c
+<div class="highlight"><pre><span></span><code><a id="__codelineno-143-1" name="__codelineno-143-1" href="#__codelineno-143-1"></a>dos&gt;arg1 a b c
+<a id="__codelineno-143-2" name="__codelineno-143-2" href="#__codelineno-143-2"></a>There are 3 arguments
+<a id="__codelineno-143-3" name="__codelineno-143-3" href="#__codelineno-143-3"></a>argument #0=a
+<a id="__codelineno-143-4" name="__codelineno-143-4" href="#__codelineno-143-4"></a>argument #1=b
+<a id="__codelineno-143-5" name="__codelineno-143-5" href="#__codelineno-143-5"></a>argument #2=c
 </code></pre></div>
 <h2 id="29-enumerations">2.9. <span style="color: #4f81bd">Enumerations</span></h2>
 <p>An enumeration is a data type whose value domain is a set of integer constants. Consider a program that needs to handle exam grades. There would be five: Pass, Fair, Good, Very Good, Excellent. We could then define an enumeration for these five constants:</p>
@@ -2941,8 +2949,8 @@
 <p>This is what the following program demonstrates:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; directives</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2982,35 +2990,33 @@
 <span class="odt-code-line">            Console.Out.WriteLine(m)</span>
 <span class="odt-code-line">        <span style="color:#0000ff">Next</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The execution results are as follows:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">dos&gt;enum2</span>
-<span class="odt-code-line"><span style="font-style:italic">mention=0</span></span>
-<span class="odt-code-line"><span style="font-style:italic">Could do better</span></span>
-<span class="odt-code-line"><span style="font-style:italic">Passable</span></span>
-<span class="odt-code-line"><span style="font-style:italic">Pretty good</span></span>
-<span class="odt-code-line"><span style="font-style:italic">Good</span></span>
-<span class="odt-code-line"><span style="font-style:italic">Very good</span></span>
-<span class="odt-code-line"><span style="font-style:italic">Excellent</span></span>
-<span class="odt-code-line"><span style="font-style:italic">0</span></span>
-<span class="odt-code-line"><span style="font-style:italic">1</span></span>
-<span class="odt-code-line"><span style="font-style:italic">2</span></span>
-<span class="odt-code-line"><span style="font-style:italic">3</span></span>
-<span class="odt-code-line"><span style="font-style:italic">4</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-144-1" name="__codelineno-144-1" href="#__codelineno-144-1"></a>dos&gt;enum2
+<a id="__codelineno-144-2" name="__codelineno-144-2" href="#__codelineno-144-2"></a>mention=0
+<a id="__codelineno-144-3" name="__codelineno-144-3" href="#__codelineno-144-3"></a>Could do better
+<a id="__codelineno-144-4" name="__codelineno-144-4" href="#__codelineno-144-4"></a>Passable
+<a id="__codelineno-144-5" name="__codelineno-144-5" href="#__codelineno-144-5"></a>Pretty good
+<a id="__codelineno-144-6" name="__codelineno-144-6" href="#__codelineno-144-6"></a>Good
+<a id="__codelineno-144-7" name="__codelineno-144-7" href="#__codelineno-144-7"></a>Very good
+<a id="__codelineno-144-8" name="__codelineno-144-8" href="#__codelineno-144-8"></a>Excellent
+<a id="__codelineno-144-9" name="__codelineno-144-9" href="#__codelineno-144-9"></a>0
+<a id="__codelineno-144-10" name="__codelineno-144-10" href="#__codelineno-144-10"></a>1
+<a id="__codelineno-144-11" name="__codelineno-144-11" href="#__codelineno-144-11"></a>2
+<a id="__codelineno-144-12" name="__codelineno-144-12" href="#__codelineno-144-12"></a>3
+<a id="__codelineno-144-13" name="__codelineno-144-13" href="#__codelineno-144-13"></a>4
 </code></pre></div>
-
 <h2 id="210-exception-handling">2.10. <span style="color: #4f81bd">Exception Handling</span></h2>
 <p>Many VB.NET functions are capable of generating exceptions, i.e., errors. When a function is capable of generating an exception, the programmer should handle it in order to create programs that are more resilient to errors: you should always avoid an application &quot;crashing&quot; unexpectedly.</p>
 <p>Exception handling follows this pattern:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-130-1" name="__codelineno-130-1" href="#__codelineno-130-1"></a><span class="k">try</span>
-<a id="__codelineno-130-2" name="__codelineno-130-2" href="#__codelineno-130-2"></a><span class="w">    </span><span class="nx">call</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">may</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">exception</span>
-<a id="__codelineno-130-3" name="__codelineno-130-3" href="#__codelineno-130-3"></a><span class="k">catch</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">Exception</span><span class="w"> </span><span class="nx">e</span><span class="p">)</span>
-<a id="__codelineno-130-4" name="__codelineno-130-4" href="#__codelineno-130-4"></a><span class="w">    </span><span class="nx">handle</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">exception</span><span class="w"> </span><span class="nx">e</span>
-<a id="__codelineno-130-5" name="__codelineno-130-5" href="#__codelineno-130-5"></a><span class="nx">end</span><span class="w"> </span><span class="k">try</span>
-<a id="__codelineno-130-6" name="__codelineno-130-6" href="#__codelineno-130-6"></a><span class="nx">next</span><span class="w"> </span><span class="nx">statement</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-145-1" name="__codelineno-145-1" href="#__codelineno-145-1"></a><span class="k">try</span>
+<a id="__codelineno-145-2" name="__codelineno-145-2" href="#__codelineno-145-2"></a><span class="w">    </span><span class="nx">call</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">may</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">exception</span>
+<a id="__codelineno-145-3" name="__codelineno-145-3" href="#__codelineno-145-3"></a><span class="k">catch</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">Exception</span><span class="w"> </span><span class="nx">e</span><span class="p">)</span>
+<a id="__codelineno-145-4" name="__codelineno-145-4" href="#__codelineno-145-4"></a><span class="w">    </span><span class="nx">handle</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">exception</span><span class="w"> </span><span class="nx">e</span>
+<a id="__codelineno-145-5" name="__codelineno-145-5" href="#__codelineno-145-5"></a><span class="nx">end</span><span class="w"> </span><span class="k">try</span>
+<a id="__codelineno-145-6" name="__codelineno-145-6" href="#__codelineno-145-6"></a><span class="nx">next</span><span class="w"> </span><span class="nx">statement</span>
 </code></pre></div>
 <p>If the function does not throw an exception, the program proceeds to <em>the next statement</em>; otherwise, it enters the body of the <em>catch</em> clause and then proceeds to <em>the next statement</em>. Note the following points:</p>
 <ul>
@@ -3018,28 +3024,28 @@
   </li>
 </ul>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-131-1" name="__codelineno-131-1" href="#__codelineno-131-1"></a><span class="k">try</span>
-<a id="__codelineno-131-2" name="__codelineno-131-2" href="#__codelineno-131-2"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">call</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">may</span><span class="w"> </span><span class="nx">generate</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">exception</span>
-<a id="__codelineno-131-3" name="__codelineno-131-3" href="#__codelineno-131-3"></a><span class="k">catch</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">IOException</span><span class="w"> </span>
-<a id="__codelineno-131-4" name="__codelineno-131-4" href="#__codelineno-131-4"></a><span class="w">    </span><span class="nx">handle</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">exception</span><span class="w"> </span><span class="nx">e</span>
-<a id="__codelineno-131-5" name="__codelineno-131-5" href="#__codelineno-131-5"></a><span class="k">catch</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">SystemException</span>
-<a id="__codelineno-131-6" name="__codelineno-131-6" href="#__codelineno-131-6"></a><span class="w">    </span><span class="nx">handle</span><span class="w"> </span><span class="nx">exception</span><span class="w"> </span><span class="nx">e</span>
-<a id="__codelineno-131-7" name="__codelineno-131-7" href="#__codelineno-131-7"></a><span class="nx">end</span><span class="w"> </span><span class="k">try</span>
-<a id="__codelineno-131-8" name="__codelineno-131-8" href="#__codelineno-131-8"></a><span class="nx">next</span><span class="w"> </span><span class="nx">statement</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-146-1" name="__codelineno-146-1" href="#__codelineno-146-1"></a><span class="k">try</span>
+<a id="__codelineno-146-2" name="__codelineno-146-2" href="#__codelineno-146-2"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">call</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">may</span><span class="w"> </span><span class="nx">generate</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">exception</span>
+<a id="__codelineno-146-3" name="__codelineno-146-3" href="#__codelineno-146-3"></a><span class="k">catch</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">IOException</span><span class="w"> </span>
+<a id="__codelineno-146-4" name="__codelineno-146-4" href="#__codelineno-146-4"></a><span class="w">    </span><span class="nx">handle</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">exception</span><span class="w"> </span><span class="nx">e</span>
+<a id="__codelineno-146-5" name="__codelineno-146-5" href="#__codelineno-146-5"></a><span class="k">catch</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">SystemException</span>
+<a id="__codelineno-146-6" name="__codelineno-146-6" href="#__codelineno-146-6"></a><span class="w">    </span><span class="nx">handle</span><span class="w"> </span><span class="nx">exception</span><span class="w"> </span><span class="nx">e</span>
+<a id="__codelineno-146-7" name="__codelineno-146-7" href="#__codelineno-146-7"></a><span class="nx">end</span><span class="w"> </span><span class="k">try</span>
+<a id="__codelineno-146-8" name="__codelineno-146-8" href="#__codelineno-146-8"></a><span class="nx">next</span><span class="w"> </span><span class="nx">statement</span>
 </code></pre></div>
 <ul>
   <li>You can add a <b>finally</b> clause to <i>try/catch</i> blocks:
   </li>
 </ul>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-132-1" name="__codelineno-132-1" href="#__codelineno-132-1"></a><span class="k">try</span>
-<a id="__codelineno-132-2" name="__codelineno-132-2" href="#__codelineno-132-2"></a><span class="w">    </span><span class="nx">call</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">may</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">exception</span>
-<a id="__codelineno-132-3" name="__codelineno-132-3" href="#__codelineno-132-3"></a><span class="k">catch</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">Exception</span>
-<a id="__codelineno-132-4" name="__codelineno-132-4" href="#__codelineno-132-4"></a><span class="w">    </span><span class="nx">handle</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">exception</span><span class="w"> </span><span class="nx">e</span>
-<a id="__codelineno-132-5" name="__codelineno-132-5" href="#__codelineno-132-5"></a><span class="k">finally</span>
-<a id="__codelineno-132-6" name="__codelineno-132-6" href="#__codelineno-132-6"></a><span class="w">    </span><span class="nx">code</span><span class="w"> </span><span class="nx">executed</span><span class="w"> </span><span class="nx">after</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="k">catch</span>
-<a id="__codelineno-132-7" name="__codelineno-132-7" href="#__codelineno-132-7"></a><span class="nx">end</span><span class="w"> </span><span class="k">try</span>
-<a id="__codelineno-132-8" name="__codelineno-132-8" href="#__codelineno-132-8"></a><span class="nx">next</span><span class="w"> </span><span class="nx">statement</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-147-1" name="__codelineno-147-1" href="#__codelineno-147-1"></a><span class="k">try</span>
+<a id="__codelineno-147-2" name="__codelineno-147-2" href="#__codelineno-147-2"></a><span class="w">    </span><span class="nx">call</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">may</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">exception</span>
+<a id="__codelineno-147-3" name="__codelineno-147-3" href="#__codelineno-147-3"></a><span class="k">catch</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">Exception</span>
+<a id="__codelineno-147-4" name="__codelineno-147-4" href="#__codelineno-147-4"></a><span class="w">    </span><span class="nx">handle</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">exception</span><span class="w"> </span><span class="nx">e</span>
+<a id="__codelineno-147-5" name="__codelineno-147-5" href="#__codelineno-147-5"></a><span class="k">finally</span>
+<a id="__codelineno-147-6" name="__codelineno-147-6" href="#__codelineno-147-6"></a><span class="w">    </span><span class="nx">code</span><span class="w"> </span><span class="nx">executed</span><span class="w"> </span><span class="nx">after</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="k">catch</span>
+<a id="__codelineno-147-7" name="__codelineno-147-7" href="#__codelineno-147-7"></a><span class="nx">end</span><span class="w"> </span><span class="k">try</span>
+<a id="__codelineno-147-8" name="__codelineno-147-8" href="#__codelineno-147-8"></a><span class="nx">next</span><span class="w"> </span><span class="nx">statement</span>
 </code></pre></div>
 <p>Whether an exception occurs or not, the code in the <em>finally</em> clause will always be executed.</p>
 <ul>
@@ -3049,26 +3055,26 @@
   </li>
 </ul>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-133-1" name="__codelineno-133-1" href="#__codelineno-133-1"></a>catch e as Exception
-<a id="__codelineno-133-2" name="__codelineno-133-2" href="#__codelineno-133-2"></a>    Console.Error.WriteLine(&quot;The following error occurred: &quot; + e.Message);
-<a id="__codelineno-133-3" name="__codelineno-133-3" href="#__codelineno-133-3"></a>    ...
-<a id="__codelineno-133-4" name="__codelineno-133-4" href="#__codelineno-133-4"></a>end try
+<div class="highlight"><pre><span></span><code><a id="__codelineno-148-1" name="__codelineno-148-1" href="#__codelineno-148-1"></a>catch e as Exception
+<a id="__codelineno-148-2" name="__codelineno-148-2" href="#__codelineno-148-2"></a>    Console.Error.WriteLine(&quot;The following error occurred: &quot; + e.Message);
+<a id="__codelineno-148-3" name="__codelineno-148-3" href="#__codelineno-148-3"></a>    ...
+<a id="__codelineno-148-4" name="__codelineno-148-4" href="#__codelineno-148-4"></a>end try
 </code></pre></div>
 <ul>
   <li>The <i>Exception</i> class has a <b>ToString</b> method that returns a string indicating the exception type and the value of the <i>Message</i> property. We can therefore write:
   </li>
 </ul>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-134-1" name="__codelineno-134-1" href="#__codelineno-134-1"></a>catch ex as Exception
-<a id="__codelineno-134-2" name="__codelineno-134-2" href="#__codelineno-134-2"></a>    Console.Error.WriteLine(&quot;The following error occurred: &quot; + ex.ToString)
-<a id="__codelineno-134-3" name="__codelineno-134-3" href="#__codelineno-134-3"></a>    ...
-<a id="__codelineno-134-4" name="__codelineno-134-4" href="#__codelineno-134-4"></a>end try
+<div class="highlight"><pre><span></span><code><a id="__codelineno-149-1" name="__codelineno-149-1" href="#__codelineno-149-1"></a>catch ex as Exception
+<a id="__codelineno-149-2" name="__codelineno-149-2" href="#__codelineno-149-2"></a>    Console.Error.WriteLine(&quot;The following error occurred: &quot; + ex.ToString)
+<a id="__codelineno-149-3" name="__codelineno-149-3" href="#__codelineno-149-3"></a>    ...
+<a id="__codelineno-149-4" name="__codelineno-149-4" href="#__codelineno-149-4"></a>end try
 </code></pre></div>
 <p>The following example shows an exception generated by using a non-existent array element:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -3097,28 +3103,26 @@
 <span class="odt-code-line">            Console.Error.WriteLine((&quot;The following error occurred: &quot; &amp; e.Message))</span>
 <span class="odt-code-line">        <span style="color:#0000ff">End Try</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>Running the program produces the following results:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">dos&gt;exception1</span>
-<span class="odt-code-line"><span style="font-style:italic">tab[0]=0</span></span>
-<span class="odt-code-line"><span style="font-style:italic">tab[1]=1</span></span>
-<span class="odt-code-line"><span style="font-style:italic">tab[2] = 2</span></span>
-<span class="odt-code-line"><span style="font-style:italic">tab[3]=3</span></span>
-<span class="odt-code-line"><span style="font-style:italic">0</span></span>
-<span class="odt-code-line"><span style="font-style:italic">1</span></span>
-<span class="odt-code-line"><span style="font-style:italic">2</span></span>
-<span class="odt-code-line"><span style="font-style:italic">3</span></span>
-<span class="odt-code-line"><span style="font-style:italic">The following error occurred: The index is out of bounds.</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-150-1" name="__codelineno-150-1" href="#__codelineno-150-1"></a>dos&gt;exception1
+<a id="__codelineno-150-2" name="__codelineno-150-2" href="#__codelineno-150-2"></a>tab[0]=0
+<a id="__codelineno-150-3" name="__codelineno-150-3" href="#__codelineno-150-3"></a>tab[1]=1
+<a id="__codelineno-150-4" name="__codelineno-150-4" href="#__codelineno-150-4"></a>tab[2] = 2
+<a id="__codelineno-150-5" name="__codelineno-150-5" href="#__codelineno-150-5"></a>tab[3]=3
+<a id="__codelineno-150-6" name="__codelineno-150-6" href="#__codelineno-150-6"></a>0
+<a id="__codelineno-150-7" name="__codelineno-150-7" href="#__codelineno-150-7"></a>1
+<a id="__codelineno-150-8" name="__codelineno-150-8" href="#__codelineno-150-8"></a>2
+<a id="__codelineno-150-9" name="__codelineno-150-9" href="#__codelineno-150-9"></a>3
+<a id="__codelineno-150-10" name="__codelineno-150-10" href="#__codelineno-150-10"></a>The following error occurred: The index is out of bounds.
 </code></pre></div>
-
 <p>Here is another example where we handle the exception caused by assigning a string to a number when the string does not represent a number:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27;imports</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -3150,21 +3154,21 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; final display</span></span>
 <span class="odt-code-line">    Console.Out.WriteLine(&quot;Your name is [&quot; &amp; name &amp; &quot;] and you are [&quot; &amp; age &amp; &quot;] years old&quot;)</span>
 <span class="odt-code-line">  <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>Some execution results:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-135-1" name="__codelineno-135-1" href="#__codelineno-135-1"></a>dos&gt;console1
-<a id="__codelineno-135-2" name="__codelineno-135-2" href="#__codelineno-135-2"></a>Name: dupont
-<a id="__codelineno-135-3" name="__codelineno-135-3" href="#__codelineno-135-3"></a>age: 23
-<a id="__codelineno-135-4" name="__codelineno-135-4" href="#__codelineno-135-4"></a>Your name is Dupont and you are 23 years old
+<div class="highlight"><pre><span></span><code><a id="__codelineno-151-1" name="__codelineno-151-1" href="#__codelineno-151-1"></a>dos&gt;console1
+<a id="__codelineno-151-2" name="__codelineno-151-2" href="#__codelineno-151-2"></a>Name: dupont
+<a id="__codelineno-151-3" name="__codelineno-151-3" href="#__codelineno-151-3"></a>age: 23
+<a id="__codelineno-151-4" name="__codelineno-151-4" href="#__codelineno-151-4"></a>Your name is Dupont and you are 23 years old
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-136-1" name="__codelineno-136-1" href="#__codelineno-136-1"></a>dos&gt;console1
-<a id="__codelineno-136-2" name="__codelineno-136-2" href="#__codelineno-136-2"></a>Name: Dupont
-<a id="__codelineno-136-3" name="__codelineno-136-3" href="#__codelineno-136-3"></a>Age: xx
-<a id="__codelineno-136-4" name="__codelineno-136-4" href="#__codelineno-136-4"></a>Incorrect age, please try again...
-<a id="__codelineno-136-5" name="__codelineno-136-5" href="#__codelineno-136-5"></a>Age: 12
-<a id="__codelineno-136-6" name="__codelineno-136-6" href="#__codelineno-136-6"></a>Your name is Dupont and you are 12 years old
+<div class="highlight"><pre><span></span><code><a id="__codelineno-152-1" name="__codelineno-152-1" href="#__codelineno-152-1"></a>dos&gt;console1
+<a id="__codelineno-152-2" name="__codelineno-152-2" href="#__codelineno-152-2"></a>Name: Dupont
+<a id="__codelineno-152-3" name="__codelineno-152-3" href="#__codelineno-152-3"></a>Age: xx
+<a id="__codelineno-152-4" name="__codelineno-152-4" href="#__codelineno-152-4"></a>Incorrect age, please try again...
+<a id="__codelineno-152-5" name="__codelineno-152-5" href="#__codelineno-152-5"></a>Age: 12
+<a id="__codelineno-152-6" name="__codelineno-152-6" href="#__codelineno-152-6"></a>Your name is Dupont and you are 12 years old
 </code></pre></div>
 <h2 id="211-passing-parameters-to-a-function">2.11. <span style="color: #4f81bd">Passing Parameters to a Function</span></h2>
 <p>Here we are interested in how parameters are passed to a function. Consider the function:</p>
@@ -3190,8 +3194,8 @@
 <p>The following example shows that the parameters of a function/procedure are passed by value by default: that is, the value of the actual parameter is copied into the corresponding formal parameter. These are two distinct entities. If the function modifies the formal parameter, the actual parameter remains unchanged.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; passing parameters by value to a function</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -3207,20 +3211,20 @@
 <span class="odt-code-line">        a = 30</span>
 <span class="odt-code-line">        Console.Out.WriteLine((&quot;Formal parameter a=&quot; &amp; a))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The results are as follows:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-137-1" name="__codelineno-137-1" href="#__codelineno-137-1"></a>Formal parameter a=30
-<a id="__codelineno-137-2" name="__codelineno-137-2" href="#__codelineno-137-2"></a>Actual parameter age=20
+<div class="highlight"><pre><span></span><code><a id="__codelineno-153-1" name="__codelineno-153-1" href="#__codelineno-153-1"></a>Formal parameter a=30
+<a id="__codelineno-153-2" name="__codelineno-153-2" href="#__codelineno-153-2"></a>Actual parameter age=20
 </code></pre></div>
 <p>The value 20 of the actual parameter was copied into the formal parameter <em>a</em>. The formal parameter was then modified. The actual parameter remained unchanged. This passing mode is suitable for the input parameters of a function.</p>
 <h3 id="2112-pass-by-reference">2.11.2. <span style="color: #4f81bd">Pass-by-reference</span></h3>
 <p>In a pass-by-reference, the actual parameter and the formal parameter are one and the same entity. If the function modifies the formal parameter, the actual parameter is also modified. In VB.NET, the formal parameter must be preceded by the <strong>ByRef</strong> keyword. Here is an example:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; passing parameters by value to a function</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -3236,12 +3240,12 @@
 <span class="odt-code-line">        a = 30</span>
 <span class="odt-code-line">        Console.Out.WriteLine((&quot;Formal parameter a=&quot; &amp; a))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>and the execution results:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-138-1" name="__codelineno-138-1" href="#__codelineno-138-1"></a>Formal parameter a=30
-<a id="__codelineno-138-2" name="__codelineno-138-2" href="#__codelineno-138-2"></a>Actual parameter age=30
+<div class="highlight"><pre><span></span><code><a id="__codelineno-154-1" name="__codelineno-154-1" href="#__codelineno-154-1"></a>Formal parameter a=30
+<a id="__codelineno-154-2" name="__codelineno-154-2" href="#__codelineno-154-2"></a>Actual parameter age=30
 </code></pre></div>
 <p>The actual parameter followed the change in the formal parameter. This passing mode is suitable for the output parameters of a function.</p>
 

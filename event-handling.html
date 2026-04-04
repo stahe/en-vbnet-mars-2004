@@ -795,7 +795,7 @@
 <span class="odt-code-line">        n = op(2, 3)</span>
 <span class="odt-code-line">        Console.Out.WriteLine((&quot;n=&quot; &amp; n))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>The results of the execution are as follows:</p>
@@ -867,7 +867,7 @@
 <span class="odt-code-line">    <span style="color:#0000ff">Public Overrides Function </span>ToString() <span style="color:#0000ff">As String</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">Return </span>_input</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Function</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">Public Class </span>emitter</span>
 <span class="odt-code-line">    <span style="font-weight:bold;color:#ff0000">&#x27; the class that emits an event</span></span>
@@ -896,7 +896,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; act as if the event originated here</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">RaiseEvent </span>evtHandler(<span style="color:#0000ff">Me</span>, evt)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; an event handler class</span>
 <span class="odt-code-line"><span style="color:#0000ff">Public Class </span>Subscriber</span>
@@ -919,7 +919,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Display event</span></span>
 <span class="odt-code-line">        Console.Out.WriteLine((&quot;The object [&quot; + sender.ToString + &quot;] reported the invalid input [&quot; + evt.ToString + &quot;] to the subscriber [&quot; + name + &quot;]&quot;))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; a test program</span>
 <span class="odt-code-line"><span style="color:#0000ff">Public Class </span>test</span>
@@ -951,7 +951,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; end</span></span>
 <span class="odt-code-line">        Environment.Exit(0)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>The code above is quite complex. Let’s break it down. In event handling, there is an event <em>sender</em> that sends event details (<em>EventArgs</em>) to subscribers who have expressed interest in the events in question. The event-sending class here is as follows:</p>
@@ -983,7 +983,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; act as if the event originated here</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">RaiseEvent </span>evtHandler(<span style="color:#0000ff">Me</span>, evt)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>Each <em>emitter</em> object has a <em>name</em> set by default. The <em>ToString</em> method has been redefined so that when an <em>emitter</em> object is converted to <em>a string,</em> its name is returned. The class defines an event:</p>
@@ -1021,7 +1021,7 @@
 <span class="odt-code-line">    <span style="color:#0000ff">Public Overrides Function </span>ToString() <span style="color:#0000ff">As String</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">Return </span>_input</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Function</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>The events we are interested in are incorrect keyboard inputs. We will ask a user to type integers on the keyboard, and as soon as they type a string that does not represent an integer, we will trigger an event. As the event detail, we will simply provide the incorrect input. This is the purpose of the <em>_input</em> attribute of the class. A <em>myEventArgs</em> object is therefore created with the incorrect input as its parameter. We also override the <em>ToString</em> method so that when we convert a <em>myEventArgs</em> object to a string, we get the <em>_input</em> property. </p>

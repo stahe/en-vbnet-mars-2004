@@ -1022,7 +1022,7 @@
 <span class="odt-code-line">    <span style="color:#0000ff">Public Sub </span>identify()</span>
 <span class="odt-code-line">        Console.Out.WriteLine((firstName &amp; &quot;,&quot; &amp; lastName &amp; &quot;,&quot; &amp; age))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>Here we have the definition of a class, which is a data type. When we create variables of this type, we call them objects or class instances. A class is therefore a template from which objects are constructed. The members or fields of a class can be data (attributes), methods (functions), or properties. Properties are special methods used to retrieve or set the value of an object’s attributes. These fields can be accompanied by one of the following three keywords:</p>
@@ -1075,7 +1075,7 @@
 <span class="odt-code-line">    <span style="color:#0000ff">Public Sub </span>identify()</span>
 <span class="odt-code-line">        Console.Out.WriteLine((firstName &amp; &quot;,&quot; &amp; lastName &amp; &quot;,&quot; &amp; age))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>What is the role of the <em>initialize</em> method? Because <em>lastName</em>, <em>firstName</em>, and <em>age</em> are private data of the <em>Person</em> class, the statements:</p>
@@ -1158,7 +1158,7 @@
 <span class="odt-code-line">    <span style="color:#0000ff">Public Sub </span>identify()</span>
 <span class="odt-code-line">        Console.Out.WriteLine((firstName &amp; &quot;,&quot; &amp; lastName &amp; &quot;,&quot; &amp; age))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>and the results obtained:</p>
@@ -1186,13 +1186,13 @@
 <span class="odt-code-line">        p1.initialize(&quot;Jean&quot;, &quot;Dupont&quot;, 30)</span>
 <span class="odt-code-line">        p1.identify()</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>person2.vb</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
-<span class="odt-code-line"><span style="color:#008000">&#x27; options</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">&#x27; options</span>
+<span class="odt-code-line">Option Explicit On</span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000">&#x27; namespaces</span></span>
+<span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">Public Class </span>Person</span>
@@ -1256,8 +1256,8 @@
 <p>We now have two methods named <em>Initialize</em>: this is valid as long as they accept different parameters. That is the case here. The parameter is now a reference <em>P</em> to a Person. The attributes of the Person <em>P</em> are then assigned to the current object (<em>Me</em>). Note that the <em>initialize</em> method has direct access to the attributes of object <em>P</em> even though they are of type <em>private</em>. This is always true: an object <em>O1</em> of class <em>C</em> always has access to the attributes of objects of the same class <em>C</em>. Here is a test of the new <em>Person</em> class, which has been compiled into <em>Person.dll</em> as explained previously:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1273,7 +1273,7 @@
 <span class="odt-code-line">        Console.Out.Write(&quot;p2=&quot;)</span>
 <span class="odt-code-line">        p2.Identify()</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>and its results:</p>
@@ -1300,8 +1300,8 @@
 <p>Let’s create two constructors for our <em>Person</em> class:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1339,14 +1339,14 @@
 <span class="odt-code-line">    <span style="color:#0000ff">Public Sub </span>identify()</span>
 <span class="odt-code-line">        Console.Out.WriteLine((firstName &amp; &quot;,&quot; &amp; lastName &amp; &quot;,&quot; &amp; age))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>Both of our constructors simply call the corresponding <em>initialize</em> methods. Note that when, for example, the notation <em>initialise(P)</em> appears in a constructor, the compiler translates it to <em>Me.initialise(P)</em>. In the constructor, the <em>initialise</em> method is therefore called to operate on the object referenced by <em>Me</em>, that is, the current object, the one being constructed. Here is a short test program:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options </span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1361,7 +1361,7 @@
 <span class="odt-code-line">        Console.Out.Write(&quot;p2=&quot;)</span>
 <span class="odt-code-line">        p2.Identify()</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>and the results obtained:</p>
@@ -1372,8 +1372,8 @@
 <p>We are still using the same <em>Person</em> class. The test program becomes the following:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1409,7 +1409,7 @@
 <span class="odt-code-line">        Console.Out.Write(&quot;p3=&quot;)</span>
 <span class="odt-code-line">        p3.Identify()</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The results obtained are as follows:</p>
@@ -1439,8 +1439,8 @@
 <p>In an expression, you can explicitly call an object’s constructor: the object is created, but you cannot access it (to modify it, for example). This temporary object is created for the purpose of evaluating the expression and then discarded. The memory space it occupied will be automatically reclaimed later by a program called a &quot;garbage collector,&quot; whose role is to reclaim memory space occupied by objects that are no longer referenced by program data. Consider the following new test program:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1451,7 +1451,7 @@
 <span class="odt-code-line">        <span style="color:#0000ff">Dim </span>p <span style="color:#0000ff">As New </span>Person(<span style="color:#0000ff">New </span>Person(&quot;Jean&quot;, &quot;Dupont&quot;, 30))</span>
 <span class="odt-code-line">        p.identify()</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>and let&#x27;s modify the constructors of the <em>Person</em> class so that they display a message:</p>
@@ -1530,14 +1530,14 @@
 <span class="odt-code-line">    <span style="color:#0000ff">Public Sub </span>setAge(<span style="color:#0000ff">ByVal </span>age <span style="color:#0000ff">As Integer</span>)</span>
 <span class="odt-code-line">        <span style="color:#0000ff">Me</span>.age = age</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>We test the new class with the following program:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1550,7 +1550,7 @@
 <span class="odt-code-line">        P.setAge(56)</span>
 <span class="odt-code-line">        Console.Out.WriteLine((&quot;P=(&quot; &amp; P.getFirstName() &amp; &quot;,&quot; &amp; P.getLastName() &amp; &quot;,&quot; &amp; P.getAge() &amp; &quot;)&quot;))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>and we get the following results:</p>
@@ -1561,8 +1561,8 @@
 <p>There is another way to access a class&#x27;s attributes: by creating properties. These allow us to manipulate private attributes as if they were public. Consider the following <em>Person</em> class, where the previous getters and setters have been replaced by read-write <strong>properties</strong>:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1627,7 +1627,7 @@
 <span class="odt-code-line">            <span style="color:#0000ff">End If</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">End Set</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Property</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p><mark style="background-color: #fff5ce">A Property </mark>allows you to read (<strong>get</strong>) or set (<strong>set</strong>) the value of an attribute. In our example, we prefixed the attribute names with an underscore (_) so that the properties have the same names as the primitive attributes. This is because a property cannot have the same name as the attribute it manages; otherwise, there would be a naming conflict within the class. We have therefore named our attributes <em>_firstName</em>, <em>_lastName</em>, and <em>_age</em> and modified the constructors and methods accordingly. We then created three properties: <em>lastName</em>, <em>firstName</em>, and <em>age</em>. A property is declared as follows:</p>
@@ -1646,8 +1646,8 @@
 <p>How are these <strong>get</strong> and <strong>set</strong> methods called? Consider the following test program:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1665,7 +1665,7 @@
 <span class="odt-code-line">            Console.Error.WriteLine(ex.Message)</span>
 <span class="odt-code-line">        <span style="color:#0000ff">End Try</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>In the statement</p>
@@ -1696,8 +1696,8 @@
 </code></pre></div>
 <p>which, from outside, will be called using the syntax <em>person.nbPeople</em>. The property is declared as read-only (ReadOnly) because it does not provide a set method. Here is an example. The <em>Person</em> class becomes the following:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1773,14 +1773,14 @@
 <span class="odt-code-line">            <span style="color:#0000ff">End If</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">End Set</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Property</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>With the following program:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1792,7 +1792,7 @@
 <span class="odt-code-line">        <span style="color:#0000ff">Dim </span>p2 <span style="color:#0000ff">As New </span>Person(p1)</span>
 <span class="odt-code-line">        Console.Out.WriteLine((&quot;Number of people created: &quot; &amp; person.nbPeople))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The following results are obtained:</p>
@@ -1805,8 +1805,8 @@
 <p>This is illustrated by the following example:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1841,7 +1841,7 @@
 <span class="odt-code-line">        Console.Out.Write(&quot;Formal parameter after modification: &quot;)</span>
 <span class="odt-code-line">        P.identify()</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The results obtained are as follows:</p>
@@ -1855,8 +1855,8 @@
 <p>An object is a piece of data like any other, and as such, multiple objects can be grouped into an array:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1876,7 +1876,7 @@
 <span class="odt-code-line">            friends(i).identify()</span>
 <span class="odt-code-line">        <span style="color:#0000ff">Next </span>i</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The statement <span style="color: #0000ff"><mark style="background-color: #fff5ce">Dim </mark></span><mark style="background-color: #fff5ce">friends(2) </mark><span style="color: #0000ff"><mark style="background-color: #fff5ce">As </mark></span><mark style="background-color: #fff5ce">Person </mark>creates an array of 3 elements of type <em>Person</em>. These 3 elements are initialized here with the value <em>Nothing</em>, meaning they do not reference any objects. Again, in a technical sense, we refer to an &quot;array of objects&quot; when it is actually just an array of object references. Creating the object array, which is an object itself, does not create any objects of the type of its elements: this must be done later. The following results are obtained:</p>
@@ -1895,8 +1895,8 @@
 <p>Note the specific two-line syntax. The <em>Person</em> class is called the parent (or base) class, and the <em>Teacher</em> class is called the derived (or child) class. A <em>Teacher</em> object has all the qualities of a <em>Person</em> object: it has the same attributes and methods. These attributes and methods of the parent class are not repeated in the definition of the child class; we simply specify the attributes and methods added by the child class. We assume that the <em>Person</em> class is defined as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1982,14 +1982,14 @@
 <span class="odt-code-line">            <span style="color:#0000ff">Return </span>&quot;person(&quot; &amp; _firstName &amp; &quot;,&quot; &amp; _lastName &amp; &quot;,&quot; &amp; age &amp; &quot;)&quot;</span>
 <span class="odt-code-line">        <span style="color:#0000ff">End Get</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Property</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>The <em>Identify</em> method has been replaced by the read-only <em>Identity</em> property, which identifies the person. We create a <em>Teacher</em> class that inherits from the <em>Person</em> class:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; Namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2016,7 +2016,7 @@
 <span class="odt-code-line">            _section = Value</span>
 <span class="odt-code-line">        <span style="color:#0000ff">End Set</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Property</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class </span></span>
+<span class="odt-code-line">End Class </span>
 </code></pre></div>
 
 <p>The <em>Teacher</em> class adds the following to the methods and attributes of the <em>Person</em> class:</p>
@@ -2099,8 +2099,8 @@
 <p>Note that to compile the <em>teacher</em> child class, we had to reference the <em>person.dll</em> file, which contains the <em>person</em> class. Let’s try a first test program:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2109,7 +2109,7 @@
 <span class="odt-code-line">    <span style="color:#0000ff">Sub </span>Main()</span>
 <span class="odt-code-line">        Console.Out.WriteLine(<span style="color:#0000ff">New </span>Teacher(&quot;Jean&quot;, &quot;Dupont&quot;, 30, 27).Identity)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>This program simply creates a <em>Teacher</em> object (new) and identifies it. The <em>Teacher</em> class does not have an <em>Identity</em> method, but its parent class does have one, which is also public: through inheritance, it becomes a public method of the <em>Teacher</em> class. The results obtained are as follows:</p>
@@ -2132,8 +2132,8 @@
 <p>In the previous example, we had the identity of the <em>person</em> part of the teacher, but some information specific to the <em>Teacher</em> class (the section) is missing. We therefore need to write a property that allows us to identify the teacher:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2167,7 +2167,7 @@
 <span class="odt-code-line">            <span style="color:#0000ff">Return </span>&quot;teacher(&quot; &amp; <span style="color:#0000ff">MyBase</span>.identity &amp; &quot;,&quot; &amp; _section &amp; &quot;)&quot;</span>
 <span class="odt-code-line">        <span style="color:#0000ff">End Get</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Property</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>The <em>identity</em> method of the <em>Teacher</em> class relies on the <em>identity</em> method of its parent class (<span style="color: #0000ff"><mark style="background-color: #fff5ce">MyBase</mark></span><mark style="background-color: #fff5ce">.identity</mark>) to display its &quot;<em>person</em>&quot; part and then supplements it with the <em>_section</em> field, which is specific to the <em>Teacher</em> class. Note the declaration of the <em>identity</em> property:</p>
@@ -2206,8 +2206,8 @@
 <p>Inheritance therefore allows methods/properties with the same name in the parent class to be redefined in the child class. This is what allows the child class to be adapted to its own needs. Combined with polymorphism, which we will discuss shortly, method/property overloading is the main benefit of inheritance. Let’s consider the same example as before:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2216,7 +2216,7 @@
 <span class="odt-code-line">    <span style="color:#0000ff">Sub </span>Main()</span>
 <span class="odt-code-line">        Console.Out.WriteLine(<span style="color:#0000ff">New </span>Teacher(&quot;Jean&quot;, &quot;Dupont&quot;, 30, 27).Identity)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The results obtained this time are as follows:</p>
@@ -2266,8 +2266,8 @@
 <p>Let&#x27;s look at the following example:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2287,7 +2287,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; displays p&#x27;s identity</span></span>
 <span class="odt-code-line">        Console.Out.WriteLine(p.identity)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The results obtained are as follows:</p>
@@ -2319,8 +2319,8 @@
 <p>The test program:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2340,7 +2340,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; displays p&#x27;s identity</span></span>
 <span class="odt-code-line">        Console.Out.WriteLine(p.identity)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>then produces the following results:</p>
@@ -2362,8 +2362,8 @@
 <p>The <em>ToString</em> method returns the name of the class to which the object belongs, as shown in the following example:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2375,7 +2375,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; a person</span></span>
 <span class="odt-code-line">        Console.Out.WriteLine(<span style="color:#0000ff">New </span>Person(&quot;Jean&quot;, &quot;Dupont&quot;, 30).ToString())</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The results are as follows:</p>
@@ -2397,8 +2397,8 @@
 <p>The definition is the same in both classes. Consider the following test program:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2418,7 +2418,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; displays p&#x27;s identity</span></span>
 <span class="odt-code-line">        Console.Out.WriteLine(p.identity)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The execution results are as follows:</p>
@@ -2432,8 +2432,8 @@
 <p>Consider the [ArrayList] class predefined in the .NET platform. This class allows you to store objects in a list. It belongs to the [System.Collections] namespace. In the following example, we use this class to store a list of people (in the broad sense):</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2488,7 +2488,7 @@
 <span class="odt-code-line">        list += &quot;)&quot;</span>
 <span class="odt-code-line">        <span style="color:#0000ff">Return </span>list</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Function</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>Let&#x27;s provide some information about certain properties and methods of the [ArrayList] class:</p>
@@ -2542,8 +2542,8 @@
 <p>Let&#x27;s create a class called [listOfPeople] that would be a list of people, so a specific list that it seems natural to derive from the [ArrayList] class:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2589,7 +2589,7 @@
 <span class="odt-code-line">        list += &quot;)&quot;</span>
 <span class="odt-code-line">        <span style="color:#0000ff">Return </span>list</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Function</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>The class has the following methods and properties:</p>
@@ -2672,8 +2672,8 @@
 <p>A test program is created:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2700,7 +2700,7 @@
 <span class="odt-code-line">            Console.Error.WriteLine(e.Message)</span>
 <span class="odt-code-line">        <span style="color:#0000ff">End Try</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>It is compiled:</p>
@@ -2754,8 +2754,8 @@
 <p>A new test program could be as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2790,7 +2790,7 @@
 <span class="odt-code-line">            <span style="color:#0000ff">End If</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">Next </span>i</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span>    </span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The execution yields the following results:</p>
@@ -2816,13 +2816,13 @@
 <span class="odt-code-line">&#x27; constructors</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">&#x27; methods</span>
-<span class="odt-code-line"><span style="color:#0000ff">End Structure</span></span>
+<span class="odt-code-line">End Structure</span>
 </code></pre></div>
 
 <p>Despite similarities in their syntax, there are significant differences between <strong>classes</strong> and <strong>structures</strong>. For example, the concept of inheritance does not exist with structures. If we are writing a class that is not intended to be derived from another, what are the differences between structures and classes that will help us choose between the two? Let’s use the following example to find out:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
@@ -2832,13 +2832,13 @@
 <span class="odt-code-line"><span style="color:#0000ff">Structure </span>spersonne</span>
 <span class="odt-code-line">    <span style="color:#0000ff">Public </span>Name <span style="color:#0000ff">As String</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">Public </span>age <span style="color:#0000ff">As Integer</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Structure</span></span>
+<span class="odt-code-line">End Structure</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; Person class</span>
 <span class="odt-code-line"><span style="color:#0000ff">Class </span>Person</span>
 <span class="odt-code-line">    <span style="color:#0000ff">Public </span>name <span style="color:#0000ff">As String</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">Public </span>age <span style="color:#0000ff">As Integer</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; A test module</span>
 <span class="odt-code-line"><span style="color:#0000ff">Public Module </span>test</span>
@@ -2873,7 +2873,7 @@
 <span class="odt-code-line">        Console.Out.WriteLine((&quot;cP1=cperson(&quot; &amp; cp1.name &amp; &quot;,&quot; &amp; cp1.age &amp; &quot;)&quot;))</span>
 <span class="odt-code-line">        Console.Out.WriteLine((&quot;cP2=cperson(&quot; &amp; cp2.name &amp; &quot;,&quot; &amp; cp2.age &amp; &quot;)&quot;))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>If we run this program, we get the following results:</p>
@@ -2892,7 +2892,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">Structure </span>spersonne</span>
 <span class="odt-code-line">    <span style="color:#0000ff">Public </span>name <span style="color:#0000ff">As String</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">Public </span>Age <span style="color:#0000ff">As Integer</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Structure</span></span>
+<span class="odt-code-line">End Structure</span>
 </code></pre></div>
 
 <p>The declaration</p>
@@ -2948,8 +2948,8 @@
 <p>Once this fundamental difference is understood, the structure proves to be very similar to a class, as shown in the following new example:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -2989,7 +2989,7 @@
 <span class="odt-code-line">    <span style="color:#0000ff">Public Overrides Function </span>ToString() <span style="color:#0000ff">As String</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">Return </span>&quot;person(&quot; &amp; name &amp; &quot;,&quot; &amp; age &amp; &quot;)&quot;</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Function</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Structure</span></span>
+<span class="odt-code-line">End Structure</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; a test module</span>
 <span class="odt-code-line">Test <span style="color:#0000ff">Module</span></span>
@@ -3007,7 +3007,7 @@
 <span class="odt-code-line">        Console.Out.WriteLine((&quot;p1=&quot; &amp; p1.ToString))</span>
 <span class="odt-code-line">        Console.Out.WriteLine((&quot;p2=&quot; &amp; p2.ToString))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The following execution results are obtained:</p>
@@ -3039,8 +3039,8 @@
 <p>The <em>[mean]</em> and <em>[standardDev]</em> methods must be defined in class C. Consider the following code:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -3055,7 +3055,7 @@
 <span class="odt-code-line">        <span style="color:#0000ff">Me</span>._name = NAME</span>
 <span class="odt-code-line">        <span style="color:#0000ff">Me</span>._score = SCORE</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Structure</span></span>
+<span class="odt-code-line">End Structure</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; notes class</span>
 <span class="odt-code-line"><span style="color:#0000ff">Public Class </span>notes</span>
@@ -3086,7 +3086,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; end</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">Return </span>value</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Function</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>The <em>notes</em> class collects the grades for a class in a subject:</p>
@@ -3108,7 +3108,7 @@
 <span class="odt-code-line">        <span style="color:#0000ff">Me</span>._name = NAME</span>
 <span class="odt-code-line">        <span style="color:#0000ff">Me</span>._score = SCORE</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span>    </span>
-<span class="odt-code-line"><span style="color:#0000ff">End Structure</span></span>
+<span class="odt-code-line">End Structure</span>
 </code></pre></div>
 
 <p>We decide to derive this <em>notes</em> class into a <em>notesStats</em> class that would have two additional attributes: the average and the standard deviation of the grades:</p>
@@ -3131,8 +3131,8 @@
 <p>This means that the <em>notesStats</em> class must have two methods named <em>average</em> and <em>standardDeviation</em> with the signatures specified in the <em>Istats</em> interface. The <em>notesStats</em> class is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -3186,15 +3186,15 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; returns the standard deviation</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">Return </span>_standardDev</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Function</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>The mean <em>_mean</em> and the standard deviation <em>_standardDev</em> are calculated when the object is created. Therefore, the <em>mean</em> and <em>standardDev</em> methods simply return the values of the <em>_mean</em> and <em>_standardDev</em> attributes. Both methods return -1 if the student array is empty.</p>
 <p>The following test class:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -3211,7 +3211,7 @@
 <span class="odt-code-line">        English = <span style="color:#0000ff">New </span>notesStats(&quot;English&quot;, STUDENTS)</span>
 <span class="odt-code-line">        Console.Out.WriteLine((English.ToString))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>gives the results:</p>
@@ -3221,8 +3221,8 @@
 <p>The <em>notesStats</em> class could very well have implemented the <em>average</em> and <em>standardDev</em> methods on its own without specifying that it implemented the <em>Istats</em> interface. What is the point of interfaces? It is this: a function can accept as a formal parameter a value of type I. Any object of class C that implements interface I can then be an actual parameter of that function. Consider the following example:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -3231,7 +3231,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">Public Interface </span>Iexample</span>
 <span class="odt-code-line">    <span style="color:#0000ff">Function </span>add(<span style="color:#0000ff">ByVal </span>i <span style="color:#0000ff">As Integer</span>, <span style="color:#0000ff">ByVal </span>j <span style="color:#0000ff">As Integer</span>) <span style="color:#0000ff">As Integer</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">Function </span>subtract(<span style="color:#0000ff">ByVal </span>i <span style="color:#0000ff">As Integer</span>, <span style="color:#0000ff">ByVal </span>j <span style="color:#0000ff">As Integer</span>) <span style="color:#0000ff">As Integer</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Interface</span></span>
+<span class="odt-code-line">End Interface</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; a first class</span>
 <span class="odt-code-line"><span style="color:#0000ff">Public Class </span>class1</span>
@@ -3244,7 +3244,7 @@
 <span class="odt-code-line">    <span style="color:#0000ff">Public Function </span>subtract(<span style="color:#0000ff">ByVal </span>a <span style="color:#0000ff">As Integer</span>, <span style="color:#0000ff">ByVal </span>b <span style="color:#0000ff">As Integer</span>) <span style="color:#0000ff">As Integer Implements </span>IExample.subtract</span>
 <span class="odt-code-line">        <span style="color:#0000ff">Return </span>a - b + 20</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Function</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">a second-grade class</span>
 <span class="odt-code-line"><span style="color:#0000ff">Public Class </span>class2</span>
@@ -3257,14 +3257,14 @@
 <span class="odt-code-line">    <span style="color:#0000ff">Public Function </span>subtract(<span style="color:#0000ff">ByVal </span>a <span style="color:#0000ff">As Integer</span>, <span style="color:#0000ff">ByVal </span>b <span style="color:#0000ff">As Integer</span>) <span style="color:#0000ff">As Integer Implements </span>IExample.subtract</span>
 <span class="odt-code-line">        <span style="color:#0000ff">Return </span>a - b + 200</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Function</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>The <em>Iexample</em> interface defines two methods: <em>add</em> and <em>subtract</em>. The classes <em>Class1</em> and <em>Class2</em> implement this interface. Note that these classes do nothing else, for the sake of simplifying the example. Now consider the following example:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -3287,7 +3287,7 @@
 <span class="odt-code-line">        calculate(4, 3, c1)</span>
 <span class="odt-code-line">        calculate(14, 13, c2)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>The <em>calculate</em> function accepts an element of type <em>Iexample</em> as a parameter. It can therefore receive either an object of type <em>class1</em> or <em>class2</em> for this parameter. This is what is done in the <em>Main</em> procedure with the following results:</p>
@@ -3345,8 +3345,8 @@
 <p>For this example, let&#x27;s create the <em>Person</em> class we studied earlier in a namespace. We will choose <em>istia.st</em> as the namespace. The <em>Person</em> class becomes:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -3371,7 +3371,7 @@
 <span class="odt-code-line">            Console.Out.WriteLine((firstName &amp; &quot;,&quot; &amp; lastName &amp; &quot;,&quot; &amp; age))</span>
 <span class="odt-code-line">        <span style="color:#0000ff">End Sub</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Class</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Namespace</span></span>
+<span class="odt-code-line">End Namespace</span>
 </code></pre></div>
 
 <p>This class is compiled into <em>person.dll</em>:</p>
@@ -3388,8 +3388,8 @@
 <p>Now let&#x27;s use the <em>Person</em> class in a test class:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -3402,7 +3402,7 @@
 <span class="odt-code-line">        p1.initialize(&quot;Jean&quot;, &quot;Dupont&quot;, 30)</span>
 <span class="odt-code-line">        p1.identify()</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>To avoid writing</p>
@@ -3461,8 +3461,8 @@
 <p>The <code>**impot</code>** class will be defined as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -3508,14 +3508,14 @@
 <span class="odt-code-line">        <span style="color:#0000ff">End While</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">Return CLng</span>(revenue * coeffR(i) - nbParts * coeffN(i))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Function</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>A <strong>tax</strong> object is created with the data needed to calculate a taxpayer&#x27;s tax. This is the stable part of the object. Once this object is created, its <code>**calculate</code>** method can be called repeatedly to calculate the taxpayer&#x27;s tax based on their marital status (married or not), number of children, and annual salary. A test program might look like this:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line">Option Strict On</span>
+<span class="odt-code-line">Option Explicit On </span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -3595,7 +3595,7 @@
 <span class="odt-code-line">            <span style="color:#0000ff">End If</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">End While</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <p>Here is an example of the previous program in action:</p>

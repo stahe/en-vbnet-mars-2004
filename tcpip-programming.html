@@ -1274,7 +1274,7 @@
 <p>A node’s <strong>Internet address</strong> is a <strong>logical</strong> address: it is independent of the hardware and the network used. It is a 4-byte address that identifies both a local network and a node on that network. The Internet address is usually represented as four numbers—the values of the four bytes—separated by a dot. Thus, the address of the machine Lagaffe at the Faculty of Sciences in Angers is 193.49.144.1, and that of the machine Liny is 193.49.144.9. From this, we can deduce that the Internet address of the local network is 193.49.144.0. There can be up to 254 nodes on this network.</p>
 <p>Because Internet addresses (IP addresses) are independent of the network, a machine on network A can communicate with a machine on network B without concerning itself with the type of network it is on: it simply needs to know its IP address. The IP protocol of each network handles the conversion between IP address and physical address, in both directions.</p>
 <p>All <strong>IP</strong> addresses must be unique. In France, INRIA is responsible for assigning IP addresses. In fact, this organization assigns an address to your local network, for example 193.49.144.0 for the network of the Faculty of Sciences in Angers. The administrator of this network can then assign the IP addresses 193.49.144.1 through 193.49.144.254 as they see fit. This address is generally stored in a specific file on each machine connected to the network.</p>
-<h4 id="9151-ip-address-classes">9.1.5.1. <span style="color: #4f81bd"><em>IP Address Classes</em></span></h4>
+<h4 id="9151-ip-address-classes">9.1.5.1. <span style="color: #4f81bd">IP Address Classes</span></h4>
 <p>An IP address is a sequence of 4 bytes, often written as I1.I2.I3.I4, which actually contains two addresses:</p>
 <ul>
   <li>the network address
@@ -1318,7 +1318,7 @@
   <li>In a Class C network, which theoretically allows for 2⁸ = 256 nodes, if we remove the two prohibited addresses, we are left with only 254 authorized addresses.
   </li>
 </ul>
-<h4 id="9152-internet-address-physical-address-conversion-protocols">9.1.5.2. <span style="color: #4f81bd"><em>Internet Address &lt;--&gt; Physical Address Conversion Protocols</em></span></h4>
+<h4 id="9152-internet-address-physical-address-conversion-protocols">9.1.5.2. <span style="color: #4f81bd">Internet Address &lt;--&gt; Physical Address Conversion Protocols</span></h4>
 <p>We have seen that when data is transmitted from one machine to another, it is encapsulated into packets as it passes through the IP layer. These packets have the following form:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000069C000000BA4EAF6855.png" style="display:inline-block; margin:4px;width:17.997cm;height:1.977cm;" class="odt-zoomable" data-zoom-src="images/100000000000069C000000BA4EAF6855.png" /></td></tr></table>
 
@@ -1349,7 +1349,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000638000000AA31CD0EC8.png" style="display:inline-block; margin:4px;width:17.997cm;height:1.923cm;" class="odt-zoomable" data-zoom-src="images/1000000000000638000000AA31CD0EC8.png" /></td></tr></table>
 
 <p>Physical frames travel from node to node toward their destination, which may not be on the same physical network as the sending machine. The IP packet can therefore be successively encapsulated in different physical frames at the nodes that connect two networks of different types. It is also possible that the IP packet is too large to be encapsulated in a single physical frame. The IP software on the node where this problem occurs then breaks the IP packet into <em>fragments</em> according to specific rules, each of which is then sent over the physical network. They will only be reassembled at their final destination.</p>
-<h4 id="9161-routing">9.1.6.1. <span style="color: #4f81bd"><em>Routing</em></span></h4>
+<h4 id="9161-routing">9.1.6.1. <span style="color: #4f81bd">Routing</span></h4>
 <p>Routing is the method of directing IP packets to their destination. There are two methods: direct routing and indirect routing.</p>
 <p><strong>Direct routing</strong></p>
 <p>Direct routing refers to the transmission of an IP packet directly from the sender to the recipient within the same network:</p>
@@ -1376,16 +1376,16 @@
 </ul>
 
 <p>The router’s role is to take the IP packet it receives—which is contained within a physical frame typical of network #1—and place it into a physical frame that can travel over network #2. If the IP address of the packet’s destination is within network #2, the router will send the packet directly to it; otherwise, it will send it to another router, connecting network #2 to network #3, and so on.</p>
-<h4 id="9162-error-and-control-messages">9.1.6.2. <span style="color: #4f81bd"><em>Error and Control Messages</em></span></h4>
+<h4 id="9162-error-and-control-messages">9.1.6.2. <span style="color: #4f81bd">Error and Control Messages</span></h4>
 <p>Also within the network layer—at the same level as the IP protocol—is the <strong>ICMP</strong> (<em>Internet Control Message Protocol</em>). It is used to send messages regarding the internal operation of the network: failed nodes, congestion at a router, etc. ICMP messages are encapsulated in IP packets and sent over the network. The IP layers of the various nodes take appropriate actions based on the ICMP messages they receive. Thus, an application itself never sees these network-specific issues. A node will use the ICMP information to update its routing tables.</p>
 <h3 id="917-the-transport-layer-the-udp-and-tcp-protocols">9.1.7. <span style="color: #4f81bd">The transport layer: the UDP and TCP protocols</span></h3>
-<h4 id="9171-the-udp-protocol-user-datagram-protocol">9.1.7.1. <span style="color: #4f81bd"><em>The UDP protocol: User Datagram Protocol</em></span></h4>
+<h4 id="9171-the-udp-protocol-user-datagram-protocol">9.1.7.1. <span style="color: #4f81bd">The UDP protocol: User Datagram Protocol</span></h4>
 <p>The UDP protocol allows for an unreliable exchange of data between two points, meaning that the successful delivery of a packet to its destination is not guaranteed. The application, if it chooses, can handle this itself, for example by waiting for an acknowledgment after sending a message before sending the next one.</p>
 <p>So far, at the network level, we have discussed machine IP addresses. However, on a single machine, different processes can coexist simultaneously, all of which can communicate. Therefore, when sending a message, it is necessary to specify not only the IP address of the destination machine but also the &quot;name&quot; of the destination process. This name is actually a number, called <strong>a port number</strong>. Certain numbers are reserved for standard applications: port 69 for the <strong>TFTP</strong> <em>(Trivial File Transfer Protocol)</em> application, for example. Packets handled by the UDP protocol are also called <strong>datagrams</strong>. They have the following form:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005EB000000B549AA3643.png" style="display:inline-block; margin:4px;width:17.997cm;height:2.15cm;" class="odt-zoomable" data-zoom-src="images/10000000000005EB000000B549AA3643.png" /></td></tr></table>
 
 <p>These datagrams will be encapsulated in IP packets, then in physical frames.</p>
-<h4 id="9172-the-tcp-protocol-transmission-control-protocol">9.1.7.2. <span style="color: #4f81bd"><em>The TCP Protocol: Transmission Control Protocol</em></span></h4>
+<h4 id="9172-the-tcp-protocol-transmission-control-protocol">9.1.7.2. <span style="color: #4f81bd">The TCP Protocol: Transmission Control Protocol</span></h4>
 <p>For secure communications, the UDP protocol is insufficient: the application developer must create a protocol themselves to ensure that packets are routed correctly.</p>
 <p>The <strong>TCP</strong> <em>(Transmission Control Protocol)</em> avoids these problems. Its characteristics are as follows:</p>
 <ul>
@@ -1523,8 +1523,8 @@
 <p>The program is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
@@ -1586,7 +1586,7 @@
 <span class="odt-code-line">            <span style="color:#0000ff">End Try</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">End While</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+<span class="odt-code-line">End Module</span>
 </code></pre></div>
 
 <h2 id="93-tcpip-programming">9.3. <span style="color: #4f81bd">TCP/IP Programming</span></h2>
@@ -1827,8 +1827,8 @@
 <p>The server runs on the port passed as a parameter. It simply sends back to the client the request that the client sent to it. The program is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System.Net.Sockets</span>
@@ -1906,7 +1906,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; exit with error</span></span>
 <span class="odt-code-line">        Environment.Exit(exitCode)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; -------------------------------------------------------</span>
 <span class="odt-code-line">&#x27; Provides service to a client of the echo server</span>
@@ -1966,7 +1966,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Exit with error</span></span>
 <span class="odt-code-line">        Environment.Exit(exitCode)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>The server structure conforms to the general architecture of TCP servers. </p>
@@ -1977,8 +1977,8 @@
 <p>It connects to the machine <em>servername</em> on port <em>port</em> and then sends lines of text to the server, which echoes them back.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
 <span class="odt-code-line">&#x27; options</span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line">Option Explicit On </span>
+<span class="odt-code-line">Option Strict On</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">&#x27; namespaces</span>
 <span class="odt-code-line"><span style="color:#0000ff">Imports </span>System.Net.Sockets</span>
@@ -2064,7 +2064,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; exit with error</span></span>
 <span class="odt-code-line">        Environment.Exit(exitCode)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>The structure of this client conforms to the general architecture of <em>TCP</em> clients. Here are the results obtained in the following configuration:</p>
@@ -2384,7 +2384,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; exit with error</span></span>
 <span class="odt-code-line">        Environment.Exit(exitCode)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">Public Class </span>clientSend</span>
 <span class="odt-code-line">    <span style="font-weight:bold;color:#ff0000">&#x27; class responsible for reading keyboard commands</span></span>
@@ -2433,7 +2433,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; the end of the thread is signaled</span></span>
 <span class="odt-code-line">        Console.Out.WriteLine(&quot;[end of the thread sending commands to the server]&quot;)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">Public Class </span>clientReceive</span>
@@ -2482,7 +2482,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; the end of the thread is signaled</span></span>
 <span class="odt-code-line">        Console.Out.WriteLine(&quot;[end of the thread reading responses from the server]&quot;)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <h3 id="944-a-generic-tcp-server">9.4.4. <span style="color: #4f81bd">A generic TCP server</span></h3>
@@ -2721,7 +2721,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; exit with error</span></span>
 <span class="odt-code-line">        Environment.Exit(exitCode)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">Public Class </span>serverSend</span>
@@ -2778,7 +2778,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; signal the end of the thread</span></span>
 <span class="odt-code-line">        Console.Out.WriteLine((&quot;[End of thread reading server responses to client &quot; &amp; numClient &amp; &quot;]&quot;))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">Public Class </span>serverReceive</span>
 <span class="odt-code-line">    <span style="font-weight:bold;color:#ff0000">&#x27; Class responsible for reading the text lines sent to the server </span></span>
@@ -2829,7 +2829,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; signal the end of the thread</span></span>
 <span class="odt-code-line">        Console.Out.WriteLine((&quot;[End of thread reading requests from client &quot; &amp; clientNumber &amp; &quot;]&quot;))</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <h3 id="945-a-web-client">9.4.5. <span style="color: #4f81bd">A Web client</span></h3>
@@ -2973,10 +2973,10 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; exit with error</span></span>
 <span class="odt-code-line">        Environment.Exit(exitCode)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
-<p>The only new feature in this program is the use of the <strong>Uri</strong> class. The program receives a URL (<em>Uniform Resource Locator</em>) or URI (<em>Uniform Resource Identifier</em>) in the form <em>http://serveur:port/cheminPageHTML?</em><em>param1=val1;param2=val2;</em>.... The <strong>Uri</strong> class allows us to break down the URL string into its various components. A Uri object is constructed from the URIstring received as a parameter:</p>
+<p>The only new feature in this program is the use of the <strong>Uri</strong> class. The program receives a URL (<em>Uniform Resource Locator</em>) or URI (<em>Uniform Resource Identifier</em>) in the form <em>http://serveur:port/cheminPageHTML?param1=val1;param2=val2;</em>.... The <strong>Uri</strong> class allows us to break down the URL string into its various components. A Uri object is constructed from the URIstring received as a parameter:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Check URI validity</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">Dim </span>uri <span style="color:#0000ff">As </span>Uri = <span style="color:#0000ff">Nothing</span></span>
@@ -3177,7 +3177,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; exit with error</span></span>
 <span class="odt-code-line">        Environment.Exit(exitCode)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <h3 id="947-tax-calculation-server">9.4.7. <span style="color: #4f81bd">Tax Calculation Server</span></h3>
@@ -3508,7 +3508,7 @@
 <span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; exit with error</span></span>
 <span class="odt-code-line">        Environment.Exit(exitCode)</span>
 <span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+<span class="odt-code-line">End Class</span>
 </code></pre></div>
 
 <p>We pass the data required to construct a <em>ServeurImpots</em> object to the test program, and from there it creates this object. This test program is compiled by:</p>
