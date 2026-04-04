@@ -1,0 +1,2070 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An Introduction to VB.NET Through Examples">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-vbnet-mars-2004/database-access.html">
+      
+      
+        <link rel="prev" href="event-handling.html">
+      
+      
+        <link rel="next" href="----execution-threads.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>7. Database access - An Introduction to VB.NET Through Examples</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "An Introduction to VB.NET Through Examples";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#7-database-access" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="An Introduction to VB.NET Through Examples" class="md-header__button md-logo" aria-label="An Introduction to VB.NET Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            An Introduction to VB.NET Through Examples
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7. Database access
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-vbnet-mars-2004" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="An Introduction to VB.NET Through Examples" class="md-nav__button md-logo" aria-label="An Introduction to VB.NET Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    An Introduction to VB.NET Through Examples
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-vbnet-mars-2004" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-basics-of-the-vbnet-language.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. The Basics of the VB.NET Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="classes-structures-interfaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Classes, structures, interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="commonly-used-net-classes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Commonly Used .NET Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graphical-interfaces-with-vbnet-and-vsnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Graphical Interfaces with VB.NET and VS.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="event-handling.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Event Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Database access
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="database-access.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Database access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. General
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-the-two-ways-to-use-a-data-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. The two ways to use a data source
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-accessing-data-in-connected-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. Accessing data in connected mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3. Accessing data in connected mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731-the-databases-in-the-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1. The databases in the example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#732-using-an-odbc-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2. Using an ODBC driver
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3.2. Using an ODBC driver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7321-the-connection-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2.1. The connection phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7322-executing-sql-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2.2. Executing SQL Queries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7323-working-with-the-result-of-a-select-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2.3. Working with the result of a SELECT query
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7324-resource-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2.4. Resource Release
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#733-using-an-ole-db-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.3. Using an OLE DB Driver
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#734-updating-a-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.4. Updating a table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#735-tax-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.5. Tax calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="----execution-threads.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.     Execution threads
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tcpip-programming.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. TCP/IP Programming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-services.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Web Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="to-be-continued.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. To be continued…
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="7-database-access">7. <span style="color: #365f91">Database access</span></h1>
+<h2 id="71-general">7.1. <span style="color: #4f81bd">General</span></h2>
+<p>There are many databases available for Windows platforms. To access them, applications use programs called drivers. </p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005EB000001C27FA19DA5.png" style="display:inline-block; margin:4px;width:17.997cm;height:5.346cm;" class="odt-zoomable" data-zoom-src="images/10000000000005EB000001C27FA19DA5.png" /></td></tr></table>
+
+<p>In the diagram above, the driver has two interfaces:</p>
+<ul>
+  <li>the I1 interface presented to the application
+  </li>
+  <li>the I2 interface to the database
+  </li>
+</ul>
+
+<p>To prevent an application written for database B1 from having to be rewritten if migrating to a different database B2, standardization efforts have been made on interface I1. If databases using &quot;standardized&quot; drivers are employed, database B1 will be provided with driver P1, database B2 with driver P2, and the I1 interface of these two drivers will be identical. Thus, the application will not need to be rewritten. For example, you can migrate an ACCESS database to a MySQL database without changing the application.</p>
+<p>There are two types of standardized drivers:</p>
+<ul>
+  <li>ODBC (Open DataBase Connectivity) drivers
+  </li>
+  <li>OLE DB (Object Linking and Embedding DataBase) drivers
+  </li>
+</ul>
+
+<p>ODBC drivers provide access to databases. The data sources for OLE DB drivers are more varied: databases, email systems, directories, etc. There are no limits. Any data source can be the subject of an OLE DB driver if a vendor decides to do so. The benefit is obviously significant: you have uniform access to a wide variety of data.</p>
+<p>The .NET platform comes with two types of data access classes:</p>
+<ol>
+  <li>SQL Server.NET classes
+  </li>
+  <li>OLE DB.NET classes
+  </li>
+</ol>
+
+<p>The first classes allow direct access to Microsoft’s SQL Server DBMS without an intermediate driver. The second classes allow access to OLE DB data sources.</p>
+<p><img src="images/10000000000001E700000071091B80B8.png" style="width:12.885cm;height:2.99cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E700000071091B80B8.png" /></p>
+<p>The .NET platform is provided (as of May 2002) with three OLE DB drivers for SQL Server, Oracle, and Microsoft Jet (Access), respectively. If you want to work with a database that has an ODBC driver but no OLE DB driver, you cannot. Thus, you cannot work with the MySQL DBMS, which (as of May 2002) does not provide an OLE DB driver. However, there is a set of classes that allow access to ODBC data sources: the <strong>odbc.net</strong> classes. These are not included by default with the SDK and must be downloaded from the Microsoft website. In the examples that follow, we will primarily use these ODBC classes because most databases on Windows come with such a driver. Here, for example, is a list of ODBC drivers installed on a Windows 2000 machine (<em>Start Menu/Settings/Control Panel/Administrative Tools</em>):</p>
+<p><img src="images/10000000000001A10000013428F0BB4E.png" style="width:11.031cm;height:8.147cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A10000013428F0BB4E.png" /></p>
+<p>Select the <em>ODBC Data Source</em> icon:</p>
+<p><img src="images/10000000000001CE00000176C78341BB.png" style="width:12.222cm;height:9.894cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CE00000176C78341BB.png" /></p>
+<h2 id="72-the-two-ways-to-use-a-data-source">7.2. <span style="color: #4f81bd">The two ways to use a data source</span></h2>
+<p>The .NET platform allows you to use a data source in two different ways:</p>
+<ol>
+  <li>connected mode
+  </li>
+  <li>disconnected mode
+  </li>
+</ol>
+
+<p>In <strong>connected</strong> mode, the application</p>
+<ol>
+  <li>opens a connection to the data source
+  </li>
+  <li>works with the data source in read/write mode
+  </li>
+  <li>closes the connection
+  </li>
+</ol>
+
+<p>In <strong>offline</strong> mode, the application</p>
+<ol>
+  <li>opens a connection to the data source
+  </li>
+  <li>retrieves a memory copy of all or part of the data from the source
+  </li>
+  <li>closes the connection
+  </li>
+  <li>works with the in-memory copy of the data in read/write mode
+  </li>
+  <li>when the work is finished, opens a connection, sends the modified data to the data source so it can be updated, and closes the connection
+  </li>
+</ol>
+
+<p>In both cases, it is the process of processing and updating the data that takes time. Imagine that these updates are performed by a user entering data; this process can take tens of minutes. During this entire time, in connected mode, the connection to the database is maintained and changes are reflected immediately. In offline mode, there is no connection to the database while the data is being updated. Changes are made only to the in-memory copy. They are reflected in the data source all at once when everything is finished.</p>
+<p>What are the advantages and disadvantages of the two methods?</p>
+<ul>
+  <li>A connection consumes system resources. If there are many simultaneous connections, offline mode helps minimize their duration. This is the case for web applications with thousands of users.
+  </li>
+  <li>The disadvantage of offline mode is the delicate handling of concurrent updates. User U1 retrieves data at time T1 and begins modifying it. At time T2, user U2 also accesses the data source and retrieves the same data. In the meantime, user U1 has modified some data but has not yet transmitted it to the data source. U2 is therefore working with data, some of which is incorrect. .NET classes offer solutions to manage this problem, but it is not easy to resolve.
+  </li>
+  <li>In connected mode, simultaneous data updates by multiple users do not normally pose a problem. Since the connection to the database is maintained, the database itself manages these simultaneous updates. Thus, Oracle locks a row in the database as soon as a user modifies it. It will remain locked—and therefore inaccessible to other users—until the user who modified it commits the change or rolls it back.
+  </li>
+  <li>If data needs to be shared over the network, you should choose offline mode. This mode provides a snapshot of the data in an object called <b>a dataset, </b>which functions as a standalone database. This object can be shared over the network between machines.
+  </li>
+</ul>
+
+<p>We will first examine connected mode.</p>
+<h2 id="73-accessing-data-in-connected-mode">7.3. <span style="color: #4f81bd">Accessing data in connected mode</span></h2>
+<h3 id="731-the-databases-in-the-example">7.3.1. <span style="color: #4f81bd">The databases in the example</span></h3>
+<p>We are considering an Access database named <em>articles.mdb</em> that contains only one table named ARTICLES with the following structure: </p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>name</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>type</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>code</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">4-character item code</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>name</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">its name (string)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>price</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">its price (actual)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>current_stock</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">current stock (integer)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>min_stock</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">the minimum stock (integer) below which the item must be restocked</div></td></tr></table>
+
+<p>Its initial contents are as follows:</p>
+<p><img src="images/10000000000001EE00000095F53C3FA2.png" style="width:13.069cm;height:3.942cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EE00000095F53C3FA2.png" /></p>
+<p>We will use this database via both an ODBC driver and an OLE DB driver to demonstrate the similarity between the two approaches and because we have both types of drivers available for ACCESS. </p>
+<p>We will also use a MySQL database named DBARTICLES, which has the same single ARTICLES table, the same content, and is accessed via an ODBC driver, to demonstrate that the application written to use the Access database does not need to be modified to use the MySQL database. The DBARTICLES database is accessible to a user named <em>admarticles</em> with the password <em>mdparticles</em>. The following screenshot shows the contents of the MySQL database:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">mysql</span><span class="err">\</span><span class="n">bin</span><span class="o">&gt;</span><span class="n">mysql</span><span class="w"> </span><span class="c1">--database=dbarticles --user=admarticles --password=mdparticles</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">Welcome</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="n">monitor</span><span class="p">.</span><span class="w">  </span><span class="n">Commands</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="err">\</span><span class="k">g</span><span class="p">.</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">Your</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="k">connection</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="k">version</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">.</span><span class="mi">23</span><span class="p">.</span><span class="mi">49</span><span class="o">-</span><span class="k">max</span><span class="o">-</span><span class="n">debug</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">Type</span><span class="w"> </span><span class="s1">&#39;help&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">help</span><span class="p">.</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">tables</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="o">+</span><span class="c1">----------------------+</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="o">|</span><span class="w"> </span><span class="n">Tables_in_dbarticles</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="o">+</span><span class="c1">----------------------+</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="o">|</span><span class="w"> </span><span class="n">articles</span><span class="w">             </span><span class="o">|</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="o">+</span><span class="c1">----------------------+</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">articles</span><span class="p">;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="o">+</span><span class="c1">------+--------------------------------+------+--------------+---------------+</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="o">|</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">                            </span><span class="o">|</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">current_stock</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">minimum_stock</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="o">+</span><span class="c1">------+--------------------------------+------+--------------+---------------+</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="o">|</span><span class="w"> </span><span class="n">a300</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">bike</span><span class="w">                           </span><span class="o">|</span><span class="w"> </span><span class="mi">2500</span><span class="w"> </span><span class="o">|</span><span class="w">           </span><span class="mi">10</span><span class="w"> </span><span class="o">|</span><span class="w">             </span><span class="mi">5</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="o">|</span><span class="w"> </span><span class="n">b300</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">pump</span><span class="w">                          </span><span class="o">|</span><span class="w">   </span><span class="mi">56</span><span class="w"> </span><span class="o">|</span><span class="w">           </span><span class="mi">62</span><span class="w"> </span><span class="o">|</span><span class="w">            </span><span class="mi">45</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="o">|</span><span class="w"> </span><span class="n">c300</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">bow</span><span class="w">                            </span><span class="o">|</span><span class="w"> </span><span class="mi">3500</span><span class="w"> </span><span class="o">|</span><span class="w">           </span><span class="mi">10</span><span class="w"> </span><span class="o">|</span><span class="w">            </span><span class="mi">20</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="o">|</span><span class="w"> </span><span class="n">d300</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">arrows</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mi">6</span><span class="w">             </span><span class="o">|</span><span class="w">  </span><span class="mi">780</span><span class="w"> </span><span class="o">|</span><span class="w">           </span><span class="mi">12</span><span class="w"> </span><span class="o">|</span><span class="w">            </span><span class="mi">20</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="o">|</span><span class="w"> </span><span class="n">e300</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">diving</span><span class="w"> </span><span class="n">suit</span><span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="mi">2800</span><span class="w"> </span><span class="o">|</span><span class="w">           </span><span class="mi">34</span><span class="w"> </span><span class="o">|</span><span class="w">             </span><span class="mi">7</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="o">|</span><span class="w"> </span><span class="n">f300</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">oxygen</span><span class="w"> </span><span class="n">tanks</span><span class="w">           </span><span class="o">|</span><span class="w">  </span><span class="mi">800</span><span class="w"> </span><span class="o">|</span><span class="w">           </span><span class="mi">10</span><span class="w"> </span><span class="o">|</span><span class="w">             </span><span class="mi">5</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="o">+</span><span class="c1">------+--------------------------------+------+--------------+---------------+</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="mi">6</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">02</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">describe</span><span class="w"> </span><span class="n">articles</span><span class="p">;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="o">+</span><span class="c1">---------------+-------------+------+-----+---------+-------+</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="o">|</span><span class="w"> </span><span class="n">Field</span><span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="k">Type</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="k">Null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">Key</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">Default</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Extra</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="o">+</span><span class="c1">---------------+-------------+------+-----+---------+-------+</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="o">|</span><span class="w"> </span><span class="n">code</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="nb">text</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="n">YES</span><span class="w">  </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="k">NULL</span><span class="w">    </span><span class="o">|</span><span class="w">       </span><span class="o">|</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="nb">text</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="n">YES</span><span class="w">  </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="k">NULL</span><span class="w">    </span><span class="o">|</span><span class="w">       </span><span class="o">|</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="o">|</span><span class="w"> </span><span class="n">price</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">double</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="n">YES</span><span class="w">  </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="k">NULL</span><span class="w">    </span><span class="o">|</span><span class="w">       </span><span class="o">|</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="o">|</span><span class="w"> </span><span class="n">current_stock</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nb">smallint</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">YES</span><span class="w">  </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="k">NULL</span><span class="w">    </span><span class="o">|</span><span class="w">       </span><span class="o">|</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="o">|</span><span class="w"> </span><span class="n">minimum_stock</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">smallint</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">YES</span><span class="w">  </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="k">NULL</span><span class="w">    </span><span class="o">|</span><span class="w">       </span><span class="o">|</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="o">+</span><span class="c1">---------------+-------------+------+-----+---------+-------+</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="mi">5</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="n">exit</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="n">Bye</span>
+</code></pre></div>
+<p>To define the ACCESS database as an ODBC data source, proceed as follows:</p>
+<ul>
+  <li>Open the ODBC Data Source Administrator as shown above and select the User DSN tab (DSN = Data Source Name)
+  </li>
+</ul>
+
+<p><img src="images/10000000000001C900000178527ABF22.png" style="width:12.09cm;height:9.947cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C900000178527ABF22.png" /></p>
+<ul>
+  <li>Add a source using the <i>Add</i> button, specify that this source is accessible via an <i>Access</i> driver, and click <i>Finish</i>:
+  </li>
+</ul>
+
+<p><img src="images/10000000000001D10000015616F5969B.png" style="width:12.301cm;height:9.047cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D10000015616F5969B.png" /></p>
+<ul>
+  <li>Name the data source &quot;<i>articles-access</i>,&quot; enter a description of your choice, and use the <i>Select</i> button to specify the database&#x27;s <i>.mdb </i>file. Finish by <i>clicking OK</i>.
+  </li>
+</ul>
+
+<p><img src="images/1000000000000208000000A430D8CF0D.png" style="width:13.757cm;height:4.339cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000208000000A430D8CF0D.png" /></p>
+<p>The new data source will then appear in the list of user DSNs:</p>
+<p><img src="images/10000000000001C9000000B20C6AC387.png" style="width:12.09cm;height:4.71cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C9000000B20C6AC387.png" /></p>
+<p>To define the MySQL DBARTICLES database as an ODBC data source, proceed as follows:</p>
+<ul>
+  <li>Open the ODBC Data Source Administrator as shown above and select the <i>User DSN </i>tab. Add a new data source using <i>Add </i>and select the MySQL ODBC driver. 
+  </li>
+</ul>
+
+<p><img src="images/10000000000001D4000000F62BAB5CA7.png" style="width:12.381cm;height:6.509cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D4000000F62BAB5CA7.png" /></p>
+<ul>
+  <li>Click <i>Finish</i>. A MySQL source configuration page will then appear:
+  </li>
+</ul>
+
+<p>54321</p>
+<p><img src="images/10000000000001C3000000BD7CCC07B0.png" style="width:11.931cm;height:5.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C3000000BD7CCC07B0.png" /></p>
+<ul>
+  <li>In (1), give a name to your ODBC data source
+  </li>
+  <li>In (2), specify the machine where the MySQL server is located. Here, we enter <i>`localhost` </i>to indicate that it is on the same machine as our application. If the MySQL server were on a remote machine `M`, we would enter its name here, and our application would then work with a remote database without any changes.
+  </li>
+  <li>In (3), enter the database name. Here, it is called DBARTICLES.
+  </li>
+  <li>In (4), enter the username <i>admarticles, </i>and in (5), the password <i>mdparticles</i>.
+  </li>
+</ul>
+<h3 id="732-using-an-odbc-driver">7.3.2. <span style="color: #4f81bd">Using an ODBC driver</span></h3>
+<p>In an application using a database in connected mode, the following steps are generally involved:</p>
+<ol>
+  <li>Connecting to the database
+  </li>
+  <li>Sending SQL queries to the database
+  </li>
+  <li>Receiving and processing the results of these queries
+  </li>
+  <li>Closing the connection
+  </li>
+</ol>
+
+<p>Steps 2 and 3 are performed repeatedly, with the connection closing only at the end of database operations. This is a relatively standard pattern that you may be familiar with if you have worked with a database interactively. These steps are the same whether the database is accessed via an ODBC driver or an OLE DB driver. Below is an example using the .NET classes for managing ODBC data sources. The program is called <em><code>liste</code></em> and takes as a parameter the DSN name of an ODBC data source containing a table named <code>ARTICLES</code>. It then displays the contents of this table:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">dos</span><span class="o">&gt;</span><span class="nb">list</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">syntax</span><span class="p">:</span> <span class="n">pg</span> <span class="n">dsnArticles</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">dos</span><span class="o">&gt;</span><span class="nb">list</span> <span class="n">articles</span><span class="o">-</span><span class="n">access</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="o">----------------------------------------</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">code</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">price</span><span class="p">,</span><span class="n">current_stock</span><span class="p">,</span><span class="n">minimum_stock</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="o">----------------------------------------</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">a300</span> <span class="n">bike</span>                           <span class="mi">2500</span> <span class="mi">10</span> <span class="mi">5</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">b300</span> <span class="n">pump</span>                          <span class="mi">56</span> <span class="mi">62</span> <span class="mi">45</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">c300</span> <span class="n">bow</span>                            <span class="mi">3500</span> <span class="mi">10</span> <span class="mi">20</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">d300</span> <span class="n">arrows</span> <span class="o">-</span> <span class="n">pack</span> <span class="n">of</span> <span class="mi">6</span>             <span class="mi">780</span> <span class="mi">12</span> <span class="mi">20</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="n">e300</span> <span class="n">diving</span> <span class="n">suit</span>         <span class="mi">2800</span> <span class="mi">34</span> <span class="mi">7</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="n">f300</span> <span class="n">oxygen</span> <span class="n">tanks</span>           <span class="mi">800</span> <span class="mi">10</span> <span class="mi">5</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">dos</span><span class="o">&gt;</span><span class="n">mysql</span><span class="o">-</span><span class="n">articles</span> <span class="nb">list</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="n">Database</span> <span class="n">operation</span> <span class="n">error</span> <span class="p">(</span><span class="n">ERROR</span> <span class="p">[</span><span class="n">IM002</span><span class="p">]</span> <span class="p">[</span><span class="n">Microsoft</span><span class="p">][</span><span class="n">ODBC</span> <span class="n">Driver</span> <span class="n">Manager</span><span class="p">]</span> <span class="n">Data</span> <span class="n">source</span> <span class="n">name</span> <span class="ow">not</span> <span class="n">found</span> <span class="ow">and</span> <span class="n">no</span> <span class="n">default</span> <span class="n">driver</span> <span class="n">specified</span><span class="p">)</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="n">dos</span><span class="o">&gt;</span><span class="n">mysql</span><span class="o">-</span><span class="n">articles</span> <span class="nb">list</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="o">----------------------------------------</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="n">code</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">price</span><span class="p">,</span><span class="n">current_stock</span><span class="p">,</span><span class="n">minimum_stock</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="o">----------------------------------------</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="n">a300</span> <span class="n">bike</span>                           <span class="mi">2500</span> <span class="mi">10</span> <span class="mi">5</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="n">b300</span> <span class="n">pump</span>                          <span class="mi">56</span> <span class="mi">62</span> <span class="mi">45</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="n">c300</span> <span class="n">bow</span>                            <span class="mi">3500</span> <span class="mi">10</span> <span class="mi">20</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="n">d300</span> <span class="n">arrows</span> <span class="o">-</span> <span class="n">pack</span> <span class="n">of</span> <span class="mi">6</span>             <span class="mi">780</span> <span class="mi">12</span> <span class="mi">20</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="n">e300</span> <span class="n">diving</span> <span class="n">suit</span>         <span class="mi">2800</span> <span class="mi">34</span> <span class="mi">7</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="n">f300</span> <span class="n">oxygen</span> <span class="n">tanks</span>           <span class="mi">800</span> <span class="mi">10</span> <span class="mi">5</span>
+</code></pre></div>
+<p>From the results above, we can see that the program listed the contents of both the ACCESS database and the MySQL database. Let’s now examine the code for this program:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<span class="odt-code-line">&#x27; options</span>
+<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">&#x27; namespaces</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>System.Data</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>Microsoft.Data.Odbc</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>Microsoft.VisualBasic</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">Module </span>db1</span>
+<span class="odt-code-line">    <span style="color:#0000ff">Sub </span>main(<span style="color:#0000ff">ByVal </span>args <span style="color:#0000ff">As String</span>())</span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; console application</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; displays the contents of an ARTICLES table in a DSN database </span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; whose name is passed as a parameter</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Const </span>syntax <span style="color:#0000ff">As String </span>= &quot;syntax: pg dsnArticles&quot;</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Const </span>tabArticles <span style="color:#0000ff">As String </span>= &quot;articles&quot;        <span style="font-weight:bold;color:#ff0000">&#x27; the articles table</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; parameter validation</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Is there 1 parameter?</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">If </span>args.Length &lt;&gt; 1 <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; error message</span></span>
+<span class="odt-code-line">            Console.Error.WriteLine(syntax)</span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; end</span></span>
+<span class="odt-code-line">            Environment.Exit(1)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">End If</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; retrieve the parameter</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>dsnArticles <span style="color:#0000ff">As String </span>= args(0)                <span style="font-weight:bold;color:#ff0000">&#x27; the DSN</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; preparing the connection to the database</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>articlesConn <span style="color:#0000ff">As </span>OdbcConnection = <span style="color:#0000ff">Nothing</span>        <span style="font-weight:bold;color:#ff0000">&#x27; the connection</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>myReader <span style="color:#0000ff">As </span>OdbcDataReader = <span style="color:#0000ff">Nothing</span>            <span style="font-weight:bold;color:#ff0000">&#x27; the data reader</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Attempt to access the database</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Try</span></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; database connection string</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>connectString <span style="color:#0000ff">As String </span>= &quot;DSN=&quot; + dsnArticles + &quot;;&quot;</span>
+<span class="odt-code-line">            articlesConn = <span style="color:#0000ff">New </span>OdbcConnection(connectString)</span>
+<span class="odt-code-line">            articlesConn.Open()</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; Execute an SQL command</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>sqlText <span style="color:#0000ff">As String </span>= &quot;select * from &quot; + tabArticles</span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>myOdbcCommand <span style="color:#0000ff">As New </span>OdbcCommand(sqlText)</span>
+<span class="odt-code-line">            myOdbcCommand.Connection = articlesConn</span>
+<span class="odt-code-line">            myReader = myOdbcCommand.ExecuteReader()</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; Processing the retrieved table</span></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; Displaying the columns</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>row <span style="color:#0000ff">As String </span>= &quot;&quot;</span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>i <span style="color:#0000ff">As Integer</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">For </span>i = 0 <span style="color:#0000ff">To </span>(myReader.FieldCount - 1) - 1</span>
+<span class="odt-code-line">                line += myReader.GetName(i) + &quot;,&quot;</span>
+<span class="odt-code-line">            <span style="color:#0000ff">Next </span>i</span>
+<span class="odt-code-line">            line += myReader.GetName(i)</span>
+<span class="odt-code-line">            Console.Out.WriteLine((ControlChars.Lf + &quot;&quot;.PadLeft(line.Length, &quot;-&quot;c) + ControlChars.Lf + line + ControlChars.Lf + &quot;&quot;.PadLeft(line.Length, &quot;-&quot;c) + ControlChars.Lf))</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; Displaying data</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">While </span>myReader.Read()</span>
+<span class="odt-code-line">                <span style="font-weight:bold;color:#ff0000">&#x27; process current line</span></span>
+<span class="odt-code-line">                line = &quot;&quot;</span>
+<span class="odt-code-line">                <span style="color:#0000ff">For </span>i = 0 <span style="color:#0000ff">To </span>myReader.FieldCount - 1</span>
+<span class="odt-code-line">                    line += myReader(i).ToString + &quot; &quot;</span>
+<span class="odt-code-line">                <span style="color:#0000ff">Next </span>i</span>
+<span class="odt-code-line">                Console.WriteLine(line)</span>
+<span class="odt-code-line">            <span style="color:#0000ff">End While</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Catch </span>ex <span style="color:#0000ff">As </span>Exception</span>
+<span class="odt-code-line">            Console.Error.WriteLine((&quot;Database operation error &quot; + ex.Message + &quot;)&quot;))</span>
+<span class="odt-code-line">            Environment.Exit(2)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Finally</span></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; Close reader</span></span>
+<span class="odt-code-line">            myReader.Close()</span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; Close connection</span></span>
+<span class="odt-code-line">            articlesConn.Close()</span>
+<span class="odt-code-line">        <span style="color:#0000ff">End Try</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+</code></pre></div>
+
+<p>The ODBC source management classes are located in the <em>Microsoft.Data.Odbc</em> namespace, which must therefore be imported. Additionally, a number of classes are located in the <em>System.Data</em> namespace.</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>System.Data</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>Microsoft.Data.Odbc</span>
+</code></pre></div>
+
+<p>The namespaces used by the program are in different assemblies. Compile the program using the following command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>dos&gt;vbc /r:microsoft.data.odbc.dll /r:microsoft.visualbasic.dll /r:system.dll /r:system.data.dll db1.vb
+</code></pre></div>
+<h4 id="7321-the-connection-phase">7.3.2.1. <span style="color: #4f81bd"><em>The connection phase</em></span></h4>
+<p>An ODBC connection uses the <em>OdbcConnection</em> class. The constructor of this class takes as a parameter what is called a <strong>connection string</strong>. This is a string of characters that defines all the parameters necessary for the connection to the database to be established. There can be many such parameters, making the string complex. The string has the form <em>&quot;param1=value1;param2=value2;...;paramj=valuej;&quot;</em>. Here are some possible <em>paramj</em> parameters:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>uid
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">username of the user who will access the database</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>password
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">this user&#x27;s password</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>dsn
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">the database&#x27;s DSN name, if it has one</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>data source
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">name of the database being accessed</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>...
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>If you define a data source as an ODBC data source using the ODBC Data Source Administrator, these parameters have already been specified and saved. In that case, you simply need to pass the DSN parameter, which provides the DSN name of the data source. This is what is done here:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
+<span class="odt-code-line">        &#x27; preparing the database connection</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>articlesConn <span style="color:#0000ff">As </span>OdbcConnection = <span style="color:#0000ff">Nothing</span>        &#x27; the connection</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>myReader <span style="color:#0000ff">As </span>OdbcDataReader = <span style="color:#0000ff">Nothing</span>        &#x27; the data reader</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Try</span></span>
+<span class="odt-code-line">            &#x27; attempt to access the database</span>
+<span class="odt-code-line">            &#x27; database connection string</span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>connectString <span style="color:#0000ff">As String </span>= &quot;DSN=&quot; + dsnArticles + &quot;;&quot;</span>
+<span class="odt-code-line">            articlesConn = <span style="color:#0000ff">New </span>OdbcConnection(connectString)</span>
+<span class="odt-code-line">            articlesConn.Open()</span>
+</code></pre></div>
+
+<p>Once the <em>OdbcConnection</em> object is created, we open the connection using the <em>Open</em> method. This operation may fail, just like any other database operation. That is why the entire database access code is enclosed in a <em>try-catch block</em>. Once the connection is established, we can execute SQL queries on the database.</p>
+<h4 id="7322-executing-sql-queries">7.3.2.2. <span style="color: #4f81bd"><em>Executing SQL Queries</em></span></h4>
+<p>To execute SQL queries, we need a <em>Command</em> object—more specifically, an <em>OdbcCommand</em> object, since we are using an ODBC data source. The <em>OdbcCommand</em> class has several constructors:</p>
+<ul>
+  <li><i>OdbcCommand()</i>: creates an empty <i>Command</i> object. To use it, you’ll need to specify various properties later:
+    <ul>
+      <li><b>CommandText</b>: the text of the SQL query to be executed
+      </li>
+      <li><b>Connection</b>: the <i>OdbcConnection</i> object representing the connection to the database on which the query will be executed
+      </li>
+      <li><b>CommandType</b>: the type of the SQL query. There are three possible values
+      </li>
+    </ul>
+  </li>
+</ul>
+<ol>
+  <li><i>CommandType.Text</i>: the <i>CommandText</i> property contains the text of an SQL query (default value)
+  </li>
+  <li><i>CommandType.StoredProcedure</i>: the <i>CommandText</i> property contains the name of a stored procedure in the database
+  </li>
+  <li><i>CommandType.TableDirect</i>: the <i>CommandText</i> property contains the name of a table T. Equivalent to <i>`SELECT * FROM T</i>`. Exists only for OLE DB drivers.
+  </li>
+</ol>
+<ul>
+  <li><i>OdbcCommand(string sqlText)</i>: the <i>sqlText</i> parameter will be assigned to the <i>CommandText</i> property. This is the text of the SQL query to be executed. The connection must be specified in the <i>Connection</i> property.
+  </li>
+  <li><i>OdbcCommand(string sqlText, OdbcConnection connection)</i>: the <i>sqlText</i> parameter is assigned to the <i>CommandText</i> property, and the <i>connection</i> parameter to the <i>Connection</i> property.
+  </li>
+</ul>
+
+<p>To execute the SQL query, two methods are available:</p>
+<ul>
+  <li><b>OdbcDataReader ExecuteReader()</b>: sends the SELECT query from <i>CommandText </i>to the <i>Connection </i>and creates an <i>OdbcDataReader</i> object that provides access to all rows in the result table of <i>the SELECT</i>
+  </li>
+  <li><b>int ExecuteNonQuery()</b>: sends the update query (INSERT, UPDATE, DELETE) from <i>CommandText </i>to the <i>Connection </i>and returns the number of rows affected by the update.
+  </li>
+</ul>
+
+<p>In our example, after opening the database connection, we issue an SQL SELECT query to retrieve the contents of the ARTICLES table:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line">            &#x27; executing an SQL command</span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>sqlText <span style="color:#0000ff">As String </span>= &quot;select * from &quot; + tabArticles</span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>myOdbcCommand <span style="color:#0000ff">As New </span>OdbcCommand(sqlText)</span>
+<span class="odt-code-line">            myOdbcCommand.Connection = articlesConn</span>
+<span class="odt-code-line">            myReader = myOdbcCommand.ExecuteReader()</span>
+</code></pre></div>
+
+<p>A query is typically of the following type:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span style="font-weight:bold">    select col1, col2,... from table1, table2,...</span></span>
+<span class="odt-code-line">    where condition</span>
+<span class="odt-code-line">    order by expression</span>
+<span class="odt-code-line"><span style="font-weight:bold">    ...</span></span>
+</code></pre></div>
+
+<p>Only the keywords in the first line are required; the others are optional. There are other keywords not shown here.</p>
+<ol>
+  <li>A join is performed on all tables listed after the `<b>FROM</b>` keyword
+  </li>
+  <li>Only the columns following the `<b>select` </b>keyword are retained
+  </li>
+  <li>Only the rows that satisfy the condition of the `<b>where` </b>keyword are retained
+  </li>
+  <li>The resulting rows, sorted according to the expression in the <b>`ORDER BY` </b>keyword, form the result of the query.
+  </li>
+</ol>
+
+<p>The result of a <em><code>SELECT</code></em> is a table. If we consider the previous <code>ARTICLES</code> table and want the names of the items whose current stock is below the minimum threshold, we would write:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span style="font-style:italic">    select name from articles where current_stock &lt; minimum_stock</span></span>
+</code></pre></div>
+
+<p>If we want them sorted alphabetically by name, we would write:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span style="font-style:italic">    select name from articles where current_stock &lt; minimum_stock order by name</span></span>
+</code></pre></div>
+
+<h4 id="7323-working-with-the-result-of-a-select-query">7.3.2.3. <span style="color: #4f81bd"><em>Working with the result of a SELECT query</em></span></h4>
+<p>The result of a SELECT query in disconnected mode is a <em>DataReader</em> object, in this case an <em>OdbcDataReader</em> object. This object allows you to retrieve all rows of the result sequentially and obtain information about the columns in those results. Let’s examine some properties and methods of this class:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>FieldCount
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">the number of columns in the table</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Item
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>Item(i) </i>represents column number i of the current row in the result</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>XXX GetXXX(i)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">the value of column i of the current row, returned as type XXX (Int16, Int32, Int64, Double, String, Boolean, ...)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>string GetName(i)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">name of column number i</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Close()
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">closes the <i>OdbcdataReader</i> object and releases the associated resources</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>bool Read()
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">moves forward one row in the result table. Returns false if this is not possible. The new row becomes the current row of the reader.</div></td></tr></table>
+
+<p>Processing the result of a <em>SELECT statement</em> is typically a sequential operation similar to that of text files: you can only move forward in the table, not backward:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#0000ff">While </span>myReader.Read()</span>
+<span class="odt-code-line">    &#x27; we have a row - we process it</span>
+<span class="odt-code-line">    ....</span>
+<span class="odt-code-line">    &#x27; next row</span>
+<span class="odt-code-line">end while</span>
+</code></pre></div>
+
+<p>These explanations are sufficient to understand the following code in our example:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; Processing the retrieved table</span></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; Displaying the columns</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>line <span style="color:#0000ff">As String </span>= &quot;&quot;</span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>i <span style="color:#0000ff">As Integer</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">For </span>i = 0 <span style="color:#0000ff">To </span>(myReader.FieldCount - 1) - 1</span>
+<span class="odt-code-line">                line += myReader.GetName(i) + &quot;,&quot;</span>
+<span class="odt-code-line">            <span style="color:#0000ff">Next </span>i</span>
+<span class="odt-code-line">            line += myReader.GetName(i)</span>
+<span class="odt-code-line">            Console.Out.WriteLine((ControlChars.Lf + &quot;&quot;.PadLeft(line.Length, &quot;-&quot;c) + ControlChars.Lf + line + ControlChars.Lf + &quot;&quot;.PadLeft(line.Length, &quot;-&quot;c) + ControlChars.Lf))</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; display data</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">While </span>myReader.Read()</span>
+<span class="odt-code-line">                <span style="font-weight:bold;color:#ff0000">&#x27; process current line</span></span>
+<span class="odt-code-line">                line = &quot;&quot;</span>
+<span class="odt-code-line">                <span style="color:#0000ff">For </span>i = 0 <span style="color:#0000ff">To </span>myReader.FieldCount - 1</span>
+<span class="odt-code-line">                    line += myReader(i).ToString + &quot; &quot;</span>
+<span class="odt-code-line">                <span style="color:#0000ff">Next </span>i</span>
+<span class="odt-code-line">                Console.WriteLine(line)</span>
+<span class="odt-code-line">            <span style="color:#0000ff">End While</span></span>
+</code></pre></div>
+
+<p>The only difficulty lies in the statement where the values of the different columns in the current row are concatenated:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">                <span style="color:#0000ff">For </span>i = 0 <span style="color:#0000ff">To </span>myReader.FieldCount - 1</span>
+<span class="odt-code-line">                    line += myReader(i).ToString + &quot; &quot;</span>
+<span class="odt-code-line">                <span style="color:#0000ff">Next </span>i</span>
+</code></pre></div>
+
+<p>The notation <em>line+=myReader(i).ToString</em> is translated to <em>line+=myReader.Item(i).ToString(),</em> where <em>Item(i)</em> is the value of column i in the current row.</p>
+<h4 id="7324-resource-release">7.3.2.4. <span style="color: #4f81bd"><em>Resource Release</em></span></h4>
+<p>The <em>OdbcReader</em> and <em>OdbcConnection</em> classes both have a <strong>Close()</strong> method that releases the resources associated with the objects being closed.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>                &#39; closing the reader
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>                myReader.Close()
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>                &#39; closing the connection
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>                articlesConn.Close()
+</code></pre></div>
+<h3 id="733-using-an-ole-db-driver">7.3.3. <span style="color: #4f81bd">Using an OLE DB Driver</span></h3>
+<p>We’ll use the same example, this time with a database accessed via an OLE DB driver. The .NET platform provides such a driver for Access databases. So we’ll use the same <em>articles.mdb</em> database as before. Our goal here is to show that while the classes may change, the concepts remain the same:</p>
+<ul>
+  <li>the connection is represented by an <b>OleDbConnection</b> object
+  </li>
+  <li>an SQL query is issued using an <b>OleDbCommand</b> object
+  </li>
+  <li>if this query is a SELECT statement, an <b>OleDbDataReader</b> object is returned to access the rows of the result table
+  </li>
+</ul>
+
+<p>These classes are in the <em>System.Data.OleDb</em> namespace. The previous program can be easily adapted to work with an OLE DB database:</p>
+<ul>
+  <li>Replace OdbcXX with OleDbXX everywhere
+  </li>
+  <li>modify the connection string. For an ACCESS database without a login/password, the connection string is <i>Provider=Microsoft.JET.OLEDB.4.0;Data Source=[file.mdb]</i>. The configurable part of this string is the name of the ACCESS file to use. We will modify our program so that it accepts the name of this file as a parameter.
+  </li>
+  <li>The namespace to import is now <i>System.Data.OleDb</i>.
+  </li>
+</ul>
+
+<p>Our program becomes the following:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<span class="odt-code-line">&#x27; options</span>
+<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">&#x27; namespaces</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>System.Data</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>Microsoft.Data.Odbc</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>Microsoft.VisualBasic</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>System.Data.OleDb</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">Module </span>db2</span>
+<span class="odt-code-line">    <span style="color:#0000ff">Public Sub </span>Main(<span style="color:#0000ff">ByVal </span>args() <span style="color:#0000ff">As String</span>)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; console application</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; displays the contents of the ARRTICLES table in a DSN database </span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; whose name is passed as a parameter</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Const </span>syntax <span style="color:#0000ff">As String </span>= &quot;syntax: pg base_access_articles&quot;</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Const </span>tabArticles <span style="color:#0000ff">As String </span>= &quot;articles&quot;        <span style="font-weight:bold;color:#ff0000">&#x27; the articles table</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; parameter validation</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Is there 1 parameter?</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">If </span>args.Length &lt;&gt; 1 <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; error message</span></span>
+<span class="odt-code-line">            Console.Error.WriteLine(syntax)</span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; end</span></span>
+<span class="odt-code-line">            Environment.Exit(1)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">End If</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; retrieve the parameter</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>dbArticles <span style="color:#0000ff">As String </span>= args(0)        <span style="font-weight:bold;color:#ff0000">&#x27; the database</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; preparing the connection to the database</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>articlesConn <span style="color:#0000ff">As </span>OleDbConnection = <span style="color:#0000ff">Nothing</span>        <span style="font-weight:bold;color:#ff0000">&#x27; the connection</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>myReader <span style="color:#0000ff">As </span>OleDbDataReader = <span style="color:#0000ff">Nothing</span>        <span style="font-weight:bold;color:#ff0000">&#x27; the data reader</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Attempt to access the database</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Try</span></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; database connection string</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>connectString <span style="color:#0000ff">As String </span>= &quot;Provider=Microsoft.JET.OLEDB.4.0;Data Source=&quot; + dbArticles + &quot;;&quot;</span>
+<span class="odt-code-line">            articlesConn = <span style="color:#0000ff">New </span>OleDbConnection(connectString)</span>
+<span class="odt-code-line">            articlesConn.Open()</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; executing an SQL command</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>sqlText <span style="color:#0000ff">As String </span>= &quot;select * from &quot; + tabArticles</span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>myOleDbCommand <span style="color:#0000ff">As New </span>OleDbCommand(sqlText)</span>
+<span class="odt-code-line">            myOleDbCommand.Connection = articlesConn</span>
+<span class="odt-code-line">            myReader = myOleDbCommand.ExecuteReader()</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; Processing the retrieved table</span></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; Displaying the columns</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>row <span style="color:#0000ff">As String </span>= &quot;&quot;</span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>i <span style="color:#0000ff">As Integer</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">For </span>i = 0 <span style="color:#0000ff">To </span>(myReader.FieldCount - 1) - 1</span>
+<span class="odt-code-line">                line += myReader.GetName(i) + &quot;,&quot;</span>
+<span class="odt-code-line">            <span style="color:#0000ff">Next </span>i</span>
+<span class="odt-code-line">            line += myReader.GetName(i)</span>
+<span class="odt-code-line">            Console.Out.WriteLine((ControlChars.Lf + &quot;&quot;.PadLeft(line.Length, &quot;-&quot;c) + ControlChars.Lf + line + ControlChars.Lf + &quot;&quot;.PadLeft(line.Length, &quot;-&quot;c) + ControlChars.Lf))</span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; display data</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">While </span>myReader.Read()</span>
+<span class="odt-code-line">                <span style="font-weight:bold;color:#ff0000">&#x27; process current line</span></span>
+<span class="odt-code-line">                line = &quot;&quot;</span>
+<span class="odt-code-line">                <span style="color:#0000ff">For </span>i = 0 <span style="color:#0000ff">To </span>myReader.FieldCount - 1</span>
+<span class="odt-code-line">                    line += myReader(i).ToString + &quot; &quot;</span>
+<span class="odt-code-line">                <span style="color:#0000ff">Next </span>i</span>
+<span class="odt-code-line">                Console.WriteLine(line)</span>
+<span class="odt-code-line">            <span style="color:#0000ff">End While</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Catch </span>ex <span style="color:#0000ff">As </span>Exception</span>
+<span class="odt-code-line">            Console.Error.WriteLine((&quot;Database operation error (&quot; + ex.Message + &quot;)&quot;))</span>
+<span class="odt-code-line">            Environment.Exit(2)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Finally</span></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; Close reader</span></span>
+<span class="odt-code-line">                myReader.Close()</span>
+<span class="odt-code-line">                <span style="font-weight:bold;color:#ff0000">&#x27; Close connection</span></span>
+<span class="odt-code-line">                articlesConn.Close()</span>
+<span class="odt-code-line">        <span style="color:#0000ff">End Try</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; end</span></span>
+<span class="odt-code-line">        Environment.Exit(0)</span>
+<span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+</code></pre></div>
+
+<p>The results obtained:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>dos&gt;vbc liste.vb
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>E:\data\serge\MSNET\vb.net\adonet\6&gt;dir
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>05/07/2002  3:09 PM                2,325 liste.CS
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>05/07/2002  3:09 PM                4,608 liste.exe
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>08/20/2001  11:54               86,016 ARTICLES.MDB
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>dos&gt;list-of-articles.mdb
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>----------------------------------------
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>code,name,price,current_stock,minimum_stock
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>----------------------------------------
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>a300 bike                           2500 10 5
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>b300 pump                          56 62 45
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>c300 bow                            3500 10 20
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>d300 arrows - pack of 6             780 12 20
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>e300 diving suit         2800 34 7
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>f300 oxygen tanks           800 10 5
+</code></pre></div>
+<h3 id="734-updating-a-table">7.3.4. <span style="color: #4f81bd">Updating a table</span></h3>
+<p>The previous examples simply listed the contents of a table. We will modify our product database management program so that it can modify the database. The program is called <em>sql</em>. We pass the DSN name of the product database to be managed as a parameter. The user types SQL commands directly on the keyboard, which the program executes, as shown by the following results obtained from the MySQL product database:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">dos</span><span class="o">&gt;</span><span class="n">vbc</span><span class="w"> </span><span class="o">/</span><span class="n">r</span><span class="p">:</span><span class="n">microsoft</span><span class="p">.</span><span class="k">data</span><span class="p">.</span><span class="n">odbc</span><span class="p">.</span><span class="n">dll</span><span class="w"> </span><span class="k">sql</span><span class="p">.</span><span class="n">vb</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">dos</span><span class="o">&gt;</span><span class="k">sql</span><span class="w"> </span><span class="n">mysql</span><span class="o">-</span><span class="n">articles</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="k">SQL</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="p">(</span><span class="k">end</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">stop</span><span class="p">):</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">articles</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1">----------------------------------------</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="n">code</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">price</span><span class="p">,</span><span class="n">current_stock</span><span class="p">,</span><span class="n">minimum_stock</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="c1">----------------------------------------</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="n">a300</span><span class="w"> </span><span class="n">bike</span><span class="w">                           </span><span class="mi">2500</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">5</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="n">b300</span><span class="w"> </span><span class="n">pump</span><span class="w">                          </span><span class="mi">56</span><span class="w"> </span><span class="mi">62</span><span class="w"> </span><span class="mi">45</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="n">c300</span><span class="w"> </span><span class="n">bow</span><span class="w">                            </span><span class="mi">3500</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">20</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="n">d300</span><span class="w"> </span><span class="n">arrows</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">pack</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mi">6</span><span class="w">             </span><span class="mi">780</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="mi">20</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="n">e300</span><span class="w"> </span><span class="n">diving</span><span class="w"> </span><span class="n">suit</span><span class="w">         </span><span class="mi">2800</span><span class="w"> </span><span class="mi">34</span><span class="w"> </span><span class="mi">7</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="n">f300</span><span class="w"> </span><span class="n">oxygen</span><span class="w"> </span><span class="n">tanks</span><span class="w">           </span><span class="mi">800</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">5</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="k">SQL</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="p">(</span><span class="k">end</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">stop</span><span class="p">):</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">items</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">current_stock</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">minimum_stock</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="c1">----------------------------------------</span>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="n">code</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">price</span><span class="p">,</span><span class="n">current_stock</span><span class="p">,</span><span class="n">minimum_stock</span>
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="c1">----------------------------------------</span>
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="n">c300</span><span class="w"> </span><span class="n">bow</span><span class="w">                            </span><span class="mi">3500</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">20</span>
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="n">d300</span><span class="w"> </span><span class="n">arrows</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">pack</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mi">6</span><span class="w">             </span><span class="mi">780</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="mi">20</span>
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span class="k">SQL</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="p">(</span><span class="k">end</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">stop</span><span class="p">):</span><span class="w"> </span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">articles</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="ss">&quot;1&quot;</span><span class="p">,</span><span class="ss">&quot;1&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">modified</span>
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>
+<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a><span class="k">SQL</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="p">(</span><span class="k">end</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">stop</span><span class="p">):</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">articles</span>
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a>
+<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span class="c1">----------------------------------------</span>
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a><span class="n">code</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">price</span><span class="p">,</span><span class="n">current_stock</span><span class="p">,</span><span class="n">minimum_stock</span>
+<a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a><span class="c1">----------------------------------------</span>
+<a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a>
+<a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a><span class="n">a300</span><span class="w"> </span><span class="n">bike</span><span class="w">                           </span><span class="mi">2500</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">5</span>
+<a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a><span class="n">b300</span><span class="w"> </span><span class="n">pump</span><span class="w">                          </span><span class="mi">56</span><span class="w"> </span><span class="mi">62</span><span class="w"> </span><span class="mi">45</span>
+<a id="__codelineno-16-38" name="__codelineno-16-38" href="#__codelineno-16-38"></a><span class="n">c300</span><span class="w"> </span><span class="n">bow</span><span class="w">                            </span><span class="mi">3500</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">20</span>
+<a id="__codelineno-16-39" name="__codelineno-16-39" href="#__codelineno-16-39"></a><span class="n">d300</span><span class="w"> </span><span class="n">arrows</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">pack</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mi">6</span><span class="w">             </span><span class="mi">780</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="mi">20</span>
+<a id="__codelineno-16-40" name="__codelineno-16-40" href="#__codelineno-16-40"></a><span class="n">e300</span><span class="w"> </span><span class="n">diving</span><span class="w"> </span><span class="n">suit</span><span class="w">         </span><span class="mi">2800</span><span class="w"> </span><span class="mi">34</span><span class="w"> </span><span class="mi">7</span>
+<a id="__codelineno-16-41" name="__codelineno-16-41" href="#__codelineno-16-41"></a><span class="n">f300</span><span class="w"> </span><span class="n">oxygen</span><span class="w"> </span><span class="n">tanks</span><span class="w">           </span><span class="mi">800</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">5</span>
+<a id="__codelineno-16-42" name="__codelineno-16-42" href="#__codelineno-16-42"></a><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-16-43" name="__codelineno-16-43" href="#__codelineno-16-43"></a>
+<a id="__codelineno-16-44" name="__codelineno-16-44" href="#__codelineno-16-44"></a><span class="k">SQL</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="p">(</span><span class="k">end</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">stop</span><span class="p">):</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="n">articles</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="ss">&quot;2&quot;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="ss">&quot;1&quot;</span>
+<a id="__codelineno-16-45" name="__codelineno-16-45" href="#__codelineno-16-45"></a><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">modified</span>
+<a id="__codelineno-16-46" name="__codelineno-16-46" href="#__codelineno-16-46"></a>
+<a id="__codelineno-16-47" name="__codelineno-16-47" href="#__codelineno-16-47"></a><span class="k">SQL</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="p">(</span><span class="k">end</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">stop</span><span class="p">):</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">articles</span>
+<a id="__codelineno-16-48" name="__codelineno-16-48" href="#__codelineno-16-48"></a>
+<a id="__codelineno-16-49" name="__codelineno-16-49" href="#__codelineno-16-49"></a><span class="c1">----------------------------------------</span>
+<a id="__codelineno-16-50" name="__codelineno-16-50" href="#__codelineno-16-50"></a><span class="n">code</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">price</span><span class="p">,</span><span class="n">current_stock</span><span class="p">,</span><span class="n">minimum_stock</span>
+<a id="__codelineno-16-51" name="__codelineno-16-51" href="#__codelineno-16-51"></a><span class="c1">----------------------------------------</span>
+<a id="__codelineno-16-52" name="__codelineno-16-52" href="#__codelineno-16-52"></a>
+<a id="__codelineno-16-53" name="__codelineno-16-53" href="#__codelineno-16-53"></a><span class="n">a300</span><span class="w"> </span><span class="n">bike</span><span class="w">                           </span><span class="mi">2500</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">5</span>
+<a id="__codelineno-16-54" name="__codelineno-16-54" href="#__codelineno-16-54"></a><span class="n">b300</span><span class="w"> </span><span class="n">pump</span><span class="w">                          </span><span class="mi">56</span><span class="w"> </span><span class="mi">62</span><span class="w"> </span><span class="mi">45</span>
+<a id="__codelineno-16-55" name="__codelineno-16-55" href="#__codelineno-16-55"></a><span class="n">c300</span><span class="w"> </span><span class="n">bow</span><span class="w">                            </span><span class="mi">3500</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">20</span>
+<a id="__codelineno-16-56" name="__codelineno-16-56" href="#__codelineno-16-56"></a><span class="n">d300</span><span class="w"> </span><span class="n">arrows</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">pack</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mi">6</span><span class="w">             </span><span class="mi">780</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="mi">20</span>
+<a id="__codelineno-16-57" name="__codelineno-16-57" href="#__codelineno-16-57"></a><span class="n">e300</span><span class="w"> </span><span class="n">diving</span><span class="w"> </span><span class="n">suit</span><span class="w">         </span><span class="mi">2800</span><span class="w"> </span><span class="mi">34</span><span class="w"> </span><span class="mi">7</span>
+<a id="__codelineno-16-58" name="__codelineno-16-58" href="#__codelineno-16-58"></a><span class="n">f300</span><span class="w"> </span><span class="n">oxygen</span><span class="w"> </span><span class="n">tanks</span><span class="w">           </span><span class="mi">800</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">5</span>
+<a id="__codelineno-16-59" name="__codelineno-16-59" href="#__codelineno-16-59"></a><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-16-60" name="__codelineno-16-60" href="#__codelineno-16-60"></a>
+<a id="__codelineno-16-61" name="__codelineno-16-61" href="#__codelineno-16-61"></a><span class="k">SQL</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="p">(</span><span class="k">end</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">stop</span><span class="p">):</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">articles</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">code</span><span class="o">=</span><span class="ss">&quot;1&quot;</span>
+<a id="__codelineno-16-62" name="__codelineno-16-62" href="#__codelineno-16-62"></a><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">modified</span>
+<a id="__codelineno-16-63" name="__codelineno-16-63" href="#__codelineno-16-63"></a>
+<a id="__codelineno-16-64" name="__codelineno-16-64" href="#__codelineno-16-64"></a><span class="k">SQL</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="p">(</span><span class="k">end</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">stop</span><span class="p">):</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">articles</span>
+<a id="__codelineno-16-65" name="__codelineno-16-65" href="#__codelineno-16-65"></a>
+<a id="__codelineno-16-66" name="__codelineno-16-66" href="#__codelineno-16-66"></a><span class="c1">----------------------------------------</span>
+<a id="__codelineno-16-67" name="__codelineno-16-67" href="#__codelineno-16-67"></a><span class="n">code</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">price</span><span class="p">,</span><span class="w"> </span><span class="n">current_stock</span><span class="p">,</span><span class="w"> </span><span class="n">minimum_stock</span>
+<a id="__codelineno-16-68" name="__codelineno-16-68" href="#__codelineno-16-68"></a><span class="c1">----------------------------------------</span>
+<a id="__codelineno-16-69" name="__codelineno-16-69" href="#__codelineno-16-69"></a>
+<a id="__codelineno-16-70" name="__codelineno-16-70" href="#__codelineno-16-70"></a><span class="n">a300</span><span class="w"> </span><span class="n">bike</span><span class="w">                           </span><span class="mi">2500</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">5</span>
+<a id="__codelineno-16-71" name="__codelineno-16-71" href="#__codelineno-16-71"></a><span class="n">b300</span><span class="w"> </span><span class="n">pump</span><span class="w">                          </span><span class="mi">56</span><span class="w"> </span><span class="mi">62</span><span class="w"> </span><span class="mi">45</span>
+<a id="__codelineno-16-72" name="__codelineno-16-72" href="#__codelineno-16-72"></a><span class="n">c300</span><span class="w"> </span><span class="n">bow</span><span class="w">                            </span><span class="mi">3500</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">20</span>
+<a id="__codelineno-16-73" name="__codelineno-16-73" href="#__codelineno-16-73"></a><span class="n">d300</span><span class="w"> </span><span class="n">arrows</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">pack</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mi">6</span><span class="w">             </span><span class="mi">780</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="mi">20</span>
+<a id="__codelineno-16-74" name="__codelineno-16-74" href="#__codelineno-16-74"></a><span class="n">e300</span><span class="w"> </span><span class="n">diving</span><span class="w"> </span><span class="n">suit</span><span class="w">         </span><span class="mi">2800</span><span class="w"> </span><span class="mi">34</span><span class="w"> </span><span class="mi">7</span>
+<a id="__codelineno-16-75" name="__codelineno-16-75" href="#__codelineno-16-75"></a><span class="n">f300</span><span class="w"> </span><span class="n">oxygen</span><span class="w"> </span><span class="n">tanks</span><span class="w">           </span><span class="mi">800</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">5</span>
+<a id="__codelineno-16-76" name="__codelineno-16-76" href="#__codelineno-16-76"></a>
+<a id="__codelineno-16-77" name="__codelineno-16-77" href="#__codelineno-16-77"></a><span class="k">SQL</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="p">(</span><span class="k">end</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">stop</span><span class="p">):</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">articles</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">asc</span>
+<a id="__codelineno-16-78" name="__codelineno-16-78" href="#__codelineno-16-78"></a>
+<a id="__codelineno-16-79" name="__codelineno-16-79" href="#__codelineno-16-79"></a><span class="c1">----------------------------------------</span>
+<a id="__codelineno-16-80" name="__codelineno-16-80" href="#__codelineno-16-80"></a><span class="n">code</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">price</span><span class="p">,</span><span class="n">current_stock</span><span class="p">,</span><span class="n">minimum_stock</span>
+<a id="__codelineno-16-81" name="__codelineno-16-81" href="#__codelineno-16-81"></a><span class="c1">----------------------------------------</span>
+<a id="__codelineno-16-82" name="__codelineno-16-82" href="#__codelineno-16-82"></a>
+<a id="__codelineno-16-83" name="__codelineno-16-83" href="#__codelineno-16-83"></a><span class="n">c300</span><span class="w"> </span><span class="n">arc</span><span class="w">                            </span><span class="mi">3500</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">20</span>
+<a id="__codelineno-16-84" name="__codelineno-16-84" href="#__codelineno-16-84"></a><span class="n">f300</span><span class="w"> </span><span class="n">oxygen</span><span class="w"> </span><span class="n">tanks</span><span class="w">           </span><span class="mi">800</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">5</span>
+<a id="__codelineno-16-85" name="__codelineno-16-85" href="#__codelineno-16-85"></a><span class="n">e300</span><span class="w"> </span><span class="n">diving</span><span class="w"> </span><span class="n">suit</span><span class="w">         </span><span class="mi">2800</span><span class="w"> </span><span class="mi">34</span><span class="w"> </span><span class="mi">7</span>
+<a id="__codelineno-16-86" name="__codelineno-16-86" href="#__codelineno-16-86"></a><span class="n">d300</span><span class="w"> </span><span class="n">arrows</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mi">6</span><span class="w">             </span><span class="mi">780</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="mi">20</span>
+<a id="__codelineno-16-87" name="__codelineno-16-87" href="#__codelineno-16-87"></a><span class="n">b300</span><span class="w"> </span><span class="n">pump</span><span class="w">                          </span><span class="mi">56</span><span class="w"> </span><span class="mi">62</span><span class="w"> </span><span class="mi">45</span>
+<a id="__codelineno-16-88" name="__codelineno-16-88" href="#__codelineno-16-88"></a><span class="n">a300</span><span class="w"> </span><span class="n">bike</span><span class="w">                           </span><span class="mi">2500</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">5</span>
+<a id="__codelineno-16-89" name="__codelineno-16-89" href="#__codelineno-16-89"></a>
+<a id="__codelineno-16-90" name="__codelineno-16-90" href="#__codelineno-16-90"></a><span class="k">SQL</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="p">(</span><span class="k">end</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">stop</span><span class="p">):</span><span class="w"> </span><span class="k">end</span>
+</code></pre></div>
+<p>The program is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<span class="odt-code-line">&#x27; options</span>
+<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">&#x27; namespaces</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>System.Data</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>Microsoft.Data.Odbc</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>System.Data.OleDb</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>System.Text.RegularExpressions</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>System.Collections</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>Microsoft.VisualBasic</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">Module </span>db3</span>
+<span class="odt-code-line">    <span style="color:#0000ff">Public Sub </span>Main(<span style="color:#0000ff">ByVal </span>args() <span style="color:#0000ff">As String</span>)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; console application</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; executes SQL queries typed at the keyboard on an </span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; ARTICLES table in a DSN database whose name is passed as a parameter</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Const </span>syntax <span style="color:#0000ff">As String </span>= &quot;syntax: pg dsnArticles&quot;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; parameter validation</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Are there 2 parameters?</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">If </span>args.Length &lt;&gt; 1 <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; error message</span></span>
+<span class="odt-code-line">            Console.Error.WriteLine(syntax)</span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; end</span></span>
+<span class="odt-code-line">            Environment.Exit(1)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">End If</span>        <span style="font-weight:bold;color:#ff0000">&#x27;if</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; retrieve the parameter</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>dsnArticles <span style="color:#0000ff">As String </span>= args(0)</span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; database connection string</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>connectString <span style="color:#0000ff">As String </span>= &quot;DSN=&quot; + dsnArticles + &quot;;&quot;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; preparing the database connection</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>articlesConn <span style="color:#0000ff">As </span>OdbcConnection = <span style="color:#0000ff">Nothing</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>sqlCommand <span style="color:#0000ff">As </span>OdbcCommand = <span style="color:#0000ff">Nothing</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Try</span></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; attempt to access the database</span></span>
+<span class="odt-code-line">            articlesConn = <span style="color:#0000ff">New </span>OdbcConnection(connectString)</span>
+<span class="odt-code-line">            articlesConn.Open()</span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; create a command object</span></span>
+<span class="odt-code-line">            sqlCommand = <span style="color:#0000ff">New </span>OdbcCommand(&quot;&quot;, articlesConn)</span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27;try</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Catch </span>ex <span style="color:#0000ff">As </span>Exception</span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; error message</span></span>
+<span class="odt-code-line">            Console.Error.WriteLine((&quot;Database operation error (&quot; + ex.Message + &quot;)&quot;))</span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; release resources</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">Try</span></span>
+<span class="odt-code-line">                articlesConn.Close()</span>
+<span class="odt-code-line">            <span style="color:#0000ff">Catch</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">End Try</span></span>
+<span class="odt-code-line">            Environment.Exit(2)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">End Try</span>        <span style="font-weight:bold;color:#ff0000">&#x27;catch</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; we build a dictionary of accepted SQL commands</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>sqlCommands() <span style="color:#0000ff">As String </span>= {&quot;select&quot;, &quot;insert&quot;, &quot;update&quot;, &quot;delete&quot;}</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>commandDictionary <span style="color:#0000ff">As New </span>Hashtable</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>i <span style="color:#0000ff">As Integer</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">For </span>i = 0 <span style="color:#0000ff">To </span>SQLCommands.Length - 1</span>
+<span class="odt-code-line">            commandsDict.Add(SQLCommands(i), <span style="color:#0000ff">True</span>)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Next </span>i</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Read and execute SQL commands entered from the keyboard</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>query <span style="color:#0000ff">As String </span>= <span style="color:#0000ff">Nothing</span>        <span style="font-weight:bold;color:#ff0000">&#x27; text of the SQL query</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>fields() <span style="color:#0000ff">As String</span>        <span style="font-weight:bold;color:#ff0000">&#x27; the fields in the query    </span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>pattern <span style="color:#0000ff">As New </span>Regex(&quot;\s+&quot;)</span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; loop to enter and execute SQL commands typed on the keyboard</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">While True</span></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; no error at the start</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>error <span style="color:#0000ff">As Boolean </span>= <span style="color:#0000ff">False</span></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; query request</span></span>
+<span class="odt-code-line">            Console.Out.Write(ControlChars.Lf + &quot;SQL query (type &#x27;end&#x27; to stop): &quot;)</span>
+<span class="odt-code-line">            query = Console.In.ReadLine().Trim().ToLower()</span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; Done?</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">If </span>query = &quot;end&quot; <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">Exit While</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">End If</span></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; split the query into fields</span></span>
+<span class="odt-code-line">            fields = template.Split(query)</span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; Is the query valid?</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">If </span>fields.Length = 0 <span style="color:#0000ff">Or Not </span>commandDict.ContainsKey(fields(0)) <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">                <span style="font-weight:bold;color:#ff0000">&#x27; error message</span></span>
+<span class="odt-code-line">                Console.Error.WriteLine(&quot;Invalid query. Use select, insert, update, delete&quot;)</span>
+<span class="odt-code-line">                <span style="font-weight:bold;color:#ff0000">&#x27; next query</span></span>
+<span class="odt-code-line">                error = <span style="color:#0000ff">True</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">End If</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">If Not </span>error <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">                <span style="font-weight:bold;color:#ff0000">&#x27; Prepare the Command object to execute the query</span></span>
+<span class="odt-code-line">                sqlCommand.CommandText = query</span>
+<span class="odt-code-line">                <span style="font-weight:bold;color:#ff0000">&#x27; execute the query</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">Try</span></span>
+<span class="odt-code-line">                    <span style="color:#0000ff">If </span>fields(0) = &quot;select&quot; <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">                        executeSelect(sqlCommand)</span>
+<span class="odt-code-line">                    <span style="color:#0000ff">Else</span></span>
+<span class="odt-code-line">                        executeUpdate(sqlCommand)</span>
+<span class="odt-code-line">                    <span style="color:#0000ff">End If</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">Catch </span>ex <span style="color:#0000ff">As </span>Exception</span>
+<span class="odt-code-line">                    <span style="font-weight:bold;color:#ff0000">&#x27; error message</span></span>
+<span class="odt-code-line">                    Console.Error.WriteLine((&quot;Database operation error (&quot; + ex.Message + &quot;)&quot;))</span>
+<span class="odt-code-line">                <span style="color:#0000ff">End Try</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">End If</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">End While</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; release resources</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Try</span></span>
+<span class="odt-code-line">            articlesConn.Close()</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Catch</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">End Try</span></span>
+<span class="odt-code-line">        Environment.Exit(0)</span>
+<span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="font-weight:bold;color:#ff0000">&#x27; Execute an update query</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">Sub </span>executeUpdate(<span style="color:#0000ff">ByVal </span>sqlCommand <span style="color:#0000ff">As </span>OdbcCommand)</span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; executes sqlCommand, an update query</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>nbLines <span style="color:#0000ff">As Integer </span>= sqlCommand.ExecuteNonQuery()</span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; display</span></span>
+<span class="odt-code-line">        Console.Out.WriteLine((&quot;There were &quot; &amp; nbLines &amp; &quot; row(s) modified&quot;))</span>
+<span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="font-weight:bold;color:#ff0000">&#x27; Execute a Select query</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">Sub </span>executeSelect(<span style="color:#0000ff">ByVal </span>sqlCommand <span style="color:#0000ff">As </span>OdbcCommand)</span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; executes sqlCommand, a SELECT query</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>myReader <span style="color:#0000ff">As </span>OdbcDataReader = sqlCommand.ExecuteReader()</span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Processing the retrieved table</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Displaying the columns</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>line <span style="color:#0000ff">As String </span>= &quot;&quot;</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>i <span style="color:#0000ff">As Integer</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">For </span>i = 0 <span style="color:#0000ff">To </span>(myReader.FieldCount - 1) - 1</span>
+<span class="odt-code-line">            line += myReader.GetName(i) + &quot;,&quot;</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Next </span>i</span>
+<span class="odt-code-line">        line += myReader.GetName(i)</span>
+<span class="odt-code-line">        Console.Out.WriteLine((ControlChars.Lf + &quot;&quot;.PadLeft(line.Length, &quot;-&quot;c) + ControlChars.Lf + line + ControlChars.Lf + &quot;&quot;.PadLeft(line.Length, &quot;-&quot;c) + ControlChars.Lf))</span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; display data</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">While </span>myReader.Read()</span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; process current line</span></span>
+<span class="odt-code-line">            line = &quot;&quot;</span>
+<span class="odt-code-line">            <span style="color:#0000ff">For </span>i = 0 <span style="color:#0000ff">To </span>myReader.FieldCount - 1</span>
+<span class="odt-code-line">                line += myReader(i).ToString + &quot; &quot;</span>
+<span class="odt-code-line">            <span style="color:#0000ff">Next </span>i</span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; display</span></span>
+<span class="odt-code-line">            Console.WriteLine(line)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">End While</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; release resources</span></span>
+<span class="odt-code-line">        myReader.Close()</span>
+<span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+</code></pre></div>
+
+<p>We will only comment here on what is new compared to the previous program:</p>
+<ul>
+  <li>We build a dictionary of accepted SQL commands:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line">        &#x27; we create a dictionary of accepted SQL commands</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>SQLCommands() <span style="color:#0000ff">As String </span>= {&quot;select&quot;, &quot;insert&quot;, &quot;update&quot;, &quot;delete&quot;}</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>commandDictionary <span style="color:#0000ff">As New </span>Hashtable</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>i <span style="color:#0000ff">As Integer</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">For </span>i = 0 <span style="color:#0000ff">To </span>SQLCommands.Length - 1</span>
+<span class="odt-code-line">            commandsDict.Add(SQLCommands(i), <span style="color:#0000ff">True</span>)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Next </span>i</span>
+</code></pre></div>
+
+<p>This then allows us to simply check if the first word (<em>fields[0]</em>) of the typed query is one of the four accepted commands:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line">            &#x27; Valid query?</span>
+<span class="odt-code-line">            <span style="color:#0000ff">If </span>champs.Length = 0 <span style="color:#0000ff">Or Not </span>dicoCommands.ContainsKey(champs(0)) <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">                &#x27; error message</span>
+<span class="odt-code-line">                Console.Error.WriteLine(&quot;Invalid query. Use select, insert, update, delete&quot;)</span>
+<span class="odt-code-line">                &#x27; next query</span>
+<span class="odt-code-line">                error = <span style="color:#0000ff">True</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">End If</span>            &#x27;if</span>
+</code></pre></div>
+
+<ul>
+  <li>Previously, the query had been split into fields using the <i>Split</i> method of the <i>RegEx</i> class:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>pattern <span style="color:#0000ff">As New </span>Regex(&quot;\s+&quot;)</span>
+<span class="odt-code-line">....</span>
+<span class="odt-code-line">            <span style="color:#008000">&#x27; split the query into fields</span></span>
+<span class="odt-code-line">            fields = template.Split(query)</span>
+</code></pre></div>
+
+<p>The words in the query can be separated by any number of spaces.</p>
+<ul>
+  <li>Executing a <i>SELECT</i> query does not use the same method as executing an update query (<i>INSERT</i>, <i>UPDATE</i>, <i>DELETE</i>). Therefore, we must perform a check and execute a different function for each of these two cases:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line">                &#x27; Preparing the Command object to execute the query</span>
+<span class="odt-code-line">                sqlCommand.CommandText = query</span>
+<span class="odt-code-line">                &#x27; executing the query</span>
+<span class="odt-code-line">                <span style="color:#0000ff">Try</span></span>
+<span class="odt-code-line">                    <span style="color:#0000ff">If </span>champs(0) = &quot;select&quot; <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">                        executeSelect(sqlCommand)</span>
+<span class="odt-code-line">                    <span style="color:#0000ff">Else</span></span>
+<span class="odt-code-line">                        executeUpdate(sqlCommand)</span>
+<span class="odt-code-line">                    <span style="color:#0000ff">End If</span>                    &#x27;try</span>
+<span class="odt-code-line">                <span style="color:#0000ff">Catch </span>ex <span style="color:#0000ff">As </span>Exception</span>
+<span class="odt-code-line">                    &#x27; error message</span>
+<span class="odt-code-line">                    Console.Error.WriteLine((&quot;Database operation error (&quot; + ex.Message + &quot;)&quot;))</span>
+<span class="odt-code-line">                <span style="color:#0000ff">End Try</span></span>
+</code></pre></div>
+
+<p>Executing an SQL query can generate an exception, which is handled here.</p>
+<ul>
+  <li>The <i>executeSelect</i> function covers everything covered in the previous examples.
+  </li>
+  <li>The <i>executeUpdate</i> function uses the <i>ExecuteNonQuery</i> method of the <i>OdbcCommand</i> class, which returns the number of rows affected by the command.
+  </li>
+</ul>
+<h3 id="735-tax-calculation">7.3.5. <span style="color: #4f81bd">Tax calculation</span></h3>
+<p>We reuse the <em>tax</em> object created in a previous chapter:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<span class="odt-code-line">&#x27; options</span>
+<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">&#x27; namespaces</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">Public Class </span>Tax</span>
+<span class="odt-code-line">    <span style="font-weight:bold;color:#ff0000">&#x27; the data needed to calculate the tax</span></span>
+<span class="odt-code-line">    <span style="font-weight:bold;color:#ff0000">&#x27; comes from an external source</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">Private </span>limits(), coeffR(), coeffN() <span style="color:#0000ff">As Decimal</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="font-weight:bold;color:#ff0000">&#x27; constructor</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">Public Sub New</span>(<span style="color:#0000ff">ByVal </span>LIMITS() <span style="color:#0000ff">As Decimal</span>, <span style="color:#0000ff">ByVal </span>COEFFR() <span style="color:#0000ff">As Decimal</span>, <span style="color:#0000ff">ByVal </span>COEFFN() <span style="color:#0000ff">As Decimal</span>)</span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; check that the 3 arrays are the same size</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>OK <span style="color:#0000ff">As Boolean </span>= LIMITS.Length = COEFFR.Length <span style="color:#0000ff">And </span>LIMITS.Length = COEFFN.Length</span>
+<span class="odt-code-line">        <span style="color:#0000ff">If Not </span>OK <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">Throw New </span>Exception(&quot;The three arrays provided do not have the same size(&quot; &amp; LIMITES.Length &amp; &quot;,&quot; &amp; COEFFR.Length &amp; &quot;,&quot; &amp; COEFFN.Length &amp; &quot;)&quot;)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">End If</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; All good</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Me</span>.limits = LIMITS</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Me</span>.coeffR = COEFFR</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Me</span>.coeffN = COEFFN</span>
+<span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="font-weight:bold;color:#ff0000">&#x27; tax calculation</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">Public Function </span>calculate(<span style="color:#0000ff">ByVal </span>married <span style="color:#0000ff">As Boolean</span>, <span style="color:#0000ff">ByVal </span>numChildren <span style="color:#0000ff">As Integer</span>, <span style="color:#0000ff">ByVal </span>salary <span style="color:#0000ff">As Integer</span>) <span style="color:#0000ff">As Long</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; calculate the number of shares</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>nbShares <span style="color:#0000ff">As Decimal</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">If </span>married <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">            nbParts = <span style="color:#0000ff">CDec</span>(nbChildren) / 2 + 2</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Else</span></span>
+<span class="odt-code-line">            nbParts = <span style="color:#0000ff">CDec</span>(nbChildren) / 2 + 1</span>
+<span class="odt-code-line">        <span style="color:#0000ff">End If</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">If </span>nbChildren &gt;= 3 <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">            nbParts += 0.5D</span>
+<span class="odt-code-line">        <span style="color:#0000ff">End If</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Calculate taxable income &amp; family quotient</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>income <span style="color:#0000ff">As Decimal </span>= 0.72D * salary</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>QF <span style="color:#0000ff">As Decimal </span>= income / nbParts</span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; calculate tax</span></span>
+<span class="odt-code-line">        limits((limits.Length - 1)) = QF + 1</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>i <span style="color:#0000ff">As Integer </span>= 0</span>
+<span class="odt-code-line">        <span style="color:#0000ff">While </span>QF &gt; limits(i)</span>
+<span class="odt-code-line">            i += 1</span>
+<span class="odt-code-line">        <span style="color:#0000ff">End While</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; return result</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Return CLng</span>(revenue * coeffR(i) - nbParts * coeffN(i))</span>
+<span class="odt-code-line">    <span style="color:#0000ff">End Function</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">End Class</span></span>
+</code></pre></div>
+
+<p>We add a new constructor to initialize the <em>limit</em> arrays, <em>coeffR</em>, and <em>coeffN</em> from an ODBC database:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>System.Data</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>Microsoft.Data.Odbc</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>System.Collections</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line"></span>
+</code></pre></div>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<span class="odt-code-line">    <span style="font-weight:bold;color:#ff0000">&#x27; constructor 2</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">Public Sub New</span>(<span style="color:#0000ff">ByVal </span>DSNimpots <span style="color:#0000ff">As String</span>, <span style="color:#0000ff">ByVal </span>Timpots <span style="color:#0000ff">As String</span>, <span style="color:#0000ff">ByVal </span>colLimites <span style="color:#0000ff">As String</span>, <span style="color:#0000ff">ByVal </span>colCoeffR <span style="color:#0000ff">As String</span>, <span style="color:#0000ff">ByVal </span>colCoeffN <span style="color:#0000ff">As String</span>)</span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; initializes the three arrays limits, coeffR, and coeffN from</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; from the contents of the Timpots table in the ODBC DSNimpots database</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; colLimites, colCoeffR, and colCoeffN are the three columns in this table</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; may throw an exception</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>connectString <span style="color:#0000ff">As String </span>= &quot;DSN=&quot; + DSNimpots + &quot;;&quot;        <span style="font-weight:bold;color:#ff0000">&#x27; database connection string</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>impotsConn <span style="color:#0000ff">As </span>OdbcConnection = <span style="color:#0000ff">Nothing</span>        <span style="font-weight:bold;color:#ff0000">&#x27; the connection</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>sqlCommand <span style="color:#0000ff">As </span>OdbcCommand = <span style="color:#0000ff">Nothing</span>        <span style="font-weight:bold;color:#ff0000">&#x27; the SQL command</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; the SELECT query</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>selectCommand <span style="color:#0000ff">As String </span>= &quot;select &quot; + colLimites + &quot;,&quot; + colCoeffR + &quot;,&quot; + colCoeffN + &quot; from &quot; + Timpots</span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; arrays to retrieve the data</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>tLimits <span style="color:#0000ff">As New </span>ArrayList</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>tCoeffR <span style="color:#0000ff">As New </span>ArrayList</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>tCoeffN <span style="color:#0000ff">As New </span>ArrayList</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; attempt to access the database</span></span>
+<span class="odt-code-line">        impotsConn = <span style="color:#0000ff">New </span>OdbcConnection(connectString)</span>
+<span class="odt-code-line">        impotsConn.Open()</span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; create a command object</span></span>
+<span class="odt-code-line">        sqlCommand = <span style="color:#0000ff">New </span>OdbcCommand(selectCommand, impotsConn)</span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Execute the query</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>myReader <span style="color:#0000ff">As </span>OdbcDataReader = sqlCommand.ExecuteReader()</span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Process the retrieved table</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">While </span>myReader.Read()</span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; the data from the current row is placed in the arrays</span></span>
+<span class="odt-code-line">            tLimites.Add(myReader(colLimites))</span>
+<span class="odt-code-line">            tCoeffR.Add(myReader(colCoeffR))</span>
+<span class="odt-code-line">            tCoeffN.Add(myReader(colCoeffN))</span>
+<span class="odt-code-line">        <span style="color:#0000ff">End While</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Release resources</span></span>
+<span class="odt-code-line">        myReader.Close()</span>
+<span class="odt-code-line">        taxConn.Close()</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; dynamic arrays are converted to static arrays</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Me</span>.limits = <span style="color:#0000ff">New Decimal</span>(tLimits.Count) {}</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Me</span>.coeffR = <span style="color:#0000ff">New Decimal</span>(tLimites.Count) {}</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Me</span>.coeffN = <span style="color:#0000ff">New Decimal</span>(tLimites.Count) {}</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>i <span style="color:#0000ff">As Integer</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">For </span>i = 0 <span style="color:#0000ff">To </span>tLimites.Count - 1</span>
+<span class="odt-code-line">            limits(i) = <span style="color:#0000ff">Decimal</span>.Parse(tLimits(i).ToString())</span>
+<span class="odt-code-line">            coeffR(i) = <span style="color:#0000ff">Decimal</span>.Parse(tCoeffR(i).ToString())</span>
+<span class="odt-code-line">            coeffN(i) = <span style="color:#0000ff">Decimal</span>.Parse(tCoeffN(i).ToString())</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Next </span>i</span>
+<span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
+</code></pre></div>
+
+<p>The test program is as follows: it receives as arguments the parameters to be passed to the <em>tax</em> class constructor. After constructing a <em>tax</em> object, it calculates the tax due:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<span class="odt-code-line"><span style="color:#0000ff">Option Explicit On </span></span>
+<span class="odt-code-line"><span style="color:#0000ff">Option Strict On</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">&#x27; namespaces</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>System</span>
+<span class="odt-code-line"><span style="color:#0000ff">Imports </span>Microsoft.VisualBasic</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">&#x27; test page</span>
+<span class="odt-code-line"><span style="color:#0000ff">Module </span>testimports</span>
+<span class="odt-code-line">    <span style="color:#0000ff">Sub </span>Main(<span style="color:#0000ff">ByVal </span>arguments() <span style="color:#0000ff">As String</span>)</span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Interactive tax calculation program</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; the user enters three pieces of data via the keyboard: married, numberOfChildren, salary</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; the program then displays the tax due</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Const </span>syntax1 <span style="color:#0000ff">As String </span>= &quot;pg DSNimpots tabImpots colLimits colCoeffR colCoeffN&quot;</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Const </span>syntax2 <span style="color:#0000ff">As String </span>= &quot;syntax: married noChildren salary&quot; + ControlChars.Lf + &quot;married: o for married, n for unmarried&quot; + ControlChars.Lf + &quot;noChildren: number of children&quot; + ControlChars.Lf + &quot;salary: annual salary in F&quot;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Checking program parameters</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">If </span>arguments.Length &lt;&gt; 5 <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; error message</span></span>
+<span class="odt-code-line">            Console.Error.WriteLine(syntax1)</span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; end</span></span>
+<span class="odt-code-line">            Environment.Exit(1)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">End If</span>        <span style="font-weight:bold;color:#ff0000">&#x27;if</span></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; retrieve the arguments</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>DSNimpots <span style="color:#0000ff">As String </span>= arguments(0)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>taxTab <span style="color:#0000ff">As String </span>= arguments(1)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>colLimits <span style="color:#0000ff">As String </span>= arguments(2)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>colCoeffR <span style="color:#0000ff">As String </span>= arguments(3)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>colCoeffN <span style="color:#0000ff">As String </span>= arguments(4)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; Create a tax object</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Dim </span>taxObj <span style="color:#0000ff">As </span>Tax = <span style="color:#0000ff">Nothing</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">Try</span></span>
+<span class="odt-code-line">            taxObj = <span style="color:#0000ff">New </span>Tax(TaxDSN, TaxTab, LimitCol, CoeffRCol, CoeffNCol)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">Catch </span>ex <span style="color:#0000ff">As </span>Exception</span>
+<span class="odt-code-line">            Console.Error.WriteLine((&quot;The following error occurred: &quot; + ex.Message))</span>
+<span class="odt-code-line">            Environment.Exit(2)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">End Try</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="font-weight:bold;color:#ff0000">&#x27; infinite loop</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">While True</span></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; initially no errors</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>error <span style="color:#0000ff">As Boolean </span>= <span style="color:#0000ff">False</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; Requesting tax calculation parameters</span></span>
+<span class="odt-code-line">            Console.Out.Write(&quot;Tax calculation parameters in the format: married, number of children, salary, or &#x27;none&#x27; to exit:&quot;)</span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>parameters <span style="color:#0000ff">As String </span>= Console.In.ReadLine().Trim()</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; anything to do?</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">If </span>parameters <span style="color:#0000ff">Is Nothing Or </span>parameters = &quot;&quot; <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">Exit While</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">End If</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">            <span style="font-weight:bold;color:#ff0000">&#x27; Check the number of arguments in the entered line</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>args <span style="color:#0000ff">As String</span>() = parameters.Split(<span style="color:#0000ff">Nothing</span>)</span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>numParameters <span style="color:#0000ff">As Integer </span>= args.Length</span>
+<span class="odt-code-line">            <span style="color:#0000ff">If </span>nbParameters &lt;&gt; 3 <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">                Console.Error.WriteLine(syntax2)</span>
+<span class="odt-code-line">                error = <span style="color:#0000ff">True</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">End If</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>groom <span style="color:#0000ff">As String</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>nbChildren <span style="color:#0000ff">As Integer</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">Dim </span>salary <span style="color:#0000ff">As Integer</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">If Not </span>error <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">                <span style="font-weight:bold;color:#ff0000">&#x27; Checking the validity of the</span></span>
+<span class="odt-code-line">                <span style="font-weight:bold;color:#ff0000">&#x27; married</span></span>
+<span class="odt-code-line">                married = args(0).ToLower()</span>
+<span class="odt-code-line">                <span style="color:#0000ff">If </span>married &lt;&gt; &quot;o&quot; <span style="color:#0000ff">And </span>married &lt;&gt; &quot;n&quot; <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">                    Console.Error.WriteLine((syntax2 + ControlChars.Lf + &quot;Invalid &#x27;married&#x27; argument: enter &#x27;y&#x27; or &#x27;n&#x27;&quot;)</span>
+<span class="odt-code-line">                    error = <span style="color:#0000ff">True</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">End If</span></span>
+<span class="odt-code-line">                <span style="font-weight:bold;color:#ff0000">&#x27; nbChildren</span></span>
+<span class="odt-code-line">                nbChildren = 0</span>
+<span class="odt-code-line">                <span style="color:#0000ff">Try</span></span>
+<span class="odt-code-line">                    nbChildren = <span style="color:#0000ff">Integer</span>.Parse(args(1))</span>
+<span class="odt-code-line">                    <span style="color:#0000ff">If </span>nbChildren &lt; 0 <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">                        <span style="color:#0000ff">Throw New </span>Exception</span>
+<span class="odt-code-line">                    <span style="color:#0000ff">End If</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">Catch</span></span>
+<span class="odt-code-line">                    Console.Error.WriteLine(syntax2 + &quot;\nInvalid numberOfChildren argument: enter a positive integer or zero&quot;)</span>
+<span class="odt-code-line">                    error = <span style="color:#0000ff">True</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">End Try</span></span>
+<span class="odt-code-line">                <span style="font-weight:bold;color:#ff0000">&#x27; salary</span></span>
+<span class="odt-code-line">                salary = 0</span>
+<span class="odt-code-line">                <span style="color:#0000ff">Try</span></span>
+<span class="odt-code-line">                    salary = <span style="color:#0000ff">Integer</span>.Parse(args(2))</span>
+<span class="odt-code-line">                    <span style="color:#0000ff">If </span>salary &lt; 0 <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">                        <span style="color:#0000ff">Throw New </span>Exception</span>
+<span class="odt-code-line">                    <span style="color:#0000ff">End If</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">Catch</span></span>
+<span class="odt-code-line">                    Console.Error.WriteLine(syntax2 + &quot;\nInvalid salary argument: enter a positive integer or zero&quot;)</span>
+<span class="odt-code-line">                    error = <span style="color:#0000ff">True</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">End Try</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">End If</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">If Not </span>error <span style="color:#0000ff">Then</span></span>
+<span class="odt-code-line">                <span style="font-weight:bold;color:#ff0000">&#x27; parameters are correct - calculate the tax</span></span>
+<span class="odt-code-line">                Console.Out.WriteLine((&quot;tax=&quot; &amp; objTax.calculate(married = &quot;o&quot;, numChildren, salary).ToString + &quot; F&quot;))</span>
+<span class="odt-code-line">            <span style="color:#0000ff">End If</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">End While</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">End Sub</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">End Module</span></span>
+</code></pre></div>
+
+<p>The database used is a MySQL database with the DSN name <em>mysql-impots</em>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">mysql</span><span class="err">\</span><span class="n">bin</span><span class="o">&gt;</span><span class="n">mysql</span><span class="w"> </span><span class="c1">--database=impots --user=admimpots --password=mdpimpots</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">Welcome</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="n">monitor</span><span class="p">.</span><span class="w">  </span><span class="n">Commands</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="err">\</span><span class="k">g</span><span class="p">.</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">Your</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="k">connection</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="k">version</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">.</span><span class="mi">23</span><span class="p">.</span><span class="mi">49</span><span class="o">-</span><span class="k">max</span><span class="o">-</span><span class="n">debug</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="k">Type</span><span class="w"> </span><span class="s1">&#39;help&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">help</span><span class="p">.</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">tables</span><span class="p">;</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="o">+</span><span class="c1">------------------+</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="o">|</span><span class="w"> </span><span class="n">Tables_in_impots</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="o">+</span><span class="c1">------------------+</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="o">|</span><span class="w"> </span><span class="n">timpots</span><span class="w">          </span><span class="o">|</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="o">+</span><span class="c1">------------------+</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">timpots</span><span class="p">;</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="o">+</span><span class="c1">---------+--------+---------+</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="o">|</span><span class="w"> </span><span class="n">limits</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">coeffR</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">coeffN</span><span class="w">  </span><span class="o">|</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="o">+</span><span class="c1">---------+--------+---------+</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="o">|</span><span class="w">   </span><span class="mi">12620</span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="mi">0</span><span class="w"> </span><span class="o">|</span><span class="w">       </span><span class="mi">0</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="o">|</span><span class="w">   </span><span class="mi">13190</span><span class="w"> </span><span class="o">|</span><span class="w">   </span><span class="mi">0</span><span class="p">.</span><span class="mi">05</span><span class="w"> </span><span class="o">|</span><span class="w">     </span><span class="mi">631</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="o">|</span><span class="w">   </span><span class="mi">15</span><span class="p">,</span><span class="mi">640</span><span class="w"> </span><span class="o">|</span><span class="w">    </span><span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mi">1</span><span class="p">,</span><span class="mi">290</span><span class="p">.</span><span class="mi">5</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="o">|</span><span class="w">   </span><span class="mi">24740</span><span class="w"> </span><span class="o">|</span><span class="w">   </span><span class="mi">0</span><span class="p">.</span><span class="mi">15</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mi">2072</span><span class="p">.</span><span class="mi">5</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="o">|</span><span class="w">   </span><span class="mi">31810</span><span class="w"> </span><span class="o">|</span><span class="w">    </span><span class="mi">0</span><span class="p">.</span><span class="mi">2</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mi">3309</span><span class="p">.</span><span class="mi">5</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a><span class="o">|</span><span class="w">   </span><span class="mi">39970</span><span class="w"> </span><span class="o">|</span><span class="w">   </span><span class="mi">0</span><span class="p">.</span><span class="mi">25</span><span class="w"> </span><span class="o">|</span><span class="w">    </span><span class="mi">4900</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a><span class="o">|</span><span class="w">   </span><span class="mi">48360</span><span class="w"> </span><span class="o">|</span><span class="w">    </span><span class="mi">0</span><span class="p">.</span><span class="mi">3</span><span class="w"> </span><span class="o">|</span><span class="w">    </span><span class="mi">6898</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a><span class="o">|</span><span class="w">   </span><span class="mi">55</span><span class="p">,</span><span class="mi">790</span><span class="w"> </span><span class="o">|</span><span class="w">   </span><span class="mi">0</span><span class="p">.</span><span class="mi">35</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mi">9</span><span class="p">,</span><span class="mi">316</span><span class="p">.</span><span class="mi">5</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a><span class="o">|</span><span class="w">   </span><span class="mi">92</span><span class="p">,</span><span class="mi">970</span><span class="w"> </span><span class="o">|</span><span class="w">    </span><span class="mi">0</span><span class="p">.</span><span class="mi">4</span><span class="w"> </span><span class="o">|</span><span class="w">   </span><span class="mi">12</span><span class="p">,</span><span class="mi">106</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a><span class="o">|</span><span class="w">  </span><span class="mi">127</span><span class="p">,</span><span class="mi">860</span><span class="w"> </span><span class="o">|</span><span class="w">   </span><span class="mi">0</span><span class="p">.</span><span class="mi">45</span><span class="w"> </span><span class="o">|</span><span class="w">   </span><span class="mi">16</span><span class="p">,</span><span class="mi">754</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a><span class="o">|</span><span class="w">  </span><span class="mi">151</span><span class="p">,</span><span class="mi">250</span><span class="w"> </span><span class="o">|</span><span class="w">    </span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="mi">147</span><span class="p">.</span><span class="mi">5</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a><span class="o">|</span><span class="w">  </span><span class="mi">172</span><span class="p">,</span><span class="mi">040</span><span class="w"> </span><span class="o">|</span><span class="w">   </span><span class="mi">0</span><span class="p">.</span><span class="mi">55</span><span class="w"> </span><span class="o">|</span><span class="w">   </span><span class="mi">30</span><span class="p">,</span><span class="mi">710</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a><span class="o">|</span><span class="w">  </span><span class="mi">195000</span><span class="w"> </span><span class="o">|</span><span class="w">    </span><span class="mi">0</span><span class="p">.</span><span class="mi">6</span><span class="w"> </span><span class="o">|</span><span class="w">   </span><span class="mi">39312</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a><span class="o">|</span><span class="w">       </span><span class="mi">0</span><span class="w"> </span><span class="o">|</span><span class="w">   </span><span class="mi">0</span><span class="p">.</span><span class="mi">65</span><span class="w"> </span><span class="o">|</span><span class="w">   </span><span class="mi">49062</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a><span class="o">+</span><span class="c1">---------+--------+---------+</span>
+</code></pre></div>
+<p>Running the test program yields the following results:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>dos&gt;D:\data\devel\vbnet\poly\chap6\impots&gt;vbc /r:system.data.dll /r:microsoft.data.odbc.dll /r:system.dll /t:library impots.vb
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>dos&gt;vbc /r:impots.dll testimpots.vb
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>dos&gt;test mysql-taxes timpots limits coeffr coeffn
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>Tax calculation parameters in married format: nbChildren, salary, or nothing to stop :o 2 200000
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>tax=22,506 F
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>Tax calculation parameters in married format: number of children, salary or nothing to stop at: n 2 200000
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>tax=33,388 F
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>Tax calculation parameters in married format: number of children, salary or nothing to stop :o 3 200000
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>tax=16,400 F
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>Tax calculation parameters for married couples with n children, salary or nothing to stop at: n 3 300000
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>tax=50,082 F
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>Tax calculation parameters for married couples with n children, salary or nothing to stop at: n 3 200000
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>tax=22,506 F
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>Tax calculation parameters for married individuals with n children: salary or nothing to stop at:
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
