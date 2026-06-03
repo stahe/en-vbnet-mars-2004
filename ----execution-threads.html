@@ -18,7 +18,7 @@
         <link rel="prev" href="database-access.html">
       
       
-        <link rel="next" href="tcpip-programming.html">
+        <link rel="next" href="programming-tcp-ip.html">
       
       
         
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -391,7 +393,7 @@
   <span class="md-ellipsis">
     
   
-    4. Commonly Used .NET Classes
+    4. Commonly used .NET classes
   
 
     
@@ -438,14 +440,14 @@
   
   
     <li class="md-nav__item">
-      <a href="event-handling.html" class="md-nav__link">
+      <a href="event-management.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. Event Handling
+    6. Event Management
   
 
     
@@ -588,7 +590,7 @@
   <a href="#84-access-to-shared-resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8.4. Access to Shared Resources
+        8.4. Access to shared resources
       
     </span>
   </a>
@@ -632,14 +634,14 @@
   
   
     <li class="md-nav__item">
-      <a href="tcpip-programming.html" class="md-nav__link">
+      <a href="programming-tcp-ip.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. TCP/IP Programming
+    9. Programming TCP-IP
   
 
     
@@ -725,40 +727,40 @@
 
 <h1 id="8-execution-threads">8. <span style="color: #365f91">Execution threads</span></h1>
 <h2 id="81-introduction">8.1. <span style="color: #4f81bd">Introduction</span></h2>
-<p>When an application is launched, it runs in an execution flow called a <strong>thread</strong>. The .NET class that models a <em>thread</em> is the <em>System.Threading.Thread</em> class and has the following definition:</p>
+<p>When an application is launched, it runs in an execution flow called a <strong>thread</strong>. The class .NET modeling a <em>thread</em> is the class <em>System.Threading.Thread</em> and has the following definition:</p>
 <p><img src="images/100000000000022B0000009C8D3F3E58.png" width="555" height="156" style="width:14.683cm;height:4.128cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000022B0000009C8D3F3E58.png" /></p>
-<p>We will use only some of the properties and methods of this class:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<p>We will use only some of this class’s properties and methods:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>CurrentThread - static property
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">returns the thread currently running</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Name - object property
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">returns the thread currently running</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Name - propriété d&#39;objet
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">thread name</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">thread name</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>isAlive - object property
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">indicates whether the thread is active (true) or not (false)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Start - object method
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">indicates whether the thread is active (true) or not (false)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Start - méthode d&#39;objet
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">starts the execution of a thread</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Abort - object method
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">starts the execution of a thread</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Abort - méthode d&#39;objet
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">permanently stops a thread&#x27;s execution</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Sleep(n) - static method
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">permanently stops a thread&#x27;s execution</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Sleep(n) - méthode statique
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">pauses a thread for n milliseconds</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Suspend() - object method
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">pauses a thread for n milliseconds</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Suspend() - méthode d&#39;objet
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">temporarily suspends the execution of a thread</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Resume() - object method
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">temporarily suspends the execution of a thread</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Resume() - méthode d&#39;objet
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">resumes the execution of a suspended thread</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Join() - object method
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">resumes the execution of a suspended thread</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Join() - méthode d&#39;objet
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">blocking operation - waits for the thread to finish before proceeding to the next instruction</div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">blocking operation - waits for the thread to finish before proceeding to the next instruction</div></td></tr></table>
 
 <p>Let’s look at a simple application that demonstrates the existence of a main execution thread, the one in which a class’s <em>Main</em> function runs:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27; use of threads</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Imports</span> System</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Imports</span> System.Threading</span></span>
@@ -784,7 +786,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">End</span> <span style="color:#0000ff">Module</span></span></span>
 </code></pre></div>
 
-<p>Screen results:</p>
+<p>Screen output:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>dos&gt;thread1
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Thread courant :
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Thread courant : main
@@ -796,19 +798,19 @@
 </code></pre></div>
 <p>The previous example illustrates the following points:</p>
 <ul>
-  <li>the <i>Main</i> function runs in a thread
+  <li>the <i>Main</i> function runs correctly in a thread
   </li>
-  <li>we can access the properties of this thread via <i>Thread.CurrentThread</i>
+  <li>we can access the characteristics of this thread via <i>Thread.CurrentThread</i>
   </li>
   <li>the role of the <i>Sleep</i> method. Here, the thread executing <i>Main </i>sleeps for 1 second between each display.
   </li>
 </ul>
 <h2 id="82-creating-execution-threads">8.2. <span style="color: #4f81bd">Creating execution threads</span></h2>
-<p>It is possible to have applications where pieces of code execute &quot;simultaneously&quot; in different execution threads. When we say that threads run simultaneously, we are often using the term loosely. If the machine has only one processor, as is still often the case, the threads share this processor: they each have access to it, in turn, for a brief moment (a few milliseconds). This is what creates the illusion of parallel execution. The amount of time allocated to a <em>thread</em> depends on various factors, including its priority, which has a default value but can also be set programmatically. When a <em>thread</em> has the processor, it normally uses it for the entire time allotted to it. However, it can release it early:</p>
+<p>It is possible to have applications where pieces of code run &quot;simultaneously&quot; in different execution threads. When we say that threads run simultaneously, we are often using the term loosely. If the machine has only one processor, as is still often the case, the threads share this processor: they each have access to it, in turn, for a brief moment (a few milliseconds). This is what creates the illusion of parallel execution. The amount of time allocated to a <em>thread</em> depends on various factors, including its priority, which has a default value but can also be set programmatically. When a <em>thread</em> has the processor, it normally uses it for the entire time allotted to it. However, it can release it early:</p>
 <ul>
   <li>by waiting for an event (<i>wait, join, suspend</i>)
   </li>
-  <li>by sleeping for a specified period (<i>sleep</i>)
+  <li>by sleeping for a specified period of time (<i>sleep</i>)
   </li>
 </ul>
 
@@ -817,17 +819,17 @@
   </li>
 </ol>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">Public</span><span class="w"> </span><span class="k">Sub</span><span class="w"> </span><span class="nf">New</span><span class="p">(</span><span class="k">ByVal</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">ThreadStart</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Public Sub New(ByVal start As ThreadStart)
 </code></pre></div>
 <p><em>ThreadStart</em> is of type delegate and defines the prototype of a function with no parameters:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">Public</span><span class="w"> </span><span class="k">Delegate</span><span class="w"> </span><span class="k">Sub</span><span class="w"> </span><span class="nf">ThreadStart</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Public Delegate Sub ThreadStart()
 </code></pre></div>
 <p>A typical construction is as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">dim</span><span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">Thread</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ThreadStart</span><span class="p">(</span><span class="n">run</span><span class="p">))</span><span class="err">;</span>
 </code></pre></div>
 <p>The <em>run</em> function passed as a parameter will be executed when the thread is launched.</p>
 <ol>
-  <li>The execution of thread T is initiated by <b>T.Start()</b>: the [run] function passed to the constructor of T will then be executed by thread T. The program executing the <i>T.Start() </i>statement does not wait for task T to finish: it immediately proceeds to the next statement. We now have two tasks running in parallel. They often need to communicate with each other to know the status of the shared work to be done. This is the problem of thread synchronization.
+  <li>The execution of thread T is initiated by <b>T.Start()</b>: The [run] function passed to the T constructor will then be executed by thread T. The program executing the <i>T.start()</i> instruction does not wait for task T to finish: it immediately moves on to the next instruction. We then have two tasks running in parallel. They often need to be able to communicate with each other to know the status of the shared work to be done. This is the problem of thread synchronization.
   </li>
 </ol>
 
@@ -850,12 +852,12 @@
 </ol>
 
 <ol>
-  <li>You can also wait for it to finish executing using <b>T.join()</b>. This is a blocking instruction: the program executing it is blocked until task T has finished its work. It is a means of synchronization.
+  <li>We can also wait for it to finish executing using <b>T.join()</b>. This is a blocking instruction: the program executing it is blocked until task T has finished its work. This is a means of synchronization.
   </li>
 </ol>
 
 <p>Let’s examine the following program:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27; options</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Option</span> <span style="color:#0000ff">Strict</span> <span style="color:#0000ff">On</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Option</span> <span style="color:#0000ff">Explicit</span> <span style="color:#0000ff">On</span> </span></span>
@@ -913,27 +915,27 @@
 </code></pre></div>
 <p>These results are very informative:</p>
 <ul>
-  <li>First, we see that starting a thread’s execution is not blocking. The <i>Main</i> method started the execution of 5 threads in parallel and finished executing before them. The
+  <li>First, we see that starting a thread’s execution is not blocking. The <i>Main</i> method started the execution of 5 threads in parallel and finished executing before they did. The
   </li>
 </ul>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>            &#39; on lance l&#39;exécution du thread i
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>            &#39; start execution of thread i
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>            tâches(i).Start()
 </code></pre></div>
-<p>starts the execution of the thread <em>tasks[i]</em>, but once this is done, execution immediately continues with the next statement without waiting for the thread to finish.</p>
+<p>triggers the execution of the thread <em>tâches[i]</em>, but once this is done, execution immediately continues with the next statement without waiting for the thread to finish.</p>
 <ul>
   <li>All created threads must execute the <i>display</i> method. The order of execution is unpredictable. Even though in the example, the order of execution appears to follow the order of execution requests, no general conclusions can be drawn from this. The operating system here has 6 threads and one processor. It will allocate the processor to these 6 threads according to its own rules.
   </li>
-  <li>The results show an effect of the <i>Sleep</i> method. In the example, thread 0 is the first to execute the <i>display</i> method. The start-of-execution message is displayed, then it executes the <i>Sleep</i> method, which suspends it for 1 second. It then loses the processor, which becomes available to another thread. The example shows that thread 1 will obtain it. Thread 1 will follow the same path, as will the other threads. When the 1-second sleep period for thread 0 ends, its execution can resume. The system grants it the processor, and it can complete the execution of the <i>display</i> method.
+  <li>The results show a consequence of the <i>Sleep</i> method. In the example, thread 0 is the first to execute the <i>display</i> method. The start-of-execution message is displayed, then it executes the <i>Sleep</i> method, which suspends it for 1 second. It then loses the processor, which becomes available to another thread. The example shows that thread 1 will obtain it. Thread 1 will follow the same path as the other threads. When the one-second sleep period for thread 0 ends, its execution can resume. The system grants it the processor, and it can complete the execution of the <i>display</i> method.
   </li>
 </ul>
 
 <p>Let’s modify our program to end the <em>Main</em> method with the following instructions:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>        &#39; fin de main
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>        &#39; end of hand
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>        Console.Out.WriteLine((&quot;fin du thread &quot; + main.Name))
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>        Environment.Exit(0)
 </code></pre></div>
-<p>Running the new program yields:</p>
+<p>Executing the new program yields:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>fin du thread main
 </code></pre></div>
 <p>The threads created by the <em>Main</em> function are not executed. It is the statement</p>
@@ -941,12 +943,12 @@
 </code></pre></div>
 <p>that does this: it terminates all threads in the application, not just the <em>Main</em> thread. The solution to this problem is for the <em>Main</em> method to wait for the threads it created to finish executing before terminating itself. This can be done using the <em>Join</em> method of the <em>Thread</em> class:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content">        &#x27; on attend la fin d&#x27;exécution de tous les threads</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        &#x27; wait for all threads to finish executing</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">For</span> i = 0 <span style="color:#0000ff">To</span> tâches.Length - 1</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            &#x27; attente de la fin d&#x27;exécution du thread i</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            &#x27; wait for thread i to finish execution</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            tâches(i).Join()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Next</span> i        &#x27;for</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        &#x27; fin de main</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        &#x27; end of hand</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Console.Out.WriteLine((&quot;fin du thread &quot; + main.Name))</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Environment.Exit(0)</span></span>
 </code></pre></div>
@@ -965,14 +967,14 @@
 <a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>fin du thread main
 </code></pre></div>
 <h2 id="83-benefits-of-threads">8.3. <span style="color: #4f81bd">Benefits of threads</span></h2>
-<p>Now that we have highlighted the existence of a default thread—the one that executes the <em>Main</em> method—and we know how to create others, let’s consider the benefits of threads for us and why we are presenting them here. There is a type of application that lends itself well to the use of threads: client-server applications on the Internet. In such an application, a server located on machine S1 responds to requests from clients located on remote machines C1, C2, ..., Cn.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003C300000142887AC200.png" width="482" height="161" style="display:inline-block; margin:4px;width:12.741cm;height:4.26cm;" class="odt-zoomable" data-zoom-src="images/10000000000003C300000142887AC200.png" /></td></tr></table>
+<p>Now that we have highlighted the existence of a default thread—the one that executes the <em>Main</em> method—and we know how to create others, let’s consider the benefits of threads for us and why we are presenting them here. There is a type of application that lends itself well to the use of threads: client-server Internet applications. In such an application, a server located on machine S1 responds to requests from clients located on remote machines C1, C2, ..., Cn.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003C300000142887AC200.png" width="482" height="161" style="display:inline-block; margin:4px;width:12.741cm;height:4.26cm;" class="odt-zoomable" data-zoom-src="images/10000000000003C300000142887AC200.png" /></td></tr></table>
 
-<p>We use Internet applications that follow this pattern every day: web services, email, forum browsing, file transfers... In the diagram above, server S1 must serve clients C1, C2, ..., Cn simultaneously. If we take the example of an FTP (File Transfer Protocol) server that delivers files to its clients, we know that a file transfer can sometimes take several hours. It is, of course, out of the question for a single client to monopolize the server for such a long period. What is usually done is that the server creates as many execution threads as there are clients. Each thread is then responsible for handling a specific client. Since the processor is cyclically shared among all active threads on the machine, the server spends a little time with each client, thereby ensuring the concurrency of the service.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003F0000002123A8BF4BB.png" width="504" height="265" style="display:inline-block; margin:4px;width:13.335cm;height:7.011cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F0000002123A8BF4BB.png" /></td></tr></table>
+<p>We use Internet applications that follow this pattern every day: web services, email, forum browsing, file transfer... In the diagram above, server S1 must serve the clients clients simultaneously. If we take the example of a FTP (File Transfer Protocol) server that delivers files to its clients clients, we know that a file transfer can sometimes take several hours. It is, of course, out of the question for a single client to monopolize the server for such a long period. What is usually done is that the server creates as many execution threads as there are clients clients. Each thread is then responsible for handling a specific client. Since the processor is cyclically shared among all active threads on the machine, the server spends a little time with each client, thereby ensuring the concurrency of the service.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003F0000002123A8BF4BB.png" width="504" height="265" style="display:inline-block; margin:4px;width:13.335cm;height:7.011cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F0000002123A8BF4BB.png" /></td></tr></table>
 
-<h2 id="84-access-to-shared-resources">8.4. <span style="color: #4f81bd">Access to Shared Resources</span></h2>
-<p>In the client-server example mentioned above, each thread serves a client largely independently. Nevertheless, threads may need to cooperate to provide the requested service to their client, particularly when accessing shared resources. The diagram above resembles the counters of a large government office, such as a post office, where an agent at each counter serves a customer. Suppose that from time to time these agents need to make photocopies of documents brought in by their customers and that there is only one photocopier. Two agents cannot use the photocopier at the same time. If agent i finds the photocopier in use by agent j, they will have to wait. This situation is called access to a shared resource, and in computer science, it is quite tricky to manage. Consider the following example:</p>
+<h2 id="84-access-to-shared-resources">8.4. <span style="color: #4f81bd">Access to shared resources</span></h2>
+<p>In the client-server example mentioned above, each thread serves a client largely independently. However, threads may need to cooperate to provide the requested service to their client, particularly when accessing shared resources. The diagram above resembles the counters of a large government office, such as a post office, where an agent at each counter serves a customer. Suppose that from time to time these agents need to make photocopies of documents brought in by their customers, and there is only one photocopier. Two agents cannot use the photocopier at the same time. If agent i finds the photocopier in use by agent j, they will have to wait. This situation is called access to a shared resource, and in computer science, it is quite tricky to manage. Consider the following example:</p>
 <ul>
   <li>an application will generate n threads, where n is passed as a parameter
   </li>
@@ -983,7 +985,7 @@
 </ul>
 
 <p>The program is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27; options</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Option</span> <span style="color:#0000ff">Explicit</span> <span style="color:#0000ff">On</span> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Option</span> <span style="color:#0000ff">Strict</span> <span style="color:#0000ff">On</span></span></span>
@@ -1055,7 +1057,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">End</span> <span style="color:#0000ff">Class</span></span></span>
 </code></pre></div>
 
-<p>We won’t dwell on the thread creation part, which we’ve already covered. Instead, let’s focus on the <em>Increment</em> method, used by each thread to increment the static counter <em>cptrThreads</em>.</p>
+<p>We won’t dwell on the thread creation part, which we’ve already covered. Let’s focus instead on the <em>Increment</em> method, used by each thread to increment the static counter <em>cptrThreads</em>.</p>
 <ol>
   <li>The counter is read
   </li>
@@ -1065,7 +1067,7 @@
   </li>
 </ol>
 
-<p>Step 2 is only there to force the thread to lose the processor. The processor will be given to another thread. In practice, there is no guarantee that a thread will not be interrupted between the moment it reads the counter and the moment it increments it. There is a risk of losing the CPU between the moment the counter value is read and the moment its value, incremented by 1, is written. Indeed, the increment operation will involve several basic instructions at the processor level that can be interrupted. Step 2, the one-second sleep, is therefore only there to account for this risk. The results obtained are as follows:</p>
+<p>Step 2 is only there to force the thread to lose the processor. The processor will be given to another thread. In practice, there is no guarantee that a thread will not be interrupted between the moment it reads the counter and the moment it increments it. There is a risk of losing the processor between the moment the counter value is read and the moment its value, incremented by 1, is written. Indeed, the increment operation will involve several basic instructions at the processor level that can be interrupted. Step 2, the one-second sleep, is therefore only there to systematize this risk. The results obtained are as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>dos&gt;thread3 5
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>A 05:44:34, le thread tache_0 a lu la valeur du compteur : 0
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>A 05:44:34, le thread tache_1 a lu la valeur du compteur : 0
@@ -1079,7 +1081,7 @@
 <a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>A 05:44:35, le thread tache_4 a écrit la valeur du compteur : 1
 <a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>Nombre de threads générés : 1
 </code></pre></div>
-<p>Looking at these results, it’s clear what’s happening:</p>
+<p>Looking at these results, it is clear what is happening:</p>
 <ul>
   <li>A first thread reads the counter. It finds 0.
   </li>
@@ -1095,7 +1097,7 @@
 
 <p>Where does the problem come from? The second thread read an incorrect value because the first thread was interrupted before it finished its task, which was to update the counter in the window. This brings us to the concept of critical resources and critical sections in a program: </p>
 <ul>
-  <li>A critical resource is a resource that can be held by only one thread at a time. Here, the critical resource is the counter. 
+  <li>a critical resource is a resource that can be held by only one thread at a time. Here, the critical resource is the counter. 
   </li>
   <li>A critical section of a program is a sequence of instructions in a thread’s execution flow during which it accesses a critical resource. We must ensure that during this critical section, it is the only one with access to the resource.
   </li>
@@ -1114,26 +1116,26 @@
 <p>To execute this code, a thread must be guaranteed to be alone. It may be interrupted, but during that interruption, no other thread must be able to execute this same code. The .NET platform offers several tools to ensure single-threaded entry into critical sections of code. We will use the <strong>Mutex</strong> class:</p>
 <p><img src="images/1000000000000227000000D09EE4EEDC.png" width="551" height="208" style="width:14.577cm;height:5.503cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000227000000D09EE4EEDC.png" /></p>
 <p>Here, we will use only the following constructors and methods:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>public Mutex()
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">creates a synchronization object M</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">creates a synchronization object M</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>public bool WaitOne()
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Thread T1, which executes the <i>M.WaitOne() </i>operation, requests ownership of the synchronization object M. If the Mutex M is not held by any thread (the initial case), it is &quot;given&quot; to thread T1, which requested it. If, a little later, thread T2 performs the same operation, it will be blocked. In fact, a mutex can belong to only one thread. It will be released when thread T1 releases the mutex M it holds. Several threads can thus be blocked while waiting for the mutex M.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Thread T1, which executes the operation <i>M.WaitOne(), </i>requests ownership of the synchronization object M. If the Mutex M is not held by any thread (which is the case initially), it is &quot;given&quot; to thread T1, which requested it. If, a little later, thread T2 attempts the same operation, it will be blocked. This is because a mutex can belong to only one thread at a time. It will be released when thread T1 releases the mutex M it holds. Thus, multiple threads can be blocked while waiting for mutex M.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>public void
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>ReleaseMutex()
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">The thread T1 that performs the operation <i>M.ReleaseMutex() </i>relinquishes ownership of the mutex M. When thread T1 loses the processor, the system can assign it to one of the threads waiting for the mutex M. Only one will obtain it in turn; the others waiting for M remain blocked</div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The thread T1 performing the operation <i>M.ReleaseMutex() </i>relinquishes ownership of the mutex M.Lorsque; thread T1 will lose the processor, and the system may grant it to one of the threads waiting for the mutex M. Only one will obtain it in turn; the others waiting for M will remain blocked</div></td></tr></table>
 
-<p>A Mutex M manages access to a shared resource R. A thread requests resource R via <em>M.WaitOne()</em> and releases it via <em>M.ReleaseMutex()</em>. A critical section of code that must be executed by only one thread at a time is a shared resource. Synchronization of the critical section’s execution can be achieved as follows:</p>
+<p>A mutex M controls access to a shared resource R. A thread requests resource R via <em>M.WaitOne()</em> and returns it via <em>M.ReleaseMutex()</em>. A critical section of code that must be executed by only one thread at a time is a shared resource. Synchronization of the critical section’s execution can be done as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>M.WaitOne()
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>&#39; le thread est seul à entrer ici
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>&#39; section critique
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>&#39; the thread is the only one to enter here
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>&#39; review section
 <a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>....
 <a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>M.ReleaseMutex()
 </code></pre></div>
-<p>where M is a <em>Mutex</em> object. Of course, you must never forget to release a <em>Mutex</em> that is no longer needed so that another thread can enter the critical section; otherwise, threads waiting for a Mutex that is never released will never gain access to the processor. Furthermore, one must avoid a deadlock situation in which two threads wait for each other. Consider the following actions occurring in sequence:</p>
+<p>where M is a <em>Mutex</em> object. Of course, you must never forget to release a <em>Mutex</em> that is no longer needed so that another thread can enter the critical section; otherwise, threads waiting for a Mutex that is never released will never gain access to the processor. Furthermore, you must avoid deadlock situations in which two threads wait for each other. Consider the following actions occurring in sequence:</p>
 <ul>
   <li>a thread T1 acquires ownership of a Mutex M1 to access a shared resource R1
   </li>
@@ -1146,7 +1148,7 @@
 </ul>
 
 <p>Here, threads T1 and T2 are waiting for each other. This situation occurs when threads require two shared resources: resource R1 controlled by Mutex M1 and resource R2 controlled by Mutex M2. One possible solution is to acquire both resources simultaneously using a single Mutex M. However, this is not always feasible if, for example, it results in a prolonged lock on a costly resource. Another solution is for a thread holding M1 that cannot obtain M2 to release M1 to avoid deadlock. If we apply what we just saw to the previous example, our application becomes as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27; options</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Option</span> <span style="color:#0000ff">Explicit</span> <span style="color:#0000ff">On</span> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Option</span> <span style="color:#0000ff">Strict</span> <span style="color:#0000ff">On</span></span></span>
@@ -1239,19 +1241,19 @@
 <a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>Nombre de threads générés : 5
 </code></pre></div>
 <h2 id="86-event-based-synchronization">8.6. <span style="color: #4f81bd">Event-based synchronization</span></h2>
-<p>Consider the following situation, sometimes referred to as a <strong>producer-consumer</strong> scenario. </p>
-<ol>
+<p>Consider the following scenario, sometimes referred to as the <strong>producer-consumer</strong> scenario. </p>
+<ol start="6">
   <li>We have an array into which some processes deposit data (the producers) and others read it (the consumers). 
   </li>
   <li>The producers are equal to one another but exclusive: only one producer at a time can deposit data into the array.
   </li>
   <li>The consumers are equal to one another but mutually exclusive: only one reader at a time can read the data stored in the array.
   </li>
-  <li>A consumer can only read data from the table once a producer has written it there, and a producer can only write new data to the table once the existing data has been consumed.
+  <li>A consumer can only read data from the array when a producer has written it there, and a producer can only write new data to the array when the existing data has been consumed.
   </li>
 </ol>
 
-<p>In this explanation, we can distinguish two shared resources:</p>
+<p>In this discussion, we can distinguish two shared resources:</p>
 <ol>
     <ol>
       <li>the writable table
@@ -1261,10 +1263,10 @@
     </ol>
 </ol>
 
-<p>Access to these two shared resources can be controlled by mutexes, as seen previously, one for each resource. Once a consumer has obtained the read-only array, it must verify that there is indeed data in it. An event will be used to notify it of this. Similarly, a producer that has obtained the write-only array must wait until a consumer has emptied it. An event will be used here as well.</p>
-<p>The events used will be of the <em>AutoResetEvent</em> class:</p>
+<p>Access to these two shared resources can be controlled by mutexes, as seen previously, one for each resource. Once a consumer has obtained the read-only table, it must verify that there is indeed data in it. An event will be used to notify it of this. Similarly, a producer that has obtained the write-only table must wait until a consumer has emptied it. An event will be used here as well.</p>
+<p>The events used will be part of the <em>AutoResetEvent</em> class:</p>
 <p><img src="images/1000000000000224000000DCE09F5CC4.png" width="548" height="220" style="width:14.497cm;height:5.821cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000224000000DCE09F5CC4.png" /></p>
-<p>This type of event is analogous to a boolean but avoids active or semi-active waits. Thus, if write access is controlled by a boolean *<code>canWrite*</code>, a producer will execute code like the following before writing:</p>
+<p>This type of event is analogous to a Boolean but avoids active or semi-active waits. Thus, if write permission is controlled by a Boolean <em>peutEcrire</em>, a producer will execute code like the following before writing:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>while(peutEcrire==false)        &#39; attente active
 </code></pre></div>
 <p>or</p>
@@ -1272,20 +1274,20 @@
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>    Thread.Sleep(100)                &#39; attente de 100ms
 <a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>end while
 </code></pre></div>
-<p>In the first method, the thread unnecessarily ties up the processor. In the second, it checks the state of the <em>canWrite</em> boolean every 100 ms. The <em>AutoResetEvent</em> class allows for further improvement: the thread will request to be woken up when the event it is waiting for occurs:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">AutoEvent</span><span class="w"> </span><span class="n">peutEcrire</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">AutoResetEvent</span><span class="p">(</span><span class="k">false</span><span class="p">)</span><span class="w">        </span><span class="c">&#39; peutEcrire=false;</span>
-<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="p">....</span>
-<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="n">peutEcrire</span><span class="p">.</span><span class="n">WaitOne</span><span class="p">()</span><span class="w"> </span><span class="c">&#39; thread waits for peutEcrire event to change to true</span>
+<p>In the first method, the thread unnecessarily ties up the processor. In the second, it checks the state of the boolean <em>peutEcrire</em> every 100 ms. The <em>AutoResetEvent</em> class allows for further improvement: the thread will request to be woken up when the event it is waiting for occurs:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>AutoEvent peutEcrire=new AutoResetEvent(false)        &#39; peutEcrire=false;
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>....
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>peutEcrire.WaitOne() &#39; le thread attend que l&#39;évt peutEcrire passe à vrai
 </code></pre></div>
 <p>The operation </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">AutoEvent</span><span class="w"> </span><span class="n">peutEcrire</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">AutoResetEvent</span><span class="p">(</span><span class="k">false</span><span class="p">)</span><span class="w">        </span><span class="c">&#39; peutEcrire=false;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>AutoEvent peutEcrire=new AutoResetEvent(false)        &#39; peutEcrire=false;
 </code></pre></div>
-<p>initializes the <em>canWrite</em> boolean to <em>false</em>. The operation</p>
+<p>sets the boolean <em>peutEcrire</em> to <em>false</em>. The operation</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>peutEcrire.WaitOne() &#39; le thread attend que l&#39;évt peutEcrire passe à vrai
 </code></pre></div>
-<p>executed by a thread causes that thread to proceed if the boolean <em><code>canWrite*</code> is true; otherwise, it is blocked until it becomes true. Another thread will set it to true using the </em><code>canWrite.Set()</code><em> operation or to false using the </em><code>canWrite.Reset()*</code> operation.</p>
+<p>executed by a thread causes it to proceed if the boolean <em>peutEcrire</em> is true; otherwise, it is blocked until it becomes true. Another thread will set it to true via the operation  <em>peutEcrire.Set()</em> or to false via the operation <em>peutEcrire.Reset()</em>.</p>
 <p>The producer-consumer program is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27; use of reader and writer threads</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27; illustrates the simultaneous use of shared resources and synchronization</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1304,7 +1306,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    Private Shared lecteur As Mutex    &#x27; synchronization variable to read the table</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Private Shared écrivain As Mutex    &#x27; synchronization variable to write to the table</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Private Shared objRandom As New Random(DateTime.Now.Second)    &#x27; a random number generator</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    Private Shared peutLire As AutoResetEvent    &#x27; indicates that you can read the contents of data</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    Private Shared peutLire As AutoResetEvent    &#x27; indicates that the contents of data can be read</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">Private</span> <span style="color:#0000ff">Shared</span> peutEcrire <span style="color:#0000ff">As</span> AutoResetEvent</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">Public</span> <span style="color:#0000ff">Shared</span> <span style="color:#0000ff">Sub</span> Main(<span style="color:#0000ff">ByVal</span> args() <span style="color:#0000ff">As</span> [String])</span></span>
@@ -1396,7 +1398,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">End</span> <span style="color:#0000ff">Class</span></span></span>
 </code></pre></div>
 
-<p>The execution yields the following results:</p>
+<p>Execution yields the following results:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>dos&gt;lececr
 <a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>fin de Main...
 <a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>05:56:56 : L&#39;écrivain écrivain_0 a écrit le nombre 459
@@ -1429,13 +1431,13 @@
 </code></pre></div>
 <p>The following points can be noted:</p>
 <ul>
-  <li>there is indeed only one reader at a time, even though it loses the CPU in the <i>read</i> critical section
+  <li>there is indeed only one reader at a time, even though it loses the CPU in the critical <i>read</i> section
   </li>
-  <li>there is indeed only one writer at a time, even though it loses the CPU in the critical <i>write</i> section
+  <li>there is indeed only one writer at a time, even though the writer loses the CPU in the critical <i>write</i> section
   </li>
-  <li>A reader only reads when there is something to read in the table
+  <li>A reader only reads when there is something to read in the array
   </li>
-  <li>A writer writes only when the array has been fully read
+  <li>a writer writes only when the array has been fully read
   </li>
 </ul>
 

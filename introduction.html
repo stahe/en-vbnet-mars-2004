@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -401,7 +403,7 @@
   <span class="md-ellipsis">
     
   
-    4. Commonly Used .NET Classes
+    4. Commonly used .NET classes
   
 
     
@@ -448,14 +450,14 @@
   
   
     <li class="md-nav__item">
-      <a href="event-handling.html" class="md-nav__link">
+      <a href="event-management.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. Event Handling
+    6. Event Management
   
 
     
@@ -529,14 +531,14 @@
   
   
     <li class="md-nav__item">
-      <a href="tcpip-programming.html" class="md-nav__link">
+      <a href="programming-tcp-ip.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. TCP/IP Programming
+    9. Programming TCP-IP
   
 
     
@@ -621,21 +623,21 @@
 
 
 <h1 id="1-introduction">1. <span style="color: #365f91">Introduction</span></h1>
-<p>The PDF of this document is available |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQAtN7yW90Q9R5iHJMYYMr-aASwJPm_-50v-CUo32OL7wKY?e=YazE67">HERE</a>|.</p>
-<p>VB.NET is a relatively new language. It has been available in beta versions since 2000 and was officially released in February 2002 alongside Microsoft’s .NET platform, to which it is tied. VB.NET can only run in this runtime environment, which is currently available only on Windows NT, 2000, and XP machines.</p>
-<p>With the .NET platform, three new languages have emerged: C#, VB.NET, and JScript.NET. C# is largely a “copy” of Java. VB.NET and JScript.NET are extensions of Visual Basic and JScript for the .NET platform. This platform makes available to programs running within it a very large set of classes, classes very similar to those found within Java virtual machines. As a first approximation, we can say that the .NET platform is a runtime environment analogous to that of a Java virtual machine. However, two important differences should be noted:</p>
+<p>The PDF for this document is available |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQAtN7yW90Q9R5iHJMYYMr-aASwJPm_-50v-CUo32OL7wKY?e=oQdeT9">HERE</a>|.</p>
+<p>VB.NET is a recent language. It has been available in beta versions since 2000 before being officially released in February 2002 alongside Microsoft’s .NET platform, to which it is linked. VB.NET can only run in this runtime environment, which is currently available only on Windows NT, 2000, and XP machines.</p>
+<p>With the .NET platform, three new languages have emerged: C#, VB.VET, and JSCRIPT.NET. C# is largely a “copy” of Java. VB.NET and JSCRIPT.NET are extensions of Visual Basic and JScript for the .NET platform. This platform makes available to programs running within it a very large set of classes, which are very similar to those found within Java virtual machines. As a first approximation, we can say that the .NET platform is a runtime environment analogous to that of a Java virtual machine. However, there are two important differences:</p>
 <ul>
-<li>The .NET platform runs only on Windows machines, whereas Java runs on various operating systems (Windows, Unix, Macintosh).</li>
-<li>The .NET platform allows the execution of programs written in different languages. All that is required is for the compiler to be able to generate IL (Intermediate Language) code, which is executed by the .NET virtual machine. All .NET classes are available to .NET-compatible languages, which tends to blur the differences between languages to the extent that programs make extensive use of these classes. Choosing a .NET language is more a matter of preference than of performance.</li>
+<li>the .NET platform runs only on Windows machines, whereas Java runs on various platforms (Windows, Unix, Macintosh).</li>
+<li>The .NET platform allows the execution of programs written in various languages. The only requirement is that the compiler for these languages be capable of producing IL code (Intermediate Language), which is executed by the .NET virtual machine. All .NET classes are available to .NET-compatible languages, which tends to blur the differences between languages to the extent that programs make extensive use of these classes. The choice of a .NET language becomes a matter of preference rather than performance.</li>
 </ul>
-<p>Just as Java cannot be ignored, neither can the .NET platform, due both to the vast number of Windows machines in use and Microsoft’s efforts to promote and establish it. C# appears to be a good choice for getting started with .NET, particularly for Java programmers, given how closely related the two languages are. Afterward, one can easily switch from C# to VB.NET or another .NET language. The syntax will change, but the .NET classes will remain the same. Contrary to appearances, the transition from VB to VB.NET is difficult. VB is not an object-oriented language, whereas VB.NET is entirely so. VB programmers will therefore be confronted with concepts they are not familiar with. It seems easier to tackle these by setting aside what you know about VB. Therefore, we make only a few references to VB in the following.</p>
-<p>This document is not a comprehensive course. It is intended for people who already know programming and want to learn VB.NET. It follows the structure of the document &quot;Introduction to the C# Language&quot; by the same author to facilitate comparison between the two languages. In fact, I have used automatic C#-to-VB.NET translators here. While not entirely perfect, these translators nevertheless do 80 to 100% of the work, depending on the case. So, when reading the VB.NET program code that follows, keep in mind that it was first generated by a machine and then revised by me as needed. You’ll therefore encounter programming “phrasing” that you might not have used yourself.</p>
-<p>The following books were helpful to me:</p>
+<p>Just as Java cannot be ignored, the .NET platform cannot be either, due both to the very large installed base of Windows machines and Microsoft’s efforts to promote and establish it. It seems that C# is a good choice for getting started with .NET, particularly for Java programmers, given how closely related these two languages are. Later, one can easily switch from C# to VB.NET or another .NET language. The syntax will change, but the .NET classes will remain the same. Contrary to appearances, the transition from VB to VB.NET is difficult. VB is not an object-oriented language, whereas VB.NET is entirely so. The VB programmer will therefore be confronted with concepts they do not fully understand. It seems easier to tackle these by setting aside what we know about VB. Therefore, we make only a few references to VB in the following.</p>
+<p>This document is not a comprehensive course. It is intended for people who are already familiar with programming and who want to learn VB.NET. It follows the structure of the document &quot;Introduction to the C# Language&quot; by the same author to facilitate comparison between the two languages. In fact, I have used automatic translators from C# to VB.NET here. While not entirely perfect, these translators nevertheless handle 80 to 100% of the work, depending on the case. So, when reading the VB.NET program code that follows, keep in mind that it was first generated by a machine and then revised by me as needed. Consequently, you may encounter programming &quot;phrasing&quot; that you might not have used yourself.</p>
+<p>The following books were helpful:</p>
 <ul>
-<li>Professional C# Programming, Wrox Publishing</li>
+<li>Professional C# Programming, Wrox</li>
 <li>C# and .NET, Gérard Leblanc, Eyrolles</li>
 </ul>
-<p>These are two excellent books that I recommend reading. The translation of the C# programs into VB.NET was obtained using a translator available at the URL (March 2004) <em>http://authors.aspalliance.com/aldotnet/examples/translate.aspx</em>. Everything else was obtained using the Visual Studio.NET documentation.</p>
+<p>These are two excellent books that I recommend reading. The translation of the C# programs into VB.NET was done using a translator available at url (March 2004) <em>http://authors.aspalliance.com/aldotnet/examples/translate.aspx</em>. Everything else was obtained from the Visual Studio documentation.NET.</p>
 <p>Serge Tahé, March 2004</p>
 
 

@@ -12,7 +12,7 @@
         <meta name="author" content="Serge Tahé">
       
       
-        <link rel="canonical" href="https://stahe.github.io/en-vbnet-mars-2004/event-handling.html">
+        <link rel="canonical" href="https://stahe.github.io/en-vbnet-mars-2004/event-management.html">
       
       
         <link rel="prev" href="graphical-interfaces-with-vbnet-and-vsnet.html">
@@ -29,7 +29,7 @@
     
     
       
-        <title>6. Event Handling - An Introduction to VB.NET Through Examples</title>
+        <title>6. Event Management - An Introduction to VB.NET Through Examples</title>
       
     
     
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -92,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#6-event-handling" class="md-skip">
+        <a href="#6-event-management" class="md-skip">
           Skip to content
         </a>
       
@@ -128,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              6. Event Handling
+              6. Event Management
             
           </span>
         </div>
@@ -391,7 +393,7 @@
   <span class="md-ellipsis">
     
   
-    4. Commonly Used .NET Classes
+    4. Commonly used .NET classes
   
 
     
@@ -454,7 +456,7 @@
   <span class="md-ellipsis">
     
   
-    6. Event Handling
+    6. Event Management
   
 
     
@@ -465,14 +467,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="event-handling.html" class="md-nav__link md-nav__link--active">
+      <a href="event-management.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. Event Handling
+    6. Event Management
   
 
     
@@ -535,7 +537,7 @@
   <a href="#622-defining-event-handlers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.2.2. Defining Event Handlers
+        6.2.2. Defining event handlers
       
     </span>
   </a>
@@ -546,7 +548,7 @@
   <a href="#623-triggering-an-event" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.2.3. Triggering an Event
+        6.2.3. Triggering an event
       
     </span>
   </a>
@@ -638,14 +640,14 @@
   
   
     <li class="md-nav__item">
-      <a href="tcpip-programming.html" class="md-nav__link">
+      <a href="programming-tcp-ip.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. TCP/IP Programming
+    9. Programming TCP-IP
   
 
     
@@ -729,25 +731,25 @@
 
 
 
-<h1 id="6-event-handling">6. <span style="color: #365f91">Event Handling</span></h1>
-<p>In the previous chapter, we discussed the concept of events associated with components. We will now see how to create events in our own classes. This is a difficult concept that will not be of interest to beginner developers, who are advised to skip directly to the next chapter.</p>
+<h1 id="6-event-management">6. <span style="color: #365f91">Event Management</span></h1>
+<p>In the previous chapter, we discussed the concept of component-related events. Now we will see how to create events in our own classes. This is a difficult concept that will not be of interest to beginner developers, who are advised to skip directly to the next chapter.</p>
 <h2 id="61-delegate-objects">6.1. <span style="color: #4f81bd">Delegate objects</span></h2>
 <p>The statement</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span><span class="k">Delegate</span><span class="w"> </span><span class="k">Function</span><span class="w"> </span><span class="nf">opération</span><span class="p">(</span><span class="k">ByVal</span><span class="w"> </span><span class="n">n1</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Integer</span><span class="p">,</span><span class="w"> </span><span class="k">ByVal</span><span class="w"> </span><span class="n">n2</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Integer</span><span class="p">)</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Integer</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    Delegate Function opération(ByVal n1 As Integer, ByVal n2 As Integer) As Integer
 </code></pre></div>
-<p>defines a type called <em>operation</em>, which is actually a function prototype that accepts two integers and returns an integer. It is the <span style="color: #0000ff">delegate</span> keyword that makes <em>operation</em> a function prototype definition. The [operation] type can be assigned to a variable as follows:</p>
+<p>defines a type called <em>operation,</em> which is actually a function prototype that accepts two integers and returns an integer. It is the <span style="color: #0000ff">delegate</span> keyword that makes <em>operation</em> a function prototype definition. The type [opération] can be assigned to a variable as follows:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Dim</span> op <span style="color:#0000ff">As</span> <span style="color:#0000ff">New</span> opération(<span style="color:#0000ff">AddressOf</span> [fonction])</span></span>
 </code></pre></div>
 
-<p>A variable of type [delegate] is constructed as an object. The constructor parameter is the function associated with the delegate instance. In VB, this function is specified as AddressOf function, where [function] is the name of the function. Once a delegate instance is created, it can be used as a function:</p>
+<p>A variable of type [délégué] is constructed as an object. The constructor parameter is the function associated with the delegate instance. In VB, this function is specified in the form AddressOf function, where [fonction] is the name of the function. Once a delegate instance has been created, it can be used as a function:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span class="odt-code-line-content">        &#x27; the delegate is executed</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Dim</span> n <span style="color:#0000ff">As</span> <span style="color:#0000ff">Integer</span> = op(4, 7)</span></span>
 </code></pre></div>
 
-<p>The delegate [operation] was defined to take two parameters of type [integer] and return a result of the same type. Therefore, its instance [op] above is used as such a function. Consider the following example:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<p>The delegate [opération] was defined to take two parameters of type [integer] and return a result of the same type. Therefore, its instance [op] above is used as such a function. Consider the following example:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27; delegated functions</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Imports</span> System</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
@@ -790,7 +792,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        &#x27; execution of delegated object</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        n = op(2, 3)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Console.Out.WriteLine((&quot;n=&quot; &amp; n))</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        &#x27; we register the subtract method of c1 in the delegate</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        &#x27; the subtract method of c1 is registered in the delegate</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        op = <span style="color:#0000ff">New</span> delegate1.opération(<span style="color:#0000ff">AddressOf</span> c1.soustraire)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        n = op(2, 3)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Console.Out.WriteLine((&quot;n=&quot; &amp; n))</span></span>
@@ -808,31 +810,35 @@
 </code></pre></div>
 <h2 id="62-event-handling">6.2. <span style="color: #4f81bd">Event handling</span></h2>
 <p>What can a <em>delegate</em> object be used for?</p>
-<p>As we will see in the following example, it is primarily used for event handling. A class <em>C1</em> can generate <em>evti</em> events. When an <em>evti</em> event occurs, an object of type <em>C1</em> will trigger the execution of an <em>evtiDéclenché</em> object of type <em>delegate</em>. All functions registered in the <em>evtiDéclenché</em> delegate object will then be executed. If an object <em>C2</em> using an object <em>C1</em> wants to be notified of the occurrence of the <em>evti</em> event on object <em>C1</em>, it will register one of its methods, <em>C2.f,</em> with the delegate object <em>C1.evtiDéclenché</em> of object <em>C1</em> so that the method <em>C2.f</em> is executed every time the <em>evti</em> event occurs on object <em>C1</em>. Since the delegate object <em>C1.evtiDéclenché</em> can register multiple functions, different objects <em>Ci</em> can register with the delegate <em>C1.evtiDéclenché</em> to be notified of the event <em>evti</em> on <em>C1</em>. </p>
+<p>As we will see in the following example, it is primarily used for event handling. A class <em>C1</em> can generate <em>evti</em> events. When an <em>evti</em> event occurs, an object of type <em>C1</em> will trigger the execution of a <em>delegate-type</em> object <em>evtiDéclenché</em>. All functions registered in the delegate object <em>evtiDéclenché</em> will then be executed. If an object <em>C2</em> using an object <em>C1</em> wants to be notified of the occurrence of the <em>evti</em> event on object <em>C1</em>, it will register one of its methods, <em>C2.f,</em> with the delegate object <em>C1.evtiDéclenché</em> of object <em>C1</em> so that the method <em>C2.f</em> is executed every time the <em>evti</em> event occurs on object <em>C1</em>. Since the delegate object <em>C1.evtiDéclenché</em> can register multiple functions, different objects <em>Ci</em> can register with the delegate <em>C1.evtiDéclenché</em> to be notified of the <em>evti</em> event on <em>C1</em>. </p>
 <h3 id="621-declaring-an-event">6.2.1. <span style="color: #4f81bd">Declaring an Event</span></h3>
 <p>An event is declared as follows (1):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">Delegate</span><span class="w"> </span><span class="k">Sub</span><span class="w"> </span><span class="nf">proc</span><span class="p">(</span><span class="n">liste</span><span class="w"> </span><span class="n">d</span><span class="c">&#39;arguments)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">Public</span><span class="w"> </span><span class="k">Event</span><span class="w"> </span><span class="n">événement</span><span class="w"> </span><span class="ow">as</span><span class="w"> </span><span class="n">proc</span>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Delegate</span> <span style="color:#0000ff">Sub</span> proc(<span style="color:#0000ff">liste d&#x27;arguments</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Public Event événement as proc</span></span>
 </code></pre></div>
+
 <p>or (2)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">Public</span><span class="w"> </span><span class="k">Event</span><span class="w"> </span><span class="n">événement</span><span class="p">(</span><span class="n">liste</span><span class="w"> </span><span class="n">d</span><span class="c">&#39;arguments)</span>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">Public Event événement(<span style="color:#0000ff">liste d&#x27;arguments</span>)</span></span>
 </code></pre></div>
-<p>The keyword [Event] defines a piece of data as an event. The event is associated with the signature that its handlers must have. This signature can be defined using a delegate (method 1) or directly (method 2).</p>
-<h3 id="622-defining-event-handlers">6.2.2. <span style="color: #4f81bd">Defining Event Handlers</span></h3>
-<p>When an event is triggered by the [RaiseEvent] statement, it must be handled. The procedures responsible for handling events are called event handlers. When creating an [Event] object, only the signature of the event handlers is declared. This signature is that of the [delegate] object associated with the event. Once this is done, handlers can be associated with the event. These are procedures that must have the same signature as the [delegate] associated with the event. To associate an event handler with an event, use the [AddHandler] statement with the following syntax:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>AddHandler event, AddressOf eventhandler
+
+<p>The keyword [Event] defines a data type as an event. The event is associated with the signature that its handlers must have. This signature can be defined using a delegate (method 1) or directly (method 2).</p>
+<h3 id="622-defining-event-handlers">6.2.2. <span style="color: #4f81bd">Defining event handlers</span></h3>
+<p>When an event is triggered by the [RaiseEvent] statement, it must be processed. The procedures responsible for handling events are called event handlers. When a [Event] object is created, only the signature of the event handlers is declared. This signature is that of the [delegate] object associated with the event. Once this is done, we can associate handlers with the event. These are procedures that must have the same signature as the [delegate] associated with the event. To associate an event handler with an event, we use the [AddHandler] statement with the following syntax:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>AddHandler event, AddressOf eventhandler
 </code></pre></div>
 <ul>
   <li><b>event</b>: event variable to which a new event handler is associated
   </li>
-  <li><b>eventhandler</b>: name of the event handler—must have the same signature as the [delegate] associated with the event
+  <li><b>eventhandler</b>: name of the event handler—must have the signature of the [délégué] associated with the event
   </li>
 </ul>
 
 <p>You can associate as many handlers as you want with an event. They will all be executed when the event they are associated with is triggered.</p>
-<h3 id="623-triggering-an-event">6.2.3. <span style="color: #4f81bd">Triggering an Event</span></h3>
+<h3 id="623-triggering-an-event">6.2.3. <span style="color: #4f81bd">Triggering an event</span></h3>
 <p>To trigger an event programmatically, use the [RaiseEvent] statement:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">RaiseEvent</span><span class="w"> </span><span class="n">eventname</span><span class="o">[</span><span class="p">(</span><span class="w"> </span><span class="n">argumentlist</span><span class="w"> </span><span class="p">)</span><span class="o">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>RaiseEvent eventname[( argumentlist )]
 </code></pre></div>
 <ul>
   <li><b>eventname</b>: event variable (declared with the Event keyword)
@@ -844,7 +850,7 @@
 <p>All handlers that have been associated with the event using the AddHandler statement will be called. They will receive as parameters the parameters defined in the event signature.</p>
 <h3 id="624-an-example">6.2.4. <span style="color: #4f81bd">An example</span></h3>
 <p>Consider the following example:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27;event management</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Imports</span> System</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -868,7 +874,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Public</span> <span style="color:#0000ff">Class</span> émetteur</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    &#x27; the class issuing an event</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    &#x27; attribute</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    Private _nom As String    &#x27; name of issuer</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">Private</span> _nom <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span>    <span style="font-weight:bold;color:#ff0000">&#x27; nom de l&#x27;émetteur</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    &#x27; manufacturer</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">Public</span> <span style="color:#0000ff">Sub</span> <span style="color:#0000ff">New</span>(<span style="color:#0000ff">ByVal</span> nom <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span>)</span></span>
@@ -897,8 +903,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27; an evt treatment class</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Public</span> <span style="color:#0000ff">Class</span> souscripteur</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    &#x27; attribute</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    Private nom As String    &#x27; name of subscriber</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    Private sender As émetteur    &#x27; evts sender</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">Private</span> nom <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span>    <span style="font-weight:bold;color:#ff0000">&#x27; nom du souscripteur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">Private</span> sender <span style="color:#0000ff">As</span> émetteur    <span style="font-weight:bold;color:#ff0000">&#x27; l&#x27;émetteur des évts</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    &#x27; manufacturer</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">Public</span> <span style="color:#0000ff">Sub</span> <span style="color:#0000ff">New</span>(<span style="color:#0000ff">ByVal</span> nom <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span>, <span style="color:#0000ff">ByVal</span> e <span style="color:#0000ff">As</span> émetteur)</span></span>
@@ -925,7 +931,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        &#x27; create a table of subscribers</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        &#x27; for events issued by issuer1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Dim</span> souscripteurs() <span style="color:#0000ff">As</span> souscripteur = {<span style="color:#0000ff">New</span> souscripteur(&quot;s1&quot;, émetteur1), <span style="color:#0000ff">New</span> souscripteur(&quot;s2&quot;, émetteur1)}</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        &#x27; read a sequence of integers from the keyboard</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        &#x27; a sequence of integers is read from the keyboard</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        &#x27; as soon as one is wrong, we issue an evt</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Console.Out.Write(&quot;Nombre entier (rien pour arrêter) : &quot;)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Dim</span> saisie <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span> = Console.In.ReadLine().Trim()</span></span>
@@ -950,12 +956,12 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">End</span> <span style="color:#0000ff">Class</span></span></span>
 </code></pre></div>
 
-<p>The code above is quite complex. Let’s break it down. In event handling, there is an event <em>sender</em> that sends event details (<em>EventArgs</em>) to subscribers who have expressed interest in the events in question. The event-sending class here is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<p>The previous code is quite complex. Let’s break it down. In event handling, there is an event <em>sender</em> that sends event details (<em>EventArgs</em>) to subscribers who have expressed interest in the events in question. The event-sending class here is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Public</span> <span style="color:#0000ff">Class</span> émetteur</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    &#x27; the class issuing an event</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    &#x27; attribute</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    Private _nom As String    &#x27; name of issuer</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">Private</span> _nom <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span>    <span style="font-weight:bold;color:#ff0000">&#x27; nom de l&#x27;émetteur</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    &#x27; manufacturer</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">Public</span> <span style="color:#0000ff">Sub</span> <span style="color:#0000ff">New</span>(<span style="color:#0000ff">ByVal</span> nom <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span>)</span></span>
@@ -982,8 +988,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">End</span> <span style="color:#0000ff">Class</span></span></span>
 </code></pre></div>
 
-<p>Each <em>emitter</em> object has a <em>name</em> set by default. The <em>ToString</em> method has been redefined so that when an <em>emitter</em> object is converted to <em>a string,</em> its name is returned. The class defines an event:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<p>Each <em>emitter</em> object has a <em>name</em> set by default. The <em>ToString</em> method has been redefined so that when an <em>emitter</em> object is converted to <em>string,</em> its name is retrieved. The class defines an event:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">        &#x27; the prototype of the functions responsible for processing the event</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Delegate</span> <span style="color:#0000ff">Sub</span> _evtHandler(<span style="color:#0000ff">ByVal</span> sender <span style="color:#0000ff">As</span> <span style="color:#0000ff">Object</span>, <span style="color:#0000ff">ByVal</span> evt <span style="color:#0000ff">As</span> myEventArgs)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -991,8 +997,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Public</span> <span style="color:#0000ff">Event</span> evtHandler <span style="color:#0000ff">As</span> _evtHandler</span></span>
 </code></pre></div>
 
-<p>The first argument of an event handler function will be the object that emits the event. The second argument will be of type <em>myEventArgs</em>, an object that provides details about the event, which we will discuss later. To trigger an event from outside an <em>emitter</em> object, we add the <em>envoyerEvt</em> method to the class:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<p>The first argument of an event-handling function will be the object that triggers the event. The second argument will be of type <em>myEventArgs</em>, an object that provides details about the event, which we will discuss later. To trigger an event from outside an <em>emitter</em> object, we add the <em>envoyerEvt</em> method to the class:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">    &#x27; method of requesting the issue of an evt</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">Public</span> <span style="color:#0000ff">Sub</span> envoyerEvt(<span style="color:#0000ff">ByVal</span> evt <span style="color:#0000ff">As</span> myEventArgs)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        &#x27; all subscribers are notified</span></span>
@@ -1001,8 +1007,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">End</span> <span style="color:#0000ff">Sub</span></span></span>
 </code></pre></div>
 
-<p>We need to define the type of events triggered by the <em>emitter</em> class. To do this, we have defined the <em>myEventArgs</em> class:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<p>We need to define the type of events triggered by the <em>emitter</em> class. To do this, we have defined the class <em>myEventArgs</em>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Public</span> <span style="color:#0000ff">Class</span> myEventArgs</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    &#x27; the class of an evt</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    &#x27; attribute</span></span>
@@ -1020,14 +1026,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">End</span> <span style="color:#0000ff">Class</span></span></span>
 </code></pre></div>
 
-<p>The events we are interested in are incorrect keyboard inputs. We will ask a user to type integers on the keyboard, and as soon as they type a string that does not represent an integer, we will trigger an event. As the event detail, we will simply provide the incorrect input. This is the purpose of the <em>_input</em> attribute of the class. A <em>myEventArgs</em> object is therefore created with the incorrect input as its parameter. We also override the <em>ToString</em> method so that when we convert a <em>myEventArgs</em> object to a string, we get the <em>_input</em> property. </p>
-<p>We have defined the event emitter and the type of events it emits. Next, we define the type of subscribers interested in these events.</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<p>The events we are interested in are incorrect keyboard inputs. We will ask a user to type integers on the keyboard, and as soon as they type a string that does not represent an integer, we will trigger an event. As the event detail, we will simply provide the incorrect input. This is the purpose of the <em>_saisie</em> attribute of the class. A <em>myEventArgs</em> object is therefore created with the incorrect input as its parameter. We also redefine the <em>ToString</em> method so that when a <em>myEventArgs</em> object is converted to a string, the <em>_saisie</em> attribute is obtained. </p>
+<p>We have defined the event emitter and the type of events it emits. We then define the type of subscribers interested in these events.</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">    &#x27; an evt treatment class</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">Public</span> <span style="color:#0000ff">Class</span> souscripteur</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        &#x27; attribute</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        Private nom As String     &#x27; name of subscriber</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        Private sender As émetteur     &#x27; evts sender</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Private</span> nom <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span>     <span style="font-weight:bold;color:#ff0000">&#x27; nom du souscripteur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Private</span> sender <span style="color:#0000ff">As</span> émetteur     <span style="font-weight:bold;color:#ff0000">&#x27; l&#x27;émetteur des évts</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        &#x27; manufacturer</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Public</span> <span style="color:#0000ff">Sub</span> <span style="color:#0000ff">New</span>(<span style="color:#0000ff">ByVal</span> nom <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span>, <span style="color:#0000ff">ByVal</span> e <span style="color:#0000ff">As</span> émetteur)</span></span>
@@ -1047,14 +1053,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">End</span> <span style="color:#0000ff">Class</span></span></span>
 </code></pre></div>
 
-<p>A subscriber is defined by two parameters: its name (<em>name</em> attribute) and the <em>emitter</em> object whose events it wants to handle (<em>sender</em> attribute). These two parameters are passed to the object&#x27;s constructor. During this same construction, the subscriber subscribes to the emitter&#x27;s events:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="font-weight:bold;color:#ff0000">&#x27; on s&#x27;inscrit pour recevoir les evts de l&#x27;émetteur e</span></span></span>
+<p>A subscriber is defined by two parameters: its name (<em>name</em> attribute) and the <em>sender</em> object whose events it wants to handle (<em>sender</em> attribute). These two parameters are passed to the object&#x27;s constructor. During this same construction, the subscriber subscribes to the sender&#x27;s events:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">            &#x27; register to receive news from the transmitter e</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">AddHandler</span> e.evtHandler, <span style="color:#0000ff">AddressOf</span> traitementEvt</span></span>
 </code></pre></div>
 
-<p>The function registered with the publisher is <em><code>traitementEvt</code></em>. This method of the <em>subscriber</em> class displays the two arguments it received (<em><code>sender</code></em>, <em><code>evt</code></em>) as well as the name of the receiver (<em><code>nom</code></em>). The types of the events produced, the type of the publisher of these events, and the types of the subscribers have been defined. All that remains is to implement them:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<p>The function registered with the sender is <em>traitementEvt</em>. This method of the <em>subscriber</em> class displays the two arguments it received (<em>sender</em>, <em>evt</em>) as well as the name of the receiver (<em>name</em>). The types of events generated, the type of the event sender, and the types of the subscribers have been defined. All that remains is to implement them:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">    &#x27; a test program</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">Public</span> <span style="color:#0000ff">Class</span> test</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Public</span> <span style="color:#0000ff">Shared</span> <span style="color:#0000ff">Sub</span> Main()</span></span>
@@ -1063,7 +1069,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">            &#x27; create a table of subscribers</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            &#x27; for events issued by issuer1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">Dim</span> souscripteurs() <span style="color:#0000ff">As</span> souscripteur = {<span style="color:#0000ff">New</span> souscripteur(&quot;s1&quot;, émetteur1), <span style="color:#0000ff">New</span> souscripteur(&quot;s2&quot;, émetteur1)}</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            &#x27; read a sequence of integers from the keyboard</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            &#x27; a sequence of integers is read from the keyboard</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            &#x27; as soon as one is wrong, we issue an evt</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            Console.Out.Write(&quot;Nombre entier (rien pour arrêter) : &quot;)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">Dim</span> saisie <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span> = Console.In.ReadLine().Trim()</span></span>
@@ -1100,22 +1106,22 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Dim</span> souscripteurs() <span style="color:#0000ff">As</span> souscripteur = {<span style="color:#0000ff">New</span> souscripteur(&quot;s1&quot;, émetteur1), <span style="color:#0000ff">New</span> souscripteur(&quot;s2&quot;, émetteur1)}</span></span>
 </code></pre></div>
 
-<p>We ask the user to enter integers via the keyboard. As soon as an incorrect entry is made, we ask <em>issuer1</em> to send an event to its subscribers:</p>
+<p>We ask the user to enter integers via the keyboard. As soon as an entry is incorrect, we ask <em>emitter1</em> to send an event to its subscribers:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span class="odt-code-line-content">                &#x27; on prévient tout le monde</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                &#x27; we warn everyone</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                émetteur1.envoyerEvt(<span style="color:#0000ff">New</span> myEventArgs(saisie))</span></span>
 </code></pre></div>
 
 <p>The event sent is of type <em>myEventArgs</em> and contains the incorrect input. Both subscribers should receive this event and report it. This is shown in the following execution.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>dos&gt;evt1
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Nombre entier (rien pour arrêter) : 4
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Nombre entier (rien pour arrêter) : a
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>L&#39;objet [émetteur1] a signalé la saisie erronée [a] au souscripteur [s1]
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>L&#39;objet [émetteur1] a signalé la saisie erronée [a] au souscripteur [s2]
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Nombre entier (rien pour arrêter) : 1.6
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>L&#39;objet [émetteur1] a signalé la saisie erronée [1.6] au souscripteur [s1]
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>L&#39;objet [émetteur1] a signalé la saisie erronée [1.6] au souscripteur [s2]
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>Nombre entier (rien pour arrêter) :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>dos&gt;evt1
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Nombre entier (rien pour arrêter) : 4
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Nombre entier (rien pour arrêter) : a
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>L&#39;objet [émetteur1] a signalé la saisie erronée [a] au souscripteur [s1]
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>L&#39;objet [émetteur1] a signalé la saisie erronée [a] au souscripteur [s2]
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>Nombre entier (rien pour arrêter) : 1.6
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>L&#39;objet [émetteur1] a signalé la saisie erronée [1.6] au souscripteur [s1]
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>L&#39;objet [émetteur1] a signalé la saisie erronée [1.6] au souscripteur [s2]
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>Nombre entier (rien pour arrêter) :
 </code></pre></div>
 
 

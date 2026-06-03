@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://stahe.github.io/en-vbnet-mars-2004/database-access.html">
       
       
-        <link rel="prev" href="event-handling.html">
+        <link rel="prev" href="event-management.html">
       
       
         <link rel="next" href="----execution-threads.html">
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -391,7 +393,7 @@
   <span class="md-ellipsis">
     
   
-    4. Commonly Used .NET Classes
+    4. Commonly used .NET classes
   
 
     
@@ -438,14 +440,14 @@
   
   
     <li class="md-nav__item">
-      <a href="event-handling.html" class="md-nav__link">
+      <a href="event-management.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. Event Handling
+    6. Event Management
   
 
     
@@ -536,10 +538,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#72-the-two-ways-to-use-a-data-source" class="md-nav__link">
+  <a href="#72-the-two-modes-of-operating-a-data-source" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7.2. The two ways to use a data source
+        7.2. The two modes of operating a data source
       
     </span>
   </a>
@@ -550,12 +552,12 @@
   <a href="#73-accessing-data-in-connected-mode" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7.3. Accessing data in connected mode
+        7.3. Accessing Data in Connected Mode
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="7.3. Accessing data in connected mode">
+    <nav class="md-nav" aria-label="7.3. Accessing Data in Connected Mode">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -570,15 +572,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#732-using-an-odbc-driver" class="md-nav__link">
+  <a href="#732-using-a-odbc-driver" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7.3.2. Using an ODBC driver
+        7.3.2. Using a ODBC driver
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="7.3.2. Using an ODBC driver">
+    <nav class="md-nav" aria-label="7.3.2. Using a ODBC driver">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -593,10 +595,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#7322-executing-sql-queries" class="md-nav__link">
+  <a href="#7322-sending-sql-queries" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7.3.2.2. Executing SQL Queries
+        7.3.2.2. Sending SQL queries
       
     </span>
   </a>
@@ -604,10 +606,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#7323-working-with-the-result-of-a-select-query" class="md-nav__link">
+  <a href="#7323-analyzing-the-results-of-a-query-select" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7.3.2.3. Working with the result of a SELECT query
+        7.3.2.3. Analyzing the results of a query SELECT
       
     </span>
   </a>
@@ -631,10 +633,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#733-using-an-ole-db-driver" class="md-nav__link">
+  <a href="#733-using-a-ole-driver-db" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7.3.3. Using an OLE DB Driver
+        7.3.3. Using a OLE driver DB
       
     </span>
   </a>
@@ -645,7 +647,7 @@
   <a href="#734-updating-a-table" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7.3.4. Updating a table
+        7.3.4. Updating a Table
       
     </span>
   </a>
@@ -653,10 +655,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#735-tax-calculation" class="md-nav__link">
+  <a href="#735-impots" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7.3.5. Tax calculation
+        7.3.5. IMPOTS
       
     </span>
   </a>
@@ -710,14 +712,14 @@
   
   
     <li class="md-nav__item">
-      <a href="tcpip-programming.html" class="md-nav__link">
+      <a href="programming-tcp-ip.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. TCP/IP Programming
+    9. Programming TCP-IP
   
 
     
@@ -804,7 +806,7 @@
 <h1 id="7-database-access">7. <span style="color: #365f91">Database access</span></h1>
 <h2 id="71-general">7.1. <span style="color: #4f81bd">General</span></h2>
 <p>There are many databases available for Windows platforms. To access them, applications use programs called drivers. </p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005EB000001C27FA19DA5.png" width="680" height="202" style="display:inline-block; margin:4px;width:17.997cm;height:5.346cm;" class="odt-zoomable" data-zoom-src="images/10000000000005EB000001C27FA19DA5.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005EB000001C27FA19DA5.png" width="680" height="202" style="display:inline-block; margin:4px;width:17.997cm;height:5.346cm;" class="odt-zoomable" data-zoom-src="images/10000000000005EB000001C27FA19DA5.png" /></td></tr></table>
 
 <p>In the diagram above, the driver has two interfaces:</p>
 <ul>
@@ -814,36 +816,36 @@
   </li>
 </ul>
 
-<p>To prevent an application written for database B1 from having to be rewritten if migrating to a different database B2, standardization efforts have been made on interface I1. If databases using &quot;standardized&quot; drivers are employed, database B1 will be provided with driver P1, database B2 with driver P2, and the I1 interface of these two drivers will be identical. Thus, the application will not need to be rewritten. For example, you can migrate an ACCESS database to a MySQL database without changing the application.</p>
+<p>To prevent an application written for database B1 from having to be rewritten when migrating to a different database B2, standardization efforts have been made on interface I1. If databases using &quot;standardized&quot; drivers are employed, database B1 will be provided with driver P1, database B2 with driver P2, and the I1 interface of these two drivers will be identical. Thus, the application will not need to be rewritten. For example, you can migrate a ACCESS database to a MySQL database without changing the application.</p>
 <p>There are two types of standardized drivers:</p>
 <ul>
-  <li>ODBC (Open DataBase Connectivity) drivers
+  <li>the ODBC drivers (Open DataBase Connectivity)
   </li>
-  <li>OLE DB (Object Linking and Embedding DataBase) drivers
+  <li>OLE and DB drivers (Object Linking and Embedding DataBase)
   </li>
 </ul>
 
-<p>ODBC drivers provide access to databases. The data sources for OLE DB drivers are more varied: databases, email systems, directories, etc. There are no limits. Any data source can be the subject of an OLE DB driver if a vendor decides to do so. The benefit is obviously significant: you have uniform access to a wide variety of data.</p>
+<p>The ODBC drivers provide access to databases. The data sources for the OLE and DB drivers are more varied: databases, email systems, directories, etc. There are no limits. Any data source can be the subject of a OLE or DB driver if a publisher so decides. The benefit is obviously significant: you have uniform access to a wide variety of data.</p>
 <p>The .NET platform comes with two types of data access classes:</p>
 <ol>
-  <li>SQL Server.NET classes
+  <li>the SQL and Server.NET classes
   </li>
-  <li>OLE DB.NET classes
+  <li>the OLE Db.NET classes
   </li>
 </ol>
 
-<p>The first classes allow direct access to Microsoft’s SQL Server DBMS without an intermediate driver. The second classes allow access to OLE DB data sources.</p>
+<p>The first classes allow direct access to Microsoft&#x27;s SGBD SQL Server without an intermediate driver. The second classes allow access to OLE DB data sources.</p>
 <p><img src="images/10000000000001E700000071091B80B8.png" width="487" height="113" style="width:12.885cm;height:2.99cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E700000071091B80B8.png" /></p>
-<p>The .NET platform is provided (as of May 2002) with three OLE DB drivers for SQL Server, Oracle, and Microsoft Jet (Access), respectively. If you want to work with a database that has an ODBC driver but no OLE DB driver, you cannot. Thus, you cannot work with the MySQL DBMS, which (as of May 2002) does not provide an OLE DB driver. However, there is a set of classes that allow access to ODBC data sources: the <strong>odbc.net</strong> classes. These are not included by default with the SDK and must be downloaded from the Microsoft website. In the examples that follow, we will primarily use these ODBC classes because most databases on Windows come with such a driver. Here, for example, is a list of ODBC drivers installed on a Windows 2000 machine (<em>Start Menu/Settings/Control Panel/Administrative Tools</em>):</p>
+<p>The .NET platform is shipped (May 2002) with three drivers: OLE, DB, and SQL, for SQL Server, Oracle, and Microsoft Jet (Access), respectively. If you want to work with a database that has a ODBC driver but no OLE or DB driver, you cannot. Thus, you cannot work with SGBD or MySQL, which (as of May 2002) do not provide drivers for OLE or DB. However, there is a set of classes that allow access to ODBC data sources: the <strong>odbc.net</strong> classes. They are not included by default with SDK and must be downloaded from the Microsoft website. In the examples that follow, we will primarily use these ODBC classes because most Windows databases come with such a driver. Here, for example, is a list of ODBC drivers installed on a Windows 2000 machine (<em>Start Menu/Settings/Control Panel/Administrative Tools</em>):</p>
 <p><img src="images/10000000000001A10000013428F0BB4E.png" width="417" height="308" style="width:11.031cm;height:8.147cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A10000013428F0BB4E.png" /></p>
-<p>Select the <em>ODBC Data Source</em> icon:</p>
+<p>Select the <em>ODBC data source</em> icon:</p>
 <p><img src="images/10000000000001CE00000176C78341BB.png" width="462" height="374" style="width:12.222cm;height:9.894cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CE00000176C78341BB.png" /></p>
-<h2 id="72-the-two-ways-to-use-a-data-source">7.2. <span style="color: #4f81bd">The two ways to use a data source</span></h2>
+<h2 id="72-the-two-modes-of-operating-a-data-source">7.2. <span style="color: #4f81bd">The two modes of operating a data source</span></h2>
 <p>The .NET platform allows you to use a data source in two different ways:</p>
 <ol>
   <li>connected mode
   </li>
-  <li>disconnected mode
+  <li>offline mode
   </li>
 </ol>
 
@@ -876,24 +878,24 @@
 <ul>
   <li>A connection consumes system resources. If there are many simultaneous connections, offline mode helps minimize their duration. This is the case for web applications with thousands of users.
   </li>
-  <li>The disadvantage of offline mode is the delicate handling of concurrent updates. User U1 retrieves data at time T1 and begins modifying it. At time T2, user U2 also accesses the data source and retrieves the same data. In the meantime, user U1 has modified some data but has not yet transmitted it to the data source. U2 is therefore working with data, some of which is incorrect. .NET classes offer solutions to manage this problem, but it is not easy to resolve.
+  <li>The disadvantage of offline mode is the delicate handling of concurrent updates. User U1 retrieves data at time T1 and begins modifying it. At time T2, user U2 also accesses the data source and retrieves the same data. In the meantime, user U1 has modified some data but has not yet transmitted it to the data source. U2 therefore works with data, some of which is incorrect. The .NET classes offer solutions to manage this problem, but it is not easy to resolve.
   </li>
   <li>In connected mode, simultaneous data updates by multiple users do not normally pose a problem. Since the connection to the database is maintained, the database itself manages these simultaneous updates. Thus, Oracle locks a row in the database as soon as a user modifies it. It will remain locked—and therefore inaccessible to other users—until the user who modified it commits the change or rolls it back.
   </li>
-  <li>If data needs to be shared over the network, you should choose offline mode. This mode provides a snapshot of the data in an object called <b>a dataset, </b>which functions as a standalone database. This object can be shared over the network between machines.
+  <li>If data needs to be transferred over the network, the disconnected mode should be chosen. It allows you to have a snapshot of the data in an object called <b>a dataset</b>, which represents a database in its own right. This object can be transferred over the network between machines.
   </li>
 </ul>
 
 <p>We will first examine connected mode.</p>
-<h2 id="73-accessing-data-in-connected-mode">7.3. <span style="color: #4f81bd">Accessing data in connected mode</span></h2>
+<h2 id="73-accessing-data-in-connected-mode">7.3. <span style="color: #4f81bd">Accessing Data in Connected Mode</span></h2>
 <h3 id="731-the-databases-in-the-example">7.3.1. <span style="color: #4f81bd">The databases in the example</span></h3>
-<p>We are considering an Access database named <em>articles.mdb</em> that contains only one table named ARTICLES with the following structure: </p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>name</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>type</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>code</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">4-character item code</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>name</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">its name (string)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>price</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">its price (actual)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>current_stock</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">current stock (integer)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>min_stock</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">the minimum stock (integer) below which the item must be restocked</div></td></tr></table>
+<p>We consider a database named ACCESS, referred to as <em>articles.mdb</em>, containing a single table named ARTICLES with the following structure: </p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>name</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>type</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>code</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">4-character item code</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>name</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">its name (string)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>price</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">its price (actual)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>stock_actuel</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">current stock (integer)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>stock_minimum</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">the minimum stock (integer) below which the item must be restocked</div></td></tr></table>
 
-<p>Its initial contents are as follows:</p>
+<p>Its initial content is as follows:</p>
 <p><img src="images/10000000000001EE00000095F53C3FA2.png" width="494" height="149" style="width:13.069cm;height:3.942cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EE00000095F53C3FA2.png" /></p>
-<p>We will use this database via both an ODBC driver and an OLE DB driver to demonstrate the similarity between the two approaches and because we have both types of drivers available for ACCESS. </p>
-<p>We will also use a MySQL database named DBARTICLES, which has the same single ARTICLES table, the same content, and is accessed via an ODBC driver, to demonstrate that the application written to use the Access database does not need to be modified to use the MySQL database. The DBARTICLES database is accessible to a user named <em>admarticles</em> with the password <em>mdparticles</em>. The following screenshot shows the contents of the MySQL database:</p>
+<p>We will use this database with both a ODBC driver anda OLE DB driver to demonstrate the similarity of the two approaches and because we have both types of drivers available for ACCESS. </p>
+<p>We will also use a database MySQL DBARTICLES containing the same single table ARTICLES, the same content, and accessed via a driver ODBC, to demonstrate that the application written to use the database ACCESS does not need to be modified to use the database MySQL. The DBARTICLES database is accessible to a user named <em>admarticles</em> with the password <em>mdparticles</em>. The following screenshot shows the contents of the MySQL database:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">mysql</span><span class="err">\</span><span class="n">bin</span><span class="o">&gt;</span><span class="n">mysql</span><span class="w"> </span><span class="c1">--database=dbarticles --user=admarticles --password=mdparticles</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">Welcome</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="n">monitor</span><span class="p">.</span><span class="w">  </span><span class="n">Commands</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="err">\</span><span class="k">g</span><span class="p">.</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">Your</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="k">connection</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="k">version</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">.</span><span class="mi">23</span><span class="p">.</span><span class="mi">49</span><span class="o">-</span><span class="k">max</span><span class="o">-</span><span class="n">debug</span>
@@ -937,9 +939,9 @@
 <a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="n">exit</span>
 <a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="n">Bye</span>
 </code></pre></div>
-<p>To define the ACCESS database as an ODBC data source, proceed as follows:</p>
+<p>To define the ACCESS database as the ODBC data source, proceed as follows:</p>
 <ul>
-  <li>Open the ODBC Data Source Administrator as shown above and select the User DSN tab (DSN = Data Source Name)
+  <li>activate the ODBC data source administrator as shown above and select the User tab DSN (DSN=Data Source Name)
   </li>
 </ul>
 
@@ -951,22 +953,22 @@
 
 <p><img src="images/10000000000001D10000015616F5969B.png" width="465" height="342" style="width:12.301cm;height:9.047cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D10000015616F5969B.png" /></p>
 <ul>
-  <li>Name the data source &quot;<i>articles-access</i>,&quot; enter a description of your choice, and use the <i>Select</i> button to specify the database&#x27;s <i>.mdb </i>file. Finish by <i>clicking OK</i>.
+  <li>Name the data source &quot;<i>articles-access</i>,&quot; enter a custom description, and use the <i>Select</i> button to specify the database&#x27;s <i>.mdb </i>file. Finish with <i>OK</i>.
   </li>
 </ul>
 
 <p><img src="images/1000000000000208000000A430D8CF0D.png" width="520" height="164" style="width:13.757cm;height:4.339cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000208000000A430D8CF0D.png" /></p>
-<p>The new data source will then appear in the list of user DSNs:</p>
+<p>The new data source will then appear in the user&#x27;s list of DSN sources:</p>
 <p><img src="images/10000000000001C9000000B20C6AC387.png" width="457" height="178" style="width:12.09cm;height:4.71cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C9000000B20C6AC387.png" /></p>
-<p>To define the MySQL DBARTICLES database as an ODBC data source, proceed as follows:</p>
+<p>To define the database MySQL DBARTICLES as the data source for ODBC, follow these steps:</p>
 <ul>
-  <li>Open the ODBC Data Source Administrator as shown above and select the <i>User DSN </i>tab. Add a new data source using <i>Add </i>and select the MySQL ODBC driver. 
+  <li>Open the ODBC data source manager as shown above and select the <i>User</i> tab (<i>DSN)</i>. Add a new data source using <i>Add </i>and select the driver ODBC from MySQL. 
   </li>
 </ul>
 
 <p><img src="images/10000000000001D4000000F62BAB5CA7.png" width="468" height="246" style="width:12.381cm;height:6.509cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D4000000F62BAB5CA7.png" /></p>
 <ul>
-  <li>Click <i>Finish</i>. A MySQL source configuration page will then appear:
+  <li>Click <i>Finish</i>. A configuration page for the MySQL source will then appear:
   </li>
 </ul>
 
@@ -975,19 +977,19 @@
 <ul>
   <li>In (1), give a name to your ODBC data source
   </li>
-  <li>In (2), specify the machine where the MySQL server is located. Here, we enter <i>`localhost` </i>to indicate that it is on the same machine as our application. If the MySQL server were on a remote machine `M`, we would enter its name here, and our application would then work with a remote database without any changes.
+  <li>In (2), specify the machine on which the server MySQL is located. Here, we enter <i>localhost </i>to indicate that it is on the same machine as our application. If the server MySQL were on a remote machine M, we would enter its name here, and our application would then work with a remote database without any changes.
   </li>
   <li>In (3), enter the database name. Here, it is called DBARTICLES.
   </li>
-  <li>In (4), enter the username <i>admarticles, </i>and in (5), the password <i>mdparticles</i>.
+  <li>In (4), enter the username <i>&quot;adarticles&quot; </i>and in (5), the password &quot;<i>mdparticles</i>&quot;.
   </li>
 </ul>
-<h3 id="732-using-an-odbc-driver">7.3.2. <span style="color: #4f81bd">Using an ODBC driver</span></h3>
+<h3 id="732-using-a-odbc-driver">7.3.2. <span style="color: #4f81bd">Using a ODBC driver</span></h3>
 <p>In an application using a database in connected mode, the following steps are generally involved:</p>
 <ol>
   <li>Connecting to the database
   </li>
-  <li>Sending SQL queries to the database
+  <li>Sending queries to the database
   </li>
   <li>Receiving and processing the results of these queries
   </li>
@@ -995,7 +997,7 @@
   </li>
 </ol>
 
-<p>Steps 2 and 3 are performed repeatedly, with the connection closing only at the end of database operations. This is a relatively standard pattern that you may be familiar with if you have worked with a database interactively. These steps are the same whether the database is accessed via an ODBC driver or an OLE DB driver. Below is an example using the .NET classes for managing ODBC data sources. The program is called <em><code>liste</code></em> and takes as a parameter the DSN name of an ODBC data source containing a table named <code>ARTICLES</code>. It then displays the contents of this table:</p>
+<p>Steps 2 and 3 are performed repeatedly; the connection is closed only at the end of database operations. This is a relatively standard pattern that you may be familiar with if you have used a database interactively. These steps are the same whether the database is accessed via a ODBC driver or a OLE or DB driver. Below is an example using the .NET classes for managing ODBC data sources. The program is called <em><code>list</code></em> and accepts as a parameter the name <code>DSN</code> of a data source <code>ODBC</code> containing a table <code>ARTICLES</code>. It then displays the contents of this table:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">dos</span><span class="o">&gt;</span><span class="n">liste</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">syntaxe</span> <span class="p">:</span> <span class="n">pg</span> <span class="n">dsnArticles</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
@@ -1028,8 +1030,8 @@
 <a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="n">e300</span> <span class="n">combinaison</span> <span class="n">de</span> <span class="n">plongée</span>         <span class="mi">2800</span> <span class="mi">34</span> <span class="mi">7</span>
 <a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="n">f300</span> <span class="n">bouteilles</span> <span class="n">d</span><span class="s1">&#39;oxygène           800 10 5</span>
 </code></pre></div>
-<p>From the results above, we can see that the program listed the contents of both the ACCESS database and the MySQL database. Let’s now examine the code for this program:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<p>From the results above, we can see that the program listed the contents of both database ACCESS and database MySQL. Let’s now examine the code for this program:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27; options</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Option</span> <span style="color:#0000ff">Explicit</span> <span style="color:#0000ff">On</span> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Option</span> <span style="color:#0000ff">Strict</span> <span style="color:#0000ff">On</span></span></span>
@@ -1108,39 +1110,39 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">End</span> <span style="color:#0000ff">Module</span></span></span>
 </code></pre></div>
 
-<p>The ODBC source management classes are located in the <em>Microsoft.Data.Odbc</em> namespace, which must therefore be imported. Additionally, a number of classes are located in the <em>System.Data</em> namespace.</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<p>The ODBC source management classes are located in the <em>Microsoft.Data.Odbc</em> namespace, which must therefore be imported. In addition, a number of classes are located in the <em>System.Data</em> namespace.</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Imports</span> System.Data</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Imports</span> Microsoft.Data.Odbc</span></span>
 </code></pre></div>
 
-<p>The namespaces used by the program are in different assemblies. Compile the program using the following command:</p>
+<p>The namespaces used by the program are in different assemblies. We compile the program with the following command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>dos&gt;vbc /r:microsoft.data.odbc.dll /r:microsoft.visualbasic.dll /r:system.dll /r:system.data.dll db1.vb
 </code></pre></div>
 <h4 id="7321-the-connection-phase">7.3.2.1. <span style="color: #4f81bd">The connection phase</span></h4>
-<p>An ODBC connection uses the <em>OdbcConnection</em> class. The constructor of this class takes as a parameter what is called a <strong>connection string</strong>. This is a string of characters that defines all the parameters necessary for the connection to the database to be established. There can be many such parameters, making the string complex. The string has the form <em>&quot;param1=value1;param2=value2;...;paramj=valuej;&quot;</em>. Here are some possible <em>paramj</em> parameters:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<p>A ODBC connection uses the <em>OdbcConnection</em> class. The constructor of this class accepts what is called a <strong>connection string</strong> as a parameter. This is a string of characters that defines all the parameters necessary for the database connection to be established. There can be many such parameters, making the string complex. The string has the form <em>&quot;param1=value1;param2=value2;...;paramj=valuej;&quot;</em>. Here are some possible <em>paramj</em> parameters:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>uid
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">username of the user who will access the database</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">username of the user who will access the database</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>password
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">this user&#x27;s password</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">this user&#x27;s password</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>dsn
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">the database&#x27;s DSN name, if it has one</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">database name (if any)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>data source
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">name of the database being accessed</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">name of the database being accessed</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>...
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>If you define a data source as an ODBC data source using the ODBC Data Source Administrator, these parameters have already been specified and saved. In that case, you simply need to pass the DSN parameter, which provides the DSN name of the data source. This is what is done here:</p>
+<p>If a data source is defined as data source ODBC using the ODBC data source administrator, these parameters have already been specified and saved. All you need to do is pass the parameter DSN, which provides the name DSN of the data source. This is what is done here:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span class="odt-code-line-content">        &#x27; preparing the connection to the comic</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        Dim articlesConn As OdbcConnection = Nothing        &#x27; the connection</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        Dim myReader As OdbcDataReader = Nothing        &#x27; the data reader</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Dim</span> articlesConn <span style="color:#0000ff">As</span> OdbcConnection = <span style="color:#0000ff">Nothing</span>        &#x27; la connexion</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Dim</span> myReader <span style="color:#0000ff">As</span> OdbcDataReader = <span style="color:#0000ff">Nothing</span>        &#x27; le lecteur de données</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Try</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            &#x27; attempt to access the database</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            &#x27; base connection chain</span></span>
@@ -1149,11 +1151,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">            articlesConn.Open()</span></span>
 </code></pre></div>
 
-<p>Once the <em>OdbcConnection</em> object is created, we open the connection using the <em>Open</em> method. This operation may fail, just like any other database operation. That is why the entire database access code is enclosed in a <em>try-catch block</em>. Once the connection is established, we can execute SQL queries on the database.</p>
-<h4 id="7322-executing-sql-queries">7.3.2.2. <span style="color: #4f81bd">Executing SQL Queries</span></h4>
-<p>To execute SQL queries, we need a <em>Command</em> object—more specifically, an <em>OdbcCommand</em> object, since we are using an ODBC data source. The <em>OdbcCommand</em> class has several constructors:</p>
+<p>Once the <em>OdbcConnection</em> object is created, we open the connection using the <em>Open</em> method. This operation may fail, just like any other database operation. That is why the entire database access code is enclosed in a <em>try-catch block</em>. Once the connection is established, we can issue SQL queries to the database.</p>
+<h4 id="7322-sending-sql-queries">7.3.2.2. <span style="color: #4f81bd">Sending SQL queries</span></h4>
+<p>To issue SQL queries, we need a <em>Command</em> object—more specifically, a <em>OdbcCommand</em> object, since we are using a ODBC data source. The <em>OdbcCommand</em> class has several constructors:</p>
 <ul>
-  <li><i>OdbcCommand()</i>: creates an empty <i>Command</i> object. To use it, you’ll need to specify various properties later:
+  <li><i>OdbcCommand()</i>: creates an empty <i>Command</i> object. To use it, you will need to specify various properties later:
     <ul>
       <li><b>CommandText</b>: the text of the SQL query to be executed
       </li>
@@ -1165,31 +1167,31 @@
   </li>
 </ul>
 <ol>
-  <li><i>CommandType.Text</i>: the <i>CommandText</i> property contains the text of an SQL query (default value)
+  <li><i>CommandType.Text</i>: The property <i>CommandText </i>contains the text of a query SQL (default value)
   </li>
-  <li><i>CommandType.StoredProcedure</i>: the <i>CommandText</i> property contains the name of a stored procedure in the database
+  <li><i>CommandType.StoredProcedure</i>: The <i>CommandText</i> property contains the name of a stored procedure in the database
   </li>
-  <li><i>CommandType.TableDirect</i>: the <i>CommandText</i> property contains the name of a table T. Equivalent to <i>`SELECT * FROM T</i>`. Exists only for OLE DB drivers.
+  <li><i>CommandType.TableDirect</i>: The <i>CommandText</i> property contains the name of a table T. Equivalent to <i>`SELECT * FROM T</i>`. Exists only for the OLE and DB drivers.
   </li>
 </ol>
 <ul>
-  <li><i>OdbcCommand(string sqlText)</i>: the <i>sqlText</i> parameter will be assigned to the <i>CommandText</i> property. This is the text of the SQL query to be executed. The connection must be specified in the <i>Connection</i> property.
+  <li><i>OdbcCommand(string sqlText)</i>: the parameter <i>sqlText </i>will be assigned to the property <i>CommandText</i>. This is the text of the SQL query to be executed. The connection must be specified in the <i>Connection</i> property.
   </li>
-  <li><i>OdbcCommand(string sqlText, OdbcConnection connection)</i>: the <i>sqlText</i> parameter is assigned to the <i>CommandText</i> property, and the <i>connection</i> parameter to the <i>Connection</i> property.
+  <li><i>OdbcCommand(string sqlText, OdbcConnection connection)</i>: the parameter <i>sqlText </i>will be assigned to the property <i>CommandText </i>and the <i>connection</i> parameter to the <i>Connection</i> property.
   </li>
 </ul>
 
-<p>To execute the SQL query, two methods are available:</p>
+<p>To issue the SQL query, there are two methods available:</p>
 <ul>
-  <li><b>OdbcDataReader ExecuteReader()</b>: sends the SELECT query from <i>CommandText </i>to the <i>Connection </i>and creates an <i>OdbcDataReader</i> object that provides access to all rows in the result table of <i>the SELECT</i>
+  <li><b>OdbcdataReader ExecuteReader()</b>: sends the SELECT query from <i>CommandText </i>to the <i>Connection</i> connection and creates a <i>OdbcDataReader</i> object that allows access to all rows in the result table of the <i>SELECT</i>
   </li>
-  <li><b>int ExecuteNonQuery()</b>: sends the update query (INSERT, UPDATE, DELETE) from <i>CommandText </i>to the <i>Connection </i>and returns the number of rows affected by the update.
+  <li><b>int ExecuteNOnQuery()</b>: sends the update query (INSERT, UPDATE, DELETE) from <i>CommandText </i>to the <i>Connection </i>and returns the number of rows affected by this update.
   </li>
 </ul>
 
-<p>In our example, after opening the database connection, we issue an SQL SELECT query to retrieve the contents of the ARTICLES table:</p>
+<p>In our example, after opening the database connection, we issue a SQL SELECT query to retrieve the contents of the ARTICLES table:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span class="odt-code-line-content">            &#x27; exécution d&#x27;une commande SQL</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            &#x27; execution of a SQL command</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">Dim</span> sqlText <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span> = &quot;select * from &quot; + tabArticles</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">Dim</span> myOdbcCommand <span style="color:#0000ff">As</span> <span style="color:#0000ff">New</span> OdbcCommand(sqlText)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            myOdbcCommand.Connection = articlesConn</span></span>
@@ -1204,7 +1206,7 @@
 </code></pre></div>
 <p>Only the keywords in the first line are required; the others are optional. There are other keywords not shown here.</p>
 <ol>
-  <li>A join is performed on all tables listed after the `<b>FROM</b>` keyword
+  <li>A join is performed with all tables listed after the `<b>FROM` </b>keyword
   </li>
   <li>Only the columns following the `<b>select` </b>keyword are retained
   </li>
@@ -1214,47 +1216,47 @@
   </li>
 </ol>
 
-<p>The result of a <em><code>SELECT</code></em> is a table. If we consider the previous <code>ARTICLES</code> table and want the names of the items whose current stock is below the minimum threshold, we would write:</p>
+<p>The result of a <code>*SELECT</code>* is a table. If we consider the previous table <code>ARTICLES</code> and want the names of the items whose current stock is below the minimum threshold, we would write:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">articles</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">stock_actuel</span><span class="o">&lt;</span><span class="n">stock_minimum</span>
 </code></pre></div>
-<p>If we want them sorted alphabetically by name, we would write:</p>
+<p>If you want them sorted alphabetically by name, you would write:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">articles</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">stock_actuel</span><span class="o">&lt;</span><span class="n">stock_minimum</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">nom</span>
 </code></pre></div>
-<h4 id="7323-working-with-the-result-of-a-select-query">7.3.2.3. <span style="color: #4f81bd">Working with the result of a SELECT query</span></h4>
-<p>The result of a SELECT query in disconnected mode is a <em>DataReader</em> object, in this case an <em>OdbcDataReader</em> object. This object allows you to retrieve all rows of the result sequentially and obtain information about the columns in those results. Let’s examine some properties and methods of this class:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<h4 id="7323-analyzing-the-results-of-a-query-select">7.3.2.3. <span style="color: #4f81bd">Analyzing the results of a query SELECT</span></h4>
+<p>The result of a SELECT query in offline mode is a <em>DataReader</em> object; here, it is a <em>OdbcDataReader</em> object. This object allows you to retrieve all rows of the result sequentially and obtain information about the columns in those results. Let’s examine some properties and methods of this class:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>FieldCount
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">the number of columns in the table</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">the number of columns in the table</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Item
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>Item(i) </i>represents column number i of the current row in the result</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>Item(i) </i>represents column number i of the current row in the result</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>XXX GetXXX(i)
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">the value of column i of the current row, returned as type XXX (Int16, Int32, Int64, Double, String, Boolean, ...)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">the value of column i of the current row, returned as type XXX(Int16, Int32, Int64, Double, String, Boolean, ...)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>string GetName(i)
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">name of column number i</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">name of column no. i</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Close()
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">closes the <i>OdbcdataReader</i> object and releases the associated resources</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">closes the <i>OdbcdataReader</i> object and releases the associated resources</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>bool Read()
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">moves forward one row in the result table. Returns false if this is not possible. The new row becomes the current row of the reader.</div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">moves forward one row in the result table. Returns false if this is not possible. The new row becomes the current row of the reader.</div></td></tr></table>
 
 <p>Processing the result of a <em>SELECT statement</em> is typically a sequential operation similar to that of text files: you can only move forward in the table, not backward:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">While</span> myReader.Read()</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    &#x27; on a une ligne - on l&#x27;exploite</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    &#x27; we have a line - we use it</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    ....</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    &#x27; ligne suivante</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    &#x27; next line</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">end while</span></span>
 </code></pre></div>
 
 <p>These explanations are sufficient to understand the following code in our example:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="font-weight:bold;color:#ff0000">&#x27; Exploitation de la table récupérée</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="font-weight:bold;color:#ff0000">&#x27; affichage des colonnes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            &#x27; Using the recovered table</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            &#x27; column display</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">Dim</span> ligne <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span> = &quot;&quot;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">Dim</span> i <span style="color:#0000ff">As</span> <span style="color:#0000ff">Integer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">For</span> i = 0 <span style="color:#0000ff">To</span> (myReader.FieldCount - 1) - 1</span></span>
@@ -1263,9 +1265,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content">            ligne += myReader.GetName(i)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            Console.Out.WriteLine((ControlChars.Lf + &quot;&quot;.PadLeft(ligne.Length, &quot;-&quot;c) + ControlChars.Lf + ligne + ControlChars.Lf + &quot;&quot;.PadLeft(ligne.Length, &quot;-&quot;c) + ControlChars.Lf))</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="font-weight:bold;color:#ff0000">&#x27; affichage des données</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            &#x27; data display</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">While</span> myReader.Read()</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="font-weight:bold;color:#ff0000">&#x27; exploitation ligne courante</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                &#x27; current line operation</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                ligne = &quot;&quot;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">For</span> i = 0 <span style="color:#0000ff">To</span> myReader.FieldCount - 1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    ligne += myReader(i).ToString + &quot; &quot;</span></span>
@@ -1281,37 +1283,37 @@
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">Next</span> i</span></span>
 </code></pre></div>
 
-<p>The notation <em>line+=myReader(i).ToString</em> is translated to <em>line+=myReader.Item(i).ToString(),</em> where <em>Item(i)</em> is the value of column i in the current row.</p>
+<p>The notation <em>line+=myReader(i).ToString</em> is translated to <em>line+=myReader.Item(i).ToString()</em> where <em>Item(i)</em> is the value of column i of the current row.</p>
 <h4 id="7324-resource-release">7.3.2.4. <span style="color: #4f81bd">Resource Release</span></h4>
-<p>The <em>OdbcReader</em> and <em>OdbcConnection</em> classes both have a <strong>Close()</strong> method that releases the resources associated with the objects being closed.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>                &#39; fermeture lecteur
+<p>The classes <em>OdbcReader</em> and <em>OdbcConnection</em> both have a <strong>Close()</strong> method that releases the resources associated with the objects thus closed.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>                &#39; drive lock
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>                myReader.Close()
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>                &#39; fermeture connexion
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>                &#39; locking connection
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>                articlesConn.Close()
 </code></pre></div>
-<h3 id="733-using-an-ole-db-driver">7.3.3. <span style="color: #4f81bd">Using an OLE DB Driver</span></h3>
-<p>We’ll use the same example, this time with a database accessed via an OLE DB driver. The .NET platform provides such a driver for Access databases. So we’ll use the same <em>articles.mdb</em> database as before. Our goal here is to show that while the classes may change, the concepts remain the same:</p>
+<h3 id="733-using-a-ole-driver-db">7.3.3. <span style="color: #4f81bd">Using a OLE driver DB</span></h3>
+<p>We&#x27;ll use the same example, this time with a database accessed via a OLE DB driver. The .NET platform provides such a driver for ACCESS databases. So we will use the same <em>articles.mdb</em> database as before. We aim to show here that while the classes may change, the concepts remain the same:</p>
 <ul>
-  <li>the connection is represented by an <b>OleDbConnection</b> object
+  <li>the connection is represented by a <b>OleDbConnection</b> object
   </li>
-  <li>an SQL query is issued using an <b>OleDbCommand</b> object
+  <li>a query SQL is issued via an object <b>OleDbCommand</b>
   </li>
-  <li>if this query is a SELECT statement, an <b>OleDbDataReader</b> object is returned to access the rows of the result table
+  <li>if this query is a clause SELECT, we will receive a <b>OleDbDataReader</b> object in return to access the rows of the result table
   </li>
 </ul>
 
-<p>These classes are in the <em>System.Data.OleDb</em> namespace. The previous program can be easily adapted to work with an OLE DB database:</p>
+<p>These classes are in the <em>System</em>.<em>Data.OleDb</em> namespace. The previous program can be easily modified to handle a OLE DB database:</p>
 <ul>
-  <li>Replace OdbcXX with OleDbXX everywhere
+  <li>replace OdbcXX with OleDbXX everywhere
   </li>
-  <li>modify the connection string. For an ACCESS database without a login/password, the connection string is <i>Provider=Microsoft.JET.OLEDB.4.0;Data Source=[file.mdb]</i>. The configurable part of this string is the name of the ACCESS file to use. We will modify our program so that it accepts the name of this file as a parameter.
+  <li>modify the connection string. For a ACCESS database without a login/password, the connection string is <i>Provider=Microsoft.JET.OLEDB.4.0;Data Source=[fichier.mdb]</i>. The configurable part of this string is the name of the ACCESS file to be used. We will modify our program so that it accepts the name of this file as a parameter.
   </li>
   <li>The namespace to import is now <i>System.Data.OleDb</i>.
   </li>
 </ul>
 
 <p>Our program becomes the following:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27; options</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Option</span> <span style="color:#0000ff">Explicit</span> <span style="color:#0000ff">On</span> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Option</span> <span style="color:#0000ff">Strict</span> <span style="color:#0000ff">On</span></span></span>
@@ -1416,8 +1418,8 @@
 <a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>e300 combinaison de plongée         2800 34 7
 <a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>f300 bouteilles d&#39;oxygène           800 10 5
 </code></pre></div>
-<h3 id="734-updating-a-table">7.3.4. <span style="color: #4f81bd">Updating a table</span></h3>
-<p>The previous examples simply listed the contents of a table. We will modify our product database management program so that it can modify the database. The program is called <em>sql</em>. We pass the DSN name of the product database to be managed as a parameter. The user types SQL commands directly on the keyboard, which the program executes, as shown by the following results obtained from the MySQL product database:</p>
+<h3 id="734-updating-a-table">7.3.4. <span style="color: #4f81bd">Updating a Table</span></h3>
+<p>The previous examples simply listed the contents of a table. We will modify our item database management program so that it can modify the database. The program is named <em>sql</em>. We pass it the name DSN of the item database to be managed as a parameter. The user types SQL commands directly on the keyboard, which the program executes, as shown by the following results obtained from the MySQL product database:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">dos</span><span class="o">&gt;</span><span class="n">vbc</span><span class="w"> </span><span class="o">/</span><span class="n">r</span><span class="p">:</span><span class="n">microsoft</span><span class="p">.</span><span class="k">data</span><span class="p">.</span><span class="n">odbc</span><span class="p">.</span><span class="n">dll</span><span class="w"> </span><span class="k">sql</span><span class="p">.</span><span class="n">vb</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="n">dos</span><span class="o">&gt;</span><span class="k">sql</span><span class="w"> </span><span class="n">mysql</span><span class="o">-</span><span class="n">articles</span>
@@ -1510,7 +1512,7 @@
 <a id="__codelineno-19-90" name="__codelineno-19-90" href="#__codelineno-19-90"></a><span class="n">Requête</span><span class="w"> </span><span class="k">SQL</span><span class="w"> </span><span class="p">(</span><span class="n">fin</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">arrêter</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">fin</span>
 </code></pre></div>
 <p>The program is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27; options</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Option</span> <span style="color:#0000ff">Explicit</span> <span style="color:#0000ff">On</span> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Option</span> <span style="color:#0000ff">Strict</span> <span style="color:#0000ff">On</span></span></span>
@@ -1564,7 +1566,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">Catch</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">End</span> <span style="color:#0000ff">Try</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            Environment.Exit(2)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        End Try        &#x27;catch</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">End</span> <span style="color:#0000ff">Try</span>        <span style="font-weight:bold;color:#ff0000">&#x27;catch</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        &#x27; build a dictionary of accepted sql commands</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Dim</span> commandesSQL() <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span> = {&quot;select&quot;, &quot;insert&quot;, &quot;update&quot;, &quot;delete&quot;}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Dim</span> dicoCommandes <span style="color:#0000ff">As</span> <span style="color:#0000ff">New</span> Hashtable</span></span>
@@ -1598,7 +1600,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">                erreur = <span style="color:#0000ff">True</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">End</span> <span style="color:#0000ff">If</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">If</span> <span style="color:#0000ff">Not</span> erreur <span style="color:#0000ff">Then</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                &#x27; prepare the Command object to execute the request</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                &#x27; prepare object Command to execute query</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                sqlCommand.CommandText = requête</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                &#x27; query execution</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">Try</span></span></span>
@@ -1629,7 +1631,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        Console.Out.WriteLine((&quot;Il y a eu &quot; &amp; nbLignes &amp; &quot; ligne(s) modifiée(s)&quot;))</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">End</span> <span style="color:#0000ff">Sub</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    &#x27; executing a Select query</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    &#x27; execute a Select query</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">Sub</span> executeSelect(<span style="color:#0000ff">ByVal</span> sqlCommand <span style="color:#0000ff">As</span> OdbcCommand)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        &#x27; executes sqlCommand, select query</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Dim</span> myReader <span style="color:#0000ff">As</span> OdbcDataReader = sqlCommand.ExecuteReader()</span></span>
@@ -1660,12 +1662,12 @@
 
 <p>We will only comment here on what is new compared to the previous program:</p>
 <ul>
-  <li>We build a dictionary of accepted SQL commands:
+  <li>We build a dictionary of accepted sql commands:
   </li>
 </ul>
 
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span class="odt-code-line-content">        &#x27; on construit un dictionnaire des commandes sql acceptées</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        &#x27; build a dictionary of accepted sql commands</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Dim</span> commandesSQL() <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span> = {&quot;select&quot;, &quot;insert&quot;, &quot;update&quot;, &quot;delete&quot;}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Dim</span> dicoCommandes <span style="color:#0000ff">As</span> <span style="color:#0000ff">New</span> Hashtable</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Dim</span> i <span style="color:#0000ff">As</span> <span style="color:#0000ff">Integer</span></span></span>
@@ -1674,13 +1676,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Next</span> i</span></span>
 </code></pre></div>
 
-<p>This then allows us to simply check if the first word (<em>fields[0]</em>) of the typed query is one of the four accepted commands:</p>
+<p>which then allows us to simply check if the first word (<em>champs[0]</em>) of the typed query is one of the four accepted commands:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span class="odt-code-line-content">            &#x27; requête valide ?</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            &#x27; valid request?</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">If</span> champs.Length = 0 <span style="color:#0000ff">Or</span> <span style="color:#0000ff">Not</span> dicoCommandes.ContainsKey(champs(0)) <span style="color:#0000ff">Then</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                &#x27; msg d&#x27;erreur</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                &#x27; error msg</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                Console.Error.WriteLine(&quot;Requête invalide. Utilisez select, insert, update, delete&quot;)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                &#x27; requête suivante</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                &#x27; following request</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                erreur = <span style="color:#0000ff">True</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">End</span> <span style="color:#0000ff">If</span>            &#x27;if</span></span>
 </code></pre></div>
@@ -1697,16 +1699,16 @@
 <span class="odt-code-line"><span class="odt-code-line-content">            champs = modèle.Split(requête)</span></span>
 </code></pre></div>
 
-<p>The words in the query can be separated by any number of spaces.</p>
+<p>The words making up the query can be separated by any number of spaces.</p>
 <ul>
-  <li>Executing a <i>SELECT</i> query does not use the same method as executing an update query (<i>INSERT</i>, <i>UPDATE</i>, <i>DELETE</i>). Therefore, we must perform a check and execute a different function for each of these two cases:
+  <li>Executing a <i>SELECT</i> query does not use the same method as an update query (<i>INSERT</i>, <i>UPDATE</i>, <i>DELETE</i>). Therefore, we must perform a check and execute a different function for each of these two cases:
   </li>
 </ul>
 
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span class="odt-code-line-content">                &#x27; préparation de l&#x27;objet Command pour exécuter la requête</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                &#x27; prepare object Command to execute query</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                sqlCommand.CommandText = requête</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                &#x27; exécution de la requête</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                &#x27; query execution</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">Try</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#0000ff">If</span> champs(0) = &quot;select&quot; <span style="color:#0000ff">Then</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                        executeSelect(sqlCommand)</span></span>
@@ -1714,21 +1716,21 @@
 <span class="odt-code-line"><span class="odt-code-line-content">                        executeUpdate(sqlCommand)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#0000ff">End</span> <span style="color:#0000ff">If</span>                    &#x27;try</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">Catch</span> ex <span style="color:#0000ff">As</span> Exception</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                    &#x27; msg d&#x27;erreur</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                    &#x27; error msg</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    Console.Error.WriteLine((&quot;Erreur d&#x27;exploitation de la base de données (&quot; + ex.Message + &quot;)&quot;))</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">End</span> <span style="color:#0000ff">Try</span></span></span>
 </code></pre></div>
 
-<p>Executing an SQL query can generate an exception, which is handled here.</p>
+<p>Executing a SQL query may generate an exception, which is handled here.</p>
 <ul>
-  <li>The <i>executeSelect</i> function covers everything covered in the previous examples.
+  <li>The <i>executeSelect</i> function incorporates everything covered in the previous examples.
   </li>
   <li>The <i>executeUpdate</i> function uses the <i>ExecuteNonQuery</i> method of the <i>OdbcCommand</i> class, which returns the number of rows affected by the command.
   </li>
 </ul>
-<h3 id="735-tax-calculation">7.3.5. <span style="color: #4f81bd">Tax calculation</span></h3>
-<p>We reuse the <em>tax</em> object created in a previous chapter:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<h3 id="735-impots">7.3.5. <span style="color: #4f81bd">IMPOTS</span></h3>
+<p>We’ll revisit the <em>tax</em> object created in a previous chapter:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27; options</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Option</span> <span style="color:#0000ff">Strict</span> <span style="color:#0000ff">On</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Option</span> <span style="color:#0000ff">Explicit</span> <span style="color:#0000ff">On</span> </span></span>
@@ -1781,8 +1783,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">End</span> <span style="color:#0000ff">Class</span></span></span>
 </code></pre></div>
 
-<p>We add a new constructor to initialize the <em>limit</em> arrays, <em>coeffR</em>, and <em>coeffN</em> from an ODBC database:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<p>We add a new constructor to initialize the <em>limit</em> arrays, <em>coeffR</em> and <em>coeffN</em>, from a database named ODBC:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Imports</span> System.Data</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Imports</span> Microsoft.Data.Odbc</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Imports</span> System.Collections</span></span>
@@ -1790,16 +1792,16 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 </code></pre></div>
 
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span class="odt-code-line-content">    &#x27; builder 2</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">Public</span> <span style="color:#0000ff">Sub</span> <span style="color:#0000ff">New</span>(<span style="color:#0000ff">ByVal</span> DSNimpots <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span>, <span style="color:#0000ff">ByVal</span> Timpots <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span>, <span style="color:#0000ff">ByVal</span> colLimites <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span>, <span style="color:#0000ff">ByVal</span> colCoeffR <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span>, <span style="color:#0000ff">ByVal</span> colCoeffN <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span>)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        &#x27; initializes the three limit arrays, coeffR, coeffN from</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="font-weight:bold;color:#ff0000">&#x27; initialise les trois tableaux limites, coeffR, coeffN à partir</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        &#x27; the contents of the Timpots table in the ODBC DSNimpots database</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        &#x27; colLimites, colCoeffR, colCoeffN are the three columns of this table</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        &#x27; can throw an exception</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        Dim connectString As String = &quot;DSN=&quot; + DSNimpots + &quot;;&quot;        &#x27; base connection chain</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        Dim impotsConn As OdbcConnection = Nothing        &#x27; the connection</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        Dim sqlCommand As OdbcCommand = Nothing        &#x27; the SQL command</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Dim</span> connectString <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span> = &quot;DSN=&quot; + DSNimpots + &quot;;&quot;        <span style="font-weight:bold;color:#ff0000">&#x27; chaîne de connexion à la base</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Dim</span> impotsConn <span style="color:#0000ff">As</span> OdbcConnection = <span style="color:#0000ff">Nothing</span>        <span style="font-weight:bold;color:#ff0000">&#x27; la connexion</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Dim</span> sqlCommand <span style="color:#0000ff">As</span> OdbcCommand = <span style="color:#0000ff">Nothing</span>        <span style="font-weight:bold;color:#ff0000">&#x27; la commande SQL</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        &#x27; the SELECT query</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">Dim</span> selectCommand <span style="color:#0000ff">As</span> <span style="color:#0000ff">String</span> = &quot;select &quot; + colLimites + &quot;,&quot; + colCoeffR + &quot;,&quot; + colCoeffN + &quot; from &quot; + Timpots</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        &#x27; tables to retrieve data</span></span>
@@ -1839,7 +1841,7 @@
 </code></pre></div>
 
 <p>The test program is as follows: it receives as arguments the parameters to be passed to the <em>tax</em> class constructor. After constructing a <em>tax</em> object, it calculates the tax due:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vb.net">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Option</span> <span style="color:#0000ff">Explicit</span> <span style="color:#0000ff">On</span> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Option</span> <span style="color:#0000ff">Strict</span> <span style="color:#0000ff">On</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1904,7 +1906,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">Dim</span> nbEnfants <span style="color:#0000ff">As</span> <span style="color:#0000ff">Integer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">Dim</span> salaire <span style="color:#0000ff">As</span> <span style="color:#0000ff">Integer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">If</span> <span style="color:#0000ff">Not</span> erreur <span style="color:#0000ff">Then</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                &#x27; checking parameter validity</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                &#x27; checking the validity of parameters</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                &#x27; married</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                marié = args(0).ToLower()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">If</span> marié &lt;&gt; &quot;o&quot; <span style="color:#0000ff">And</span> marié &lt;&gt; &quot;n&quot; <span style="color:#0000ff">Then</span></span></span>
@@ -1943,7 +1945,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">End</span> <span style="color:#0000ff">Module</span></span></span>
 </code></pre></div>
 
-<p>The database used is a MySQL database with the DSN name <em>mysql-impots</em>:</p>
+<p>The database used is a MySQL database named DSN <em>mysql-impots</em>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">mysql</span><span class="err">\</span><span class="n">bin</span><span class="o">&gt;</span><span class="n">mysql</span><span class="w"> </span><span class="c1">--database=impots --user=admimpots --password=mdpimpots</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">Welcome</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="n">monitor</span><span class="p">.</span><span class="w">  </span><span class="n">Commands</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="err">\</span><span class="k">g</span><span class="p">.</span>
 <a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="n">Your</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="k">connection</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="k">version</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">.</span><span class="mi">23</span><span class="p">.</span><span class="mi">49</span><span class="o">-</span><span class="k">max</span><span class="o">-</span><span class="n">debug</span>
